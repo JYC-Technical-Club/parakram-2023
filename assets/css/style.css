@@ -2574,15 +2574,23 @@ blockquote:before {
   font-weight: 600;
   margin-bottom: 15px; }
 .our-trainer-info p {
-  max-width: 90%; }
+  max-width: 100%; }
 .our-trainer-info .social-list {
   margin-top: 38px; }
   .our-trainer-info .social-list li {
-    margin-right: 18px; }
+    margin-right: 10px; }
     .our-trainer-info .social-list li:last-child {
       margin-right: 0; }
   .our-trainer-info .social-list a {
     font-size: 23px; }
+@media (max-width:400px){
+  .our-trainer-info p .prof{
+    font-size: 15px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: clip;
+  }
+}
 
 /*----------------- S-TRAINER-AWARDS -----------------*/
 .s-trainer-awards {
@@ -2970,6 +2978,13 @@ blockquote:before {
     .out-trainer-info .social-list li a {
       transition: .25s ease-in;
       font-size: 23px; }
+
+@media(max-width:450px){
+  .out-trainer-info{
+    max-width: 50%;
+    font-size: 12px;
+  }
+}
 
 /*-------------------- S-CLIENTS --------------------*/
 .s-clients {
