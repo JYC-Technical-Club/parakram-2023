@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parakram</title>
+    <link rel="stylesheet" type="text/css" href="./assets/css/credits.css">
+    <link rel="icon" href="photosc/fevicon.avif">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="square">
+        <span></span>
+        <span></span>
+        <span></span>
+        <div class="content">
+            <div class="contentBx active" id="content1">
+                <div class="card">
+                    <div class="imgBx">
+                        <img src="./photosc/shagun.webp" alt="">
+                    </div>
+                    <div class="textBx">
+                        <h2>Shagun Choudhary <br><b>Web Developer</b></h2>
+                        <ul class="sci">
+                            <li><a href="https://www.instagram.com/sgndesigner/"><i class="fa-brands fa-instagram"></i></a></li>
+                            <li><a href="https://www.linkedin.com/in/sgndesigner/"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                            <li><a href="http://linktr.ee/sgndesigner"><box-icon name='code-block'  id= "code" color = "white"></box-icon></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="contentBx" id="content2">
+                <div class="card">
+                    <div class="imgBx">
+                        <img src="./photosc/yash.jpeg" alt="">
+                    </div>
+                    <div class="textBx">
+                        <h2>Yash Khatri <br><b>Web Developer</b></h2>
+                        <ul class="sci">
+                            <li><a href="https://www.instagram.com/yashkhatri99/"><i class="fa-brands fa-instagram"></i></a></li>
+                            <li><a href="https://www.linkedin.com/in/yash-khatri-29b956251/"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                            <li><a href=""><box-icon name='code-block' id = "code" color = "white" ></box-icon></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="contentBx" id="content3">
+                <div class="card">
+                    <div class="imgBx">
+                        <img src="./photosc/samson.JPG" alt="">
+                    </div>
+                    <div class="textBx">
+                        <h2>Samson Vincent Julius <br><b>Web Developer</b></h2>
+                        <ul class="sci">
+                            <li><a href="https://instagram.com/sam.v_julius?utm_source=qr&igshid=MThlNWY1MzQwNA=="><i class="fa-brands fa-instagram"></i></a></li>
+                            <li><a href=""><i class="fa-brands fa-linkedin-in"></i></a></li>
+                            <li><a href=""><box-icon name='code-block' id = "code"  color = "white"></box-icon></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="contentBx" id="content4">
+                <div class="card">
+                    <div class="imgBx">
+                        <img src="./photosc/anant.jpeg" alt="">
+                    </div>
+                    <div class="textBx">
+                        <h2>Anant Singh <br><b>Web Developer</b></h2>
+                        <ul class="sci">
+                            <li><a href="https://www.instagram.com/_anant.singh_/"><i class="fa-brands fa-instagram"></i></a></li>
+                            <li><a href="https://www.linkedin.com/in/anant-singh-7a42551a1/"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                            <li><a href=""><box-icon name='code-block' id = "code" color = "white" ></box-icon></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="bottom">
+        <div class="waves">
+            <div class="wave" id="wave1"></div>
+            <div class="wave" id="wave2"></div>
+            <div class="wave" id="wave3"></div>
+            <div class="wave" id="wave4"></div>
+        </div>
+        <div class="icon">
+            <div class="imgBx active" data-id="content1">
+                <img src="./photosc/shagun.webp" alt="">
+            </div>
+            <div class="imgBx" data-id="content2">
+                <img src="./photosc/yash.jpeg" alt="">
+            </div>
+            <div class="imgBx" data-id="content3">
+                <img src="./photosc/samson.JPG" alt="">
+            </div>
+            <div class="imgBx" data-id="content4">
+                <img src="./photosc/anant.jpeg" alt="">       
+            </div>
+        </div>
+    </div>
+    <script>
+        let imgBx = document.querySelectorAll('.imgBx');
+        let contentBx = document.querySelectorAll('.contentBx');
+
+        for(var i=1;i<imgBx.length;i++){
+            imgBx[i].addEventListener('mouseover', function(){
+                for(var i=0;i<contentBx.length;i++){
+                    contentBx[i].className = 'contentBx';
+                }
+                document.getElementById(this.dataset.id).className='contentBx active';
+
+                for(var i=0;i<imgBx.length;i++){
+                    imgBx[i].className='imgBx';
+                } 
+                this.className='imgBx active';
+            })
+        }
+    </script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Poppins:wght@300;400;500;600;700;800;900&family=Tektur:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+</body>
+</html>
