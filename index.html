@@ -65,13 +65,13 @@
 						<li class="">
 							<a href="index.html">Home </a>
 						</li>
-						<li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdbsN8gA7w68OjTguUvE-m4YKpW2XMoriWFllJQ3YRg_D3vPQ/viewform?usp=sf_link ">Registrations</a></li>
+						<li><a href="">Registrations</a></li>
 						<li class="dropdown">
 							
 						</li>
 						<li><a href="contacts.html">Contacts</a></li>
 						<li><a href="galary.html">Gallery</a></li>
-						<li><a href="credits.html">Credits</a></li>
+						<!-- <li><a href="credits.html">Credits</a></li> -->
 					</ul>
 				</nav>
 			</div>
@@ -93,7 +93,7 @@
 						<span class="scene-item" data-depth="0.4" style="background-image: url(assets/img/effect-2.svg);"></span>
 					</div>
 				</div>
-				<div class="crossfit-slide-bg" style="background-image: url(ppc/mainpage1.webp);"></div>
+				<div class="crossfit-slide-bg" style="background-image: url(photosc/main1.webp);"></div>
 				<div class="container">
 					<div class="crossfit-slide-cover">
 						<h2 class="title">Para<span>kram</span></h2>
@@ -114,7 +114,7 @@
 						<span class="scene-item" data-depth="0.4" style="background-image: url(assets/img/effect-2.svg);"></span>
 					</div>
 				</div>
-				<div class="crossfit-slide-bg" style="background-image: url(photosc/main2.webp);"></div>
+				<div class="crossfit-slide-bg" style="background-image: url(photosc/mainn2.webp);"></div>
 				<div class="container">
 					<div class="crossfit-slide-cover">
 						<h1 class="title">Para<span>kram</span></h1>
@@ -133,7 +133,7 @@
 						<span class="scene-item" data-depth="0.4" style="background-image: url(assets/img/effect-2.svg);"></span>
 					</div>
 				</div>
-				<div class="crossfit-slide-bg" style="background-image: url(photosc/main3.webp);"></div>
+				<div class="crossfit-slide-bg" style="background-image: url(photosc/mainn3.webp);"></div>
 				<div class="container">
 					<div class="crossfit-slide-cover">
 						<h2 class="title">Para<span>kram</span></h2>
@@ -193,25 +193,80 @@
 		<div class="mask"></div>
 		<div class="container">
 			<h2 class="title-decor">Countdown to <span>Parakram</span></h2>
-			<p class="slogan"></p>
+			<p class="slogan">Event Date: October 6, 2024</p>
 			<div id="clockdiv">
 				<div class="clock-item">
-					<span>0</span>
+					<span id="days">0</span>
 					<div class="smalltext">Days</div>
 				</div>
 				<div class="clock-item">
-					<span>0</span>
+					<span id="hours">0</span>
 					<div class="smalltext">Hours</div>
 				</div>
 				<div class="clock-item">
-					<span>0</span>
+					<span id="minutes">0</span>
 					<div class="smalltext">Minutes</div>
 				</div>
 				<div class="clock-item">
-					<span>0</span>
+					<span id="seconds">0</span>
 					<div class="smalltext">Seconds</div>
 				</div>
 			</div>
+		</div>
+	</section>
+
+	<script>
+		document.addEventListener("DOMContentLoaded", function() {
+			// Function to calculate the time remaining
+			function getTimeRemaining(endtime) {
+				var t = Date.parse(endtime) - Date.parse(new Date());
+				var seconds = Math.floor((t / 1000) % 60);
+				var minutes = Math.floor((t / 1000 / 60) % 60);
+				var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+				var days = Math.floor(t / (1000 * 60 * 60 * 24));
+				return {
+					'total': t,
+					'days': days,
+					'hours': hours,
+					'minutes': minutes,
+					'seconds': seconds
+				};
+			}
+	
+			// Function to initialize and update the clock
+			function initializeClock(endtime) {
+				var daysSpan = document.getElementById('days');
+				var hoursSpan = document.getElementById('hours');
+				var minutesSpan = document.getElementById('minutes');
+				var secondsSpan = document.getElementById('seconds');
+	
+				function updateClock() {
+					var t = getTimeRemaining(endtime);
+	
+					daysSpan.innerHTML = t.days;
+					hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
+					minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
+					secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
+	
+					if (t.total <= 0) {
+						clearInterval(timeinterval);
+					}
+				}
+	
+				updateClock(); // Run the function immediately
+				var timeinterval = setInterval(updateClock, 1000); // Update every second
+			}
+	
+			// Set the deadline to October 6, 2024, 00:00:00
+			var deadline = new Date('2024-10-06T00:00:00');
+			initializeClock(deadline);
+		});
+	</script>
+	
+
+
+	
+	
 			<!-- <form class="subscribe-form">
 				<input class="inp-form" type="email" name="subscribe" placeholder="Your E-mail">
 				<button type="submit" class="btn">Subscribe</button>
@@ -330,15 +385,44 @@
 				</div>
 				<div class="col-md-6 out-trainer-col">
 					<div class="out-trainer-item">
-						<a href="" class="out-trainer-img"><img class="rx-lazy" src="photosc/dk.webp" data-src="photosc/dk.webp" alt="img"></a>
+						<a href="" class="out-trainer-img"><img class="rx-lazy" src="photosc/Sanjiv_phy.webp" data-src="photosc/Sanjiv_phy.webp" alt="img"></a>
 						<div class="out-trainer-info">
-							<h3><a href="trainer.html">Diksha Hooda</a></h3>
-							<div class="prof">Assistant Professor (SG)</div>
+							<h3><a href="trainer.html">Dr. Sanjiv Kumar Tiwari</a></h3>
+							<div class="prof">Associate Professor</div>
+							<p>Dr. Sanjiv Kumar Tiwari boasts a distinguished academic journey, earning his M.Sc. at Banaras Hindu University (1999) followed by a Ph.D. from IIT Kanpur (2007). He further enriched his research experience with postdocs at Tata Institute of Fundamental Research (Mumbai) and Weizmann Institute of Science (Israel).</p>
 							<p>
-								Dr. Diksha Hooda: Assistant Professor with 5 years of Computer Science experience, Ph.D., MTech, GATE qualifier, and ML competition winner with SCI journal publications.</p>
+								(91)-01792-239359
+								<br>sanjivkumar.tiwari@juit.ac.in
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 out-trainer-col">
+					<div class="out-trainer-item">
+						<a href="" class="out-trainer-img"><img class="rx-lazy" src="photosc/sudhir.webp" data-src="photosc/sudhir.webp" alt="img"></a>
+						<div class="out-trainer-info">
+							<h3><a href="trainer.html">Dr. Sudhir Kumar</a></h3>
+							<div class="prof">Professor and Head</div>
+							<p>Dr. Sudhir Kumar, an expert in Environmental Biotechnology, has a strong academic background from Panjab University and TIET, Patiala. His research focuses on bioleaching precious metals from e-waste, environmental impact assessment, and utilizing thermostable enzymes for various applications.</p>
+							<p>
+								(91)-1792-239231
+                                <br>sudhir.syal@juit.ac.in
+							</p>
+							
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 out-trainer-col">
+					<div class="out-trainer-item">
+						<a href="" class="out-trainer-img"><img class="rx-lazy" src="photosc/Neena Jindal.webp" data-src="photosc/Neena Jindal.webp" alt="img"></a>
+						<div class="out-trainer-info">
+							<h3><a href="trainer.html">Dr. Neena Jindal</a></h3>
+							<div class="prof">Assistant Professor (Grade-II)</div>
+							<p>
+								Dr. Neena Jindal has taught Political Science for seven years. Presently, she is teaching engineering students at JUIT. She is also involved in various student activities in the campus. </p>
 								<p>
-									(91) 01792 239 556
-                                     <br>diksha.hooda@juitsolan.in
+									(91)01792- 239306
+                                     <br>neena.jindal@juit.ac.in
 								</p>
 						
 						</div>
@@ -346,19 +430,20 @@
 				</div>
 				<div class="col-md-6 out-trainer-col">
 					<div class="out-trainer-item">
-						<a href="" class="out-trainer-img"><img class="rx-lazy" src="photosc/ms.webp" data-src="photosc/ms.webp" alt="img"></a>
+						<a href="" class="out-trainer-img"><img class="rx-lazy" src="photosc/rajkumar.webp" data-src="photosc/rajkumar.webp" alt="img"></a>
 						<div class="out-trainer-info">
-							<h3><a href="trainer.html">Munish Sood</a></h3>
-							<div class="prof">Assistant Professor (Grade-II)</div>
-							<p>Munish Sood possesses an M.Tech (2011) and an MBA (2008) with a background in Electronics and Communication Engineering, earning his B.Tech (2001). He has served as a committed educator at JUIT since August 2006. </p>
-							<p>
-								(91) 01792 239502
-                                <br>munish.sood@juit.ac.in
+							<h3><a href="trainer.html">Dr. Raj Kumar</a></h3>
+							<div class="prof">FAssistant Professor (SG)</div>
+							<p>Dr. Raj Kumar, specializes in Computer-Aided Drug Design and related fields. He holds a Ph.D. from Gyeongsang National University and has postdoctoral experience from Seoul National University.
 							</p>
-							
+							<p>
+								(91) 01792-239305
+								<br>raj.kumar@juit.ac.in
+							</p>
 						</div>
 					</div>
 				</div>
+				
 			</div>
 		</div>
 	</section>
@@ -366,11 +451,11 @@
 
 	<!-- ============ S-CROSSFIT-BANNER ============ -->
 	<section class="s-crossfit-banner">
-		<div class="crossfit-banner-left" style="background-image: url(photosc/ar.webp);"></div>
+		<div class="crossfit-banner-left" style=""></div>
 		<div class="crossfit-banner-right">
 			<div class="text-top">To</div>
 			<h2>Register</h2>
-			<div class="text-bottom"> <a href="https://docs.google.com/forms/d/e/1FAIpQLSdbsN8gA7w68OjTguUvE-m4YKpW2XMoriWFllJQ3YRg_D3vPQ/viewform?usp=sf_link">Click here</a></div>
+			<div class="text-bottom"> <a href="">Click here</a></div>
 		</div>
 	</section>
 	<!-- ========== S-CROSSFIT-BANNER END ========== -->
@@ -380,7 +465,7 @@
 	<!-- ============ S-CLUB-CARDS END ============ -->
 
 	<!-- ============== S-TESTIMONIALS ============== -->
-	<section class="s-testimonials" style="background-image: url(/photosc/bjjuit.webp);">
+	<!-- <section class="s-testimonials" style="background-image: url(/photosc/bjjuit.webp);">
 		<div class="mask"></div>
 		
 		<div class="container">
@@ -405,7 +490,7 @@
 				
 					<img src="./sponsers/images.jpeg" alt="img">
 					
-				</div>
+				</div> -->
 				<!-- <div class="testimonial-slide">
 				
 					<img src="./sponsers/y.png" alt="img">
@@ -448,13 +533,13 @@
 			<h2 class="title-decor">Our  <span>Coordinators</span></h2>
 			<div class="carousel">
 				<div class="carousel__body">
-				  <div class="carousel__prev"><i class="fa-solid fa-angle-left" style="color: #f23849;"></i></i></div>
-				  <div class="carousel__next"><i class="fa-solid fa-angle-right" style="color: #f23849;"></i></i></div>
+				  <div class="carousel__prev"><i class="fa-solid fa-angle-left" style="color: #3AABBA;"></i></i></div>
+				  <div class="carousel__next"><i class="fa-solid fa-angle-right" style="color: #3AABBA;"></i></i></div>
 				  <div class="carousel__slider">
 					<div class="carousel__slider__item">
 					  <div class="item__3d-frame">
 						<div class="item__3d-frame__box item__3d-frame__box--front">
-						  <img src="photosc/Aditya Prabhakar.webp" alt="">
+						  <img src="photosc/Ojaswi Chauhan.webp" alt="">
 						</div>
 						<div class="item__3d-frame__box item__3d-frame__box--left"></div>
 						<div class="item__3d-frame__box item__3d-frame__box--right">             </div>
@@ -463,7 +548,7 @@
 					<div class="carousel__slider__item">
 					  <div class="item__3d-frame">
 						<div class="item__3d-frame__box item__3d-frame__box--front">
-						<img src="photosc/Avi Jaiswal.webp" alt="">
+						<img src="photosc/Khushi Singh Himalvi.webp" alt="">
 						</div>
 						<div class="item__3d-frame__box item__3d-frame__box--left"></div>
 						<div class="item__3d-frame__box item__3d-frame__box--right">             </div>
@@ -472,7 +557,7 @@
 					<div class="carousel__slider__item">
 					  <div class="item__3d-frame">
 						<div class="item__3d-frame__box item__3d-frame__box--front">
-							<img src="photosc/Astik Tyagi.webp" alt="">
+							<img src="photosc/Suryansh Sharma.webp" alt="">
 						</div>
 						<div class="item__3d-frame__box item__3d-frame__box--left"></div>
 						<div class="item__3d-frame__box item__3d-frame__box--right">             </div>
@@ -481,7 +566,7 @@
 					<div class="carousel__slider__item">
 					  <div class="item__3d-frame">
 						<div class="item__3d-frame__box item__3d-frame__box--front">
-							<img src="photosc/Jasmeen Kaur.webp" alt="">
+							<img src="photosc/Ansh Gupta.webp" alt="">
 						</div>
 						<div class="item__3d-frame__box item__3d-frame__box--left"></div>
 						<div class="item__3d-frame__box item__3d-frame__box--right">             </div>
@@ -490,7 +575,7 @@
 					<div class="carousel__slider__item">
 					  <div class="item__3d-frame">
 						<div class="item__3d-frame__box item__3d-frame__box--front">
-							<img src="photosc/Karan Rana.webp" alt="">
+							<img src="photosc/Achintya Sharma.webp" alt="">
 						</div>
 						<div class="item__3d-frame__box item__3d-frame__box--left"></div>
 						<div class="item__3d-frame__box item__3d-frame__box--right">             </div>
@@ -499,7 +584,7 @@
 					<div class="carousel__slider__item">
 					  <div class="item__3d-frame">
 						<div class="item__3d-frame__box item__3d-frame__box--front">
-							<img src="photosc/Pranjal Thakur.webp" alt="">
+							<img src="photosc/Parv Goel.webp" alt="">
 						</div>
 						<div class="item__3d-frame__box item__3d-frame__box--left"></div>
 						<div class="item__3d-frame__box item__3d-frame__box--right">             </div>
@@ -508,7 +593,7 @@
 					<div class="carousel__slider__item">
 					  <div class="item__3d-frame">
 						<div class="item__3d-frame__box item__3d-frame__box--front">
-							<img src="photosc/Shruti Kadyan.webp" alt="">
+							<img src="photosc/Rijul Dhiman.webp" alt="">
 						</div>
 						<div class="item__3d-frame__box item__3d-frame__box--left"></div>
 						<div class="item__3d-frame__box item__3d-frame__box--right">             </div>
@@ -517,7 +602,7 @@
 					<div class="carousel__slider__item">
 					  <div class="item__3d-frame">
 						<div class="item__3d-frame__box item__3d-frame__box--front">
-							<img src="photosc/Tarisha Kaplex.webp" alt="">
+							<img src="photosc/Jayant Anand.webp" alt="">
 						</div>
 						<div class="item__3d-frame__box item__3d-frame__box--left"></div>
 						<div class="item__3d-frame__box item__3d-frame__box--right">             </div>
@@ -526,7 +611,7 @@
 					<div class="carousel__slider__item">
 					  <div class="item__3d-frame">
 						<div class="item__3d-frame__box item__3d-frame__box--front">
-							<img src="photosc/Manav Lukar.webp" alt="">
+							<img src="photosc/Om Shree.webp" alt="">
 						</div>
 						<div class="item__3d-frame__box item__3d-frame__box--left"></div>
 						<div class="item__3d-frame__box item__3d-frame__box--right">             </div>
@@ -535,7 +620,7 @@
 					<div class="carousel__slider__item">
 					  <div class="item__3d-frame">
 						<div class="item__3d-frame__box item__3d-frame__box--front">
-							<img src="photosc/Roodransh Mehta.webp" alt="">
+							<img src="photosc/Tejas Gomte.webp" alt="">
 						</div>
 						<div class="item__3d-frame__box item__3d-frame__box--left"></div>
 						<div class="item__3d-frame__box item__3d-frame__box--right">             </div>

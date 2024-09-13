@@ -303,7 +303,8 @@
 	});
 
 	/*-------------------- COUNTDOWN -------------------*/
-	if ($('#clockdiv')[0]) {
+	$(document).ready(function() {
+		if ($('#clockdiv')[0]) {
 		function getTimeRemaining(endtime) {
 			var t = Date.parse(endtime) - Date.parse(new Date());
 			var seconds = Math.floor((t / 1000) % 60);
@@ -344,9 +345,10 @@
 		}
 	
 		// Set the deadline to October 6th, 0000 hours (midnight)
-		var deadline = new Date('2023-10-06T00:00:00');
+		var deadline = new Date('2024-10-06T00:00:00');
 		initializeClock('clockdiv', deadline);
 	}
+});
 
 	/* -------------------- ISOTOPE ------------------- */
 	if( $( '.grid-gallery' )[0] ){

@@ -377,7 +377,7 @@ body.compensate-for-scrollbar {
 }
 
 .fancybox-progress {
-    background: #ff5268;
+    background: #3AABBA;
     height: 2px;
     left: 0;
     position: absolute;
@@ -733,11 +733,11 @@ body.compensate-for-scrollbar {
 }
 
 .fancybox-share__button--pt {
-    background: #bd081d;
+    background: #3AABBA;
 }
 
 .fancybox-share__button--pt:hover {
-    background: #aa0719;
+    background: #3AABBA;
 }
 
 .fancybox-share__button--tw {
@@ -859,7 +859,7 @@ body.compensate-for-scrollbar {
 }
 
 .fancybox-thumbs__list a::before {
-    border: 6px solid #ff5268;
+    border: 6px solid #3AABBA;
     bottom: 0;
     content: '';
     left: 0;
