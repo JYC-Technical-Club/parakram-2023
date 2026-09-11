@@ -193,7 +193,7 @@
 		<div class="mask"></div>
 		<div class="container">
 			<h2 class="title-decor">Countdown to <span>Parakram</span></h2>
-			<p class="slogan">Event Date:  1-4 October  2026</p>
+			<p class="slogan">Event Date:  2-4 October  2026</p>
 			<div id="clockdiv">
 				<div class="clock-item">
 					<span id="days">0</span>
@@ -217,55 +217,76 @@
 
 	<script>
     document.addEventListener("DOMContentLoaded", function (){
-        function getTimeRemaining(endtime){
-            var t = Date.parse(endtime) - Date.parse(new Date());
-            var seconds = Math.floor((t / 1000) % 60);
-            var minutes = Math.floor((t / 1000 / 60) % 60);
-            var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
-            var days = Math.floor(t / (1000 * 60 * 60 * 24));
-            return{
-                total: t,
-                days: days,
-                hours: hours,
-                minutes: minutes,
-                seconds: seconds
-            };
-        }
-        function initializeClock(endtime) {
-            var clockdiv = document.getElementById("clockdiv");
-            var daysSpan = document.getElementById("days");
-            var hoursSpan = document.getElementById("hours");
-            var minutesSpan = document.getElementById("minutes");
-            var secondsSpan = document.getElementById("seconds");
-            function updateClock() {
-                var t = getTimeRemaining(endtime);
-                if (t.total <= 0) {
-                    clockdiv.innerHTML = `
-                        <div class="parakram-live">
-                            <h2>🎉 Parakram is finally here!</h2>
-                            <p>Let the games begin! 🏆</p>
-                        </div>
-                    `;
-                    clearInterval(timeinterval);
-                    return;
-                }
-                daysSpan.innerHTML = t.days;
-                hoursSpan.innerHTML = ("0" + t.hours).slice(-2);
-                minutesSpan.innerHTML = ("0" + t.minutes).slice(-2);
-                secondsSpan.innerHTML = ("0" + t.seconds).slice(-2);
+        var countdownEnd = new Date("2026-10-02T00:00:00+05:30");
+        var eventEnd = new Date("2026-10-05T00:00:00+05:30");
+        var clockdiv = document.getElementById("clockdiv");
+        var daysSpan = document.getElementById("days");
+        var hoursSpan = document.getElementById("hours");
+        var minutesSpan = document.getElementById("minutes");
+        var secondsSpan = document.getElementById("seconds");
+        function updateClock() {
+            var now = new Date();
+            if (now < countdownEnd) {
+                var t = countdownEnd - now;
+                var days = Math.floor(t / (1000 * 60 * 60 * 24));
+                var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+                var minutes = Math.floor((t / (1000 * 60)) % 60);
+                var seconds = Math.floor((t / 1000) % 60);
+                daysSpan.innerHTML = days;
+                hoursSpan.innerHTML = ("0" + hours).slice(-2);
+                minutesSpan.innerHTML = ("0" + minutes).slice(-2);
+                secondsSpan.innerHTML = ("0" + seconds).slice(-2);
+                return;
             }
-            updateClock();
-            var timeinterval = setInterval(updateClock, 1000);
+            if (now < eventEnd) {
+                clockdiv.innerHTML = `
+                    <div class="parakram-live">
+                        <h2>🎉 Parakram is finally here!</h2>
+                        <p>Let the games begin! 🏆</p>
+                    </div>
+                `;
+                return;
+            }
+            var elapsed = now - eventEnd;
+            var negativeDays = Math.floor(
+                elapsed / (1000 * 60 * 60 * 24)
+            ) + 1;
+            var elapsedHours = Math.floor(
+                (elapsed / (1000 * 60 * 60)) % 24
+            );
+            var elapsedMinutes = Math.floor(
+                (elapsed / (1000 * 60)) % 60
+            );
+            var elapsedSeconds = Math.floor(
+                (elapsed / 1000) % 60
+            );
+            clockdiv.innerHTML = `
+                <div class="clock-item">
+                    <span>-${negativeDays}</span>
+                    <div class="smalltext">Days</div>
+                </div>
+
+                <div class="clock-item">
+                    <span>${("0" + elapsedHours).slice(-2)}</span>
+                    <div class="smalltext">Hours</div>
+                </div>
+
+                <div class="clock-item">
+                    <span>${("0" + elapsedMinutes).slice(-2)}</span>
+                    <div class="smalltext">Minutes</div>
+                </div>
+
+                <div class="clock-item">
+                    <span>${("0" + elapsedSeconds).slice(-2)}</span>
+                    <div class="smalltext">Seconds</div>
+                </div>
+            `;
         }
-        var deadline = new Date("2026-10-01T00:00:00");
-        initializeClock(deadline);
+        updateClock();
+        setInterval(updateClock, 1000);
     });
 	</script>
-	
 
-
-	
-	
 			<!-- <form class="subscribe-form">
 				<input class="inp-form" type="email" name="subscribe" placeholder="Your E-mail">
 				<button type="submit" class="btn">Subscribe</button>
