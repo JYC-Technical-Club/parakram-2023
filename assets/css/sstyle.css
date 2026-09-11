@@ -151,25 +151,83 @@ html > .carousel, body > .carousel {
    PARAKRAM 2026 - COORDINATORS
    ========================================================= */
 
-/* ================= COORDINATOR SECTION ================= */
+/* ================= COORDINATORS ================= */
+
+/* =====================================================
+   PARAKRAM COORDINATORS
+   FUTURISTIC 3-CARD CAROUSEL
+===================================================== */
 
 .coordinator-arena {
     position: relative;
     width: 100%;
-    padding: 100px 0 90px;
+    padding: 90px 0 65px;
     overflow: hidden;
-    background: #020b14;
+    content-visibility: auto;
+    contain-intrinsic-size: 900px;
+    isolation: isolate;
+    background:
+        radial-gradient(ellipse at 50% 58%, rgba(0, 196, 255, 0.17), transparent 32%),
+        radial-gradient(ellipse at 12% 100%, rgba(0, 89, 152, 0.2), transparent 38%),
+        radial-gradient(ellipse at 88% 100%, rgba(0, 111, 174, 0.16), transparent 38%),
+        linear-gradient(180deg, #031523 0%, #020b16 48%, #01060d 100%);
     color: #fff;
 }
 
-.coordinator-bg {
+.coordinator-arena::before {
+    content: "";
     position: absolute;
     inset: 0;
-    background:
-        radial-gradient(circle at 50% 45%, rgba(0, 190, 255, 0.16), transparent 45%),
-        radial-gradient(circle at 20% 60%, rgba(0, 110, 255, 0.10), transparent 35%),
-        radial-gradient(circle at 80% 60%, rgba(0, 220, 255, 0.08), transparent 35%);
+    z-index: 0;
     pointer-events: none;
+    background:
+        linear-gradient(115deg, transparent 0 19%, rgba(23, 213, 255, 0.055) 19.1% 19.35%, transparent 19.45% 71%, rgba(23, 213, 255, 0.045) 71.1% 71.35%, transparent 71.45%),
+        repeating-linear-gradient(90deg, rgba(72, 198, 235, 0.045) 0 1px, transparent 1px 92px),
+        repeating-linear-gradient(0deg, rgba(72, 198, 235, 0.035) 0 1px, transparent 1px 64px);
+    opacity: 0.55;
+}
+
+.coordinator-arena::after {
+    content: "";
+    position: absolute;
+    left: 8%;
+    right: 8%;
+    bottom: 5%;
+    height: 34%;
+    z-index: 1;
+    pointer-events: none;
+    background:
+        linear-gradient(180deg, transparent, rgba(0, 172, 235, 0.08)),
+        repeating-linear-gradient(90deg, transparent 0 38px, rgba(25, 223, 255, 0.09) 39px 40px),
+        repeating-linear-gradient(0deg, transparent 0 22px, rgba(25, 223, 255, 0.07) 23px 24px);
+    transform: perspective(500px) rotateX(58deg);
+    transform-origin: bottom;
+    opacity: 0.42;
+}
+
+/* ---------- BACKGROUND GLOW ---------- */
+
+.coordinator-glow {
+    position: absolute;
+    pointer-events: none;
+    border-radius: 50%;
+    opacity: 0.35;
+}
+
+.coordinator-glow-one {
+    width: 350px;
+    height: 350px;
+    left: 10%;
+    top: 25%;
+    background: rgba(0, 130, 255, 0.08);
+}
+
+.coordinator-glow-two {
+    width: 350px;
+    height: 350px;
+    right: 10%;
+    top: 25%;
+    background: rgba(0, 220, 255, 0.06);
 }
 
 .coordinator-arena .container {
@@ -177,177 +235,487 @@ html > .carousel, body > .carousel {
     z-index: 2;
 }
 
+
+/* ---------- HEADING ---------- */
+
 .coordinator-heading {
     text-align: center;
-    margin-bottom: 55px;
+    margin-bottom: 45px;
 }
 
-.coordinator-heading > span {
-    display: block;
+.coordinator-kicker {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
     margin-bottom: 12px;
-    font-size: 13px;
+
+    color: #19dfff;
+    font-size: 12px;
     font-weight: 700;
     letter-spacing: 5px;
-    color: #19d9ff;
+}
+
+.coordinator-kicker span {
+    width: 30px;
+    height: 2px;
+    background: #19dfff;
 }
 
 .coordinator-heading h2 {
     margin: 0;
-    font-size: 48px;
+    font-size: 46px;
     font-weight: 800;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
 }
 
 .coordinator-heading h2 strong {
-    color: #18dfff;
-    text-shadow: 0 0 20px rgba(24, 223, 255, 0.5);
+    color: #19dfff;
+    text-shadow: 0 0 20px rgba(25,223,255,0.45);
 }
 
 .coordinator-heading p {
-    margin: 15px 0 0;
-    color: rgba(255,255,255,0.65);
-    font-size: 15px;
+    margin: 12px 0 0;
+    color: rgba(255,255,255,0.62);
+    font-size: 14px;
 }
 
 .coordinator-line {
-    width: 65px;
-    height: 4px;
-    margin: 20px auto 0;
-    background: #18dfff;
-    box-shadow: 0 0 15px rgba(24,223,255,0.8);
+    width: 55px;
+    height: 3px;
+    margin: 18px auto 0;
+    background: #19dfff;
+    box-shadow: 0 0 12px rgba(25,223,255,0.8);
 }
 
 
-/* ================= CAROUSEL ================= */
+/* =====================================================
+   CAROUSEL
+===================================================== */
 
-.coordinator-slider {
+.coordinator-carousel {
+    position: relative;
     width: 100%;
-    height: 500px;
-    overflow: hidden;
     display: flex;
     align-items: center;
+    justify-content: center;
+}
+
+.coordinator-window {
+    width: 900px;
+    max-width: calc(100% - 150px);
+    overflow: hidden;
+    --visible-cards: 3;
 }
 
 .coordinator-track {
     display: flex;
     align-items: center;
-    gap: 35px;
-    width: max-content;
-    flex-shrink: 0;
+    gap: 28px;
+    will-change: transform;
+    contain: layout style;
+}
+
+.coordinator-track.coordinator-continuous {
+    animation: coordinator-continuous 32s linear infinite;
+}
+
+@keyframes coordinator-continuous {
+    from {
+        transform: translate3d(var(--coordinator-start), 0, 0);
+    }
+
+    to {
+        transform: translate3d(var(--coordinator-end), 0, 0);
+    }
 }
 
 
-/* ================= CARD ================= */
+/* ---------- CARD ---------- */
 
 .coordinator-card {
     position: relative;
     flex: 0 0 280px;
     width: 280px;
-    height: 410px;
+    padding: 10px;
+    box-sizing: border-box;
+
+    opacity: 0.55;
+    transform: scale(0.86);
+    transition:
+        transform 0.55s ease,
+        opacity 0.55s ease;
+    contain: layout paint;
 }
 
-.coordinator-image {
-    width: 100%;
-    height: 330px;
+.coordinator-card.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+
+/* ---------- PHOTO ---------- */
+
+.coordinator-photo {
+    position: relative;
+    height: 360px;
     overflow: hidden;
-    border-radius: 12px;
-    background: #07131f;
-    border: 1px solid rgba(24,223,255,0.25);
-    box-shadow: 0 10px 35px rgba(0,0,0,0.5);
+
+    border: 1px solid rgba(25,223,255,0.45);
+    border-radius: 8px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(0, 160, 255, 0.22),
+            rgba(0, 10, 20, 0.95)
+        );
+
+    box-shadow:
+        0 0 15px rgba(0,150,255,0.12),
+        inset 0 0 25px rgba(0,170,255,0.08);
 }
 
-.coordinator-image img {
+.coordinator-card.active .coordinator-photo {
+    border: 2px solid #19dfff;
+
+    box-shadow:
+        0 0 15px rgba(25,223,255,0.65),
+        0 0 45px rgba(25,150,255,0.20),
+        inset 0 0 30px rgba(25,223,255,0.10);
+}
+
+.coordinator-photo::before,
+.coordinator-photo::after {
+    content: "";
+    position: absolute;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.coordinator-photo::before {
+    inset: 8px;
+    border: 1px solid rgba(25,223,255,0.18);
+}
+
+.coordinator-photo::after {
+    left: 12%;
+    right: 12%;
+    bottom: 0;
+    height: 35%;
+    background: linear-gradient(
+        to top,
+        rgba(0, 10, 20, 0.75),
+        transparent
+    );
+}
+
+.coordinator-photo img {
+    position: relative;
+    z-index: 1;
+
     width: 100%;
     height: 100%;
+
     display: block;
+
     object-fit: cover;
     object-position: center;
+
+    transition: transform 0.55s ease;
 }
 
-.coordinator-info {
-    text-align: center;
-    padding-top: 15px;
+.coordinator-card.active .coordinator-photo img {
+    transform: scale(1.03);
+}
+
+
+/* ---------- PHOTO GLOW ---------- */
+
+.photo-glow {
+    position: absolute;
+    z-index: 0;
+    inset: 25% 15%;
+    background: rgba(0,190,255,0.12);
+    opacity: 0.5;
+}
+
+.coordinator-clone .photo-glow {
+    display: none;
+}
+
+
+/* ---------- DETAILS ---------- */
+
+.coordinator-details {
+    padding: 12px 5px 0;
+    text-align: left;
 }
 
 .coordinator-number {
     display: block;
-    margin-bottom: 4px;
-    font-size: 11px;
+    margin-bottom: 3px;
+
+    color: #19dfff;
+    font-size: 10px;
     font-weight: 700;
     letter-spacing: 3px;
+}
+
+.coordinator-details h3 {
+    margin: 0;
+
+    color: #fff;
+    font-size: 19px;
+    font-weight: 700;
+}
+
+.coordinator-details p {
+    margin: 4px 0 0;
+
+    color: rgba(255,255,255,0.65);
+    font-size: 11px;
+}
+
+.coordinator-details p i {
+    margin-right: 5px;
     color: #19dfff;
 }
 
-.coordinator-info h3 {
-    margin: 0;
-    font-size: 23px;
-    font-weight: 700;
-    color: #fff;
-}
 
-.coordinator-info p {
-    margin: 4px 0 0;
-    font-size: 12px;
-    color: rgba(255,255,255,0.55);
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
+/* =====================================================
+   ARROWS
+===================================================== */
 
+.coordinator-arrow {
+    position: relative;
+    z-index: 5;
 
-/* ================= HOVER ================= */
+    width: 45px;
+    height: 45px;
 
-.coordinator-card:hover .coordinator-image {
-    border: 2px solid #19dfff;
+    flex: 0 0 45px;
+
+    border: 1px solid #19dfff;
+    border-radius: 50%;
+
+    background: rgba(0,20,35,0.75);
+
+    color: #19dfff;
+    font-size: 16px;
+
+    cursor: pointer;
+
     box-shadow:
-        0 0 20px rgba(25,223,255,0.5),
-        0 0 55px rgba(25,223,255,0.18);
+        0 0 12px rgba(25,223,255,0.35);
+
+    transition:
+        background 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.25s ease;
 }
 
-.coordinator-card:hover .coordinator-image img {
-    transform: scale(1.04);
+.coordinator-arrow:hover {
+    background: rgba(25,223,255,0.15);
+
+    box-shadow:
+        0 0 20px rgba(25,223,255,0.65);
+
+    transform: scale(1.08);
 }
 
-.coordinator-image img {
-    transition: transform 0.4s ease;
-}
 
+/* =====================================================
+   DOTS
+===================================================== */
 
-/* ================= HIDE OLD CONTROLS ================= */
-
-.coordinator-arrow,
 .coordinator-dots {
-    display: none !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 9px;
+
+    margin-top: 25px;
+}
+
+.coordinator-dot {
+    width: 8px;
+    height: 8px;
+
+    padding: 0;
+
+    border: 0;
+    border-radius: 50%;
+
+    background: rgba(255,255,255,0.25);
+
+    cursor: pointer;
+
+    transition:
+        width 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.coordinator-dot.active {
+    width: 9px;
+    height: 9px;
+
+    background: #19dfff;
+
+    box-shadow:
+        0 0 10px rgba(25,223,255,0.9);
 }
 
 
-/* ================= MOBILE ================= */
+/* =====================================================
+   BOTTOM FEATURE STRIP
+===================================================== */
 
-@media (max-width: 600px) {
+.coordinator-features {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-    .coordinator-slider {
-        height: 450px;
-    }
+    margin-top: 55px;
+    padding-top: 25px;
 
-    .coordinator-track {
-        gap: 20px;
+    border-top: 1px solid rgba(255,255,255,0.12);
+}
+
+.coordinator-feature {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 0 22px;
+}
+
+.feature-icon {
+    width: 35px;
+    height: 35px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #19dfff;
+    font-size: 21px;
+}
+
+.coordinator-feature strong {
+    display: block;
+
+    color: #fff;
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+.coordinator-feature span {
+    display: block;
+    margin-top: 3px;
+
+    color: rgba(255,255,255,0.50);
+    font-size: 9px;
+}
+
+.feature-divider {
+    width: 1px;
+    height: 38px;
+    background: rgba(255,255,255,0.15);
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1000px) {
+
+    .coordinator-window {
+        max-width: calc(100% - 120px);
     }
 
     .coordinator-card {
-        flex: 0 0 220px;
-        width: 220px;
-        height: 370px;
+        flex-basis: 250px;
     }
 
-    .coordinator-image {
-        height: 280px;
+    .coordinator-photo {
+        height: 330px;
     }
 
-    .coordinator-info h3 {
-        font-size: 19px;
+    .coordinator-features {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .feature-divider {
+        display: none;
+    }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .coordinator-arena {
+        padding: 70px 10px 45px;
+    }
+
+    .coordinator-heading {
+        margin-bottom: 30px;
     }
 
     .coordinator-heading h2 {
-        font-size: 34px;
+        font-size: 32px;
+    }
+
+    .coordinator-heading p {
+        font-size: 12px;
+    }
+
+    .coordinator-kicker {
+        font-size: 10px;
+        letter-spacing: 3px;
+    }
+
+    .coordinator-window {
+        max-width: calc(100% - 70px);
+        --visible-cards: 1;
+    }
+
+    .coordinator-card {
+        flex-basis: 220px;
+        width: 220px;
+    }
+
+    .coordinator-photo {
+        height: 290px;
+    }
+
+    .coordinator-arrow {
+        width: 35px;
+        height: 35px;
+        flex-basis: 35px;
+        font-size: 12px;
+    }
+
+    .coordinator-track {
+        gap: 15px;
+    }
+
+    .coordinator-features {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 40px;
+        gap: 18px;
+    }
+
+    .coordinator-feature {
+        padding: 0;
     }
 }
