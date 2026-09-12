@@ -1965,8 +1965,6 @@ blockquote:before {
 
 .s-crossfit .container {
   position: relative;
-  padding-left: 20px;
-  padding-right: 20px;
 }
 
 .s-crossfit .container > div {
@@ -1984,7 +1982,7 @@ blockquote:before {
   background-color: #252830;
   border: 1px solid #2e3240;
   padding: 40px 40px;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
 }
 .s-crossfit .event-strip::before {
   content: '';
@@ -2021,7 +2019,7 @@ blockquote:before {
 .s-crossfit .event-info .label-text {
   margin-bottom: 24px;
   color: #3AABBA;
-  font-size: 13x;
+  font-size: 13px;
   font-weight: 600;
   letter-spacing: 3px;
   text-transform: uppercase;
@@ -2082,19 +2080,16 @@ blockquote:before {
   display: flex;
   gap: 0;
   margin: 0;
-  position: relative;
-  padding-top: 50px;
 }
 
 .s-crossfit .organizer-item {
   position: relative;
   display: grid;
-  grid-template-columns: 130px 1fr;
+  grid-template-columns: 130px minmax(0, 1fr);
   column-gap: 24px;
   align-items: start;
   flex: 1;
   padding: 8px 45px 8px 0;
-  overflow: hidden;
 }
 
 .s-crossfit .organizer-item + .organizer-item {
@@ -2111,8 +2106,6 @@ height: 130px;
   background-color: #202020;
   border: 1.5px solid rgba(58, 171, 186, 0.35);
   flex-shrink: 0;
-  position: relative;
-  z-index: 1;
 }
 
 .s-crossfit .organizer-item h4 {
@@ -2124,7 +2117,6 @@ height: 130px;
   line-height: 1.25;
   letter-spacing: .5px;
   text-transform: uppercase;
-  z-index: 1;
 }
 
 .s-crossfit .organizer-item h4::before {
@@ -2156,8 +2148,6 @@ height: 130px;
   font-size: 15px;
   letter-spacing: 1px;
   line-height: 1.75;
-  position: relative;
-  z-index: 1;
 }
 
 .s-crossfit .organizer-item .btn {
@@ -2168,8 +2158,6 @@ height: 130px;
   padding: 12px 36px;
   font-size: 15px;
   letter-spacing: 2px;
-  position: relative;
-  z-index: 1;
 }
 /*------------------ S-OUR-PROGRAMS ------------------*/
 .s-our-programs {
@@ -3942,17 +3930,12 @@ height: 130px;
   .s-crossfit .event-strip {
     padding: 48px 45px 44px; }
 
-  .s-crossfit .organizer-item {
-      grid-template-columns: 85px 1fr;
-      column-gap: 20px;
-      padding-right: 30px; }
-
   .s-crossfit .organizer-item + .organizer-item {
-      padding-left: 30px; }
+    padding-left: 30px; }
 
   .s-crossfit .organizer-item .organizer-logo {
-      width: 85px;
-      height: 85px; }
+    width: 85px;
+    height: 85px; }
 
   .program-item {
     height: 270px; }
@@ -4240,26 +4223,11 @@ height: 130px;
   .s-crossfit-slider:before {
     height: 30px; }
 
-.s-crossfit .event-strip {
-    padding: 45px 40px;
-    margin-bottom: 30px; }
-
   .s-crossfit .event-info .body-text {
       max-width: 620px; }
 
   .s-crossfit .event-actions {
       width: 100%; }
-
-  .s-crossfit .organizer-item {
-      grid-template-columns: 80px 1fr;
-      padding-right: 25px; }
-
-  .s-crossfit .organizer-item + .organizer-item {
-      padding-left: 25px; }
-
-  .s-crossfit .organizer-item .organizer-logo {
-      width: 80px;
-      height: 80px; }
 
   .btn {
     padding: 12px 30px 10px; }
@@ -4445,14 +4413,12 @@ height: 130px;
 
   .s-crossfit .event-strip {
     padding: 40px 30px;
-    margin-bottom: 25px; }
+    margin-bottom: 25px;
+    grid-template-columns: 1fr;
+    gap: 24px; }
 
   .s-crossfit .event-title {
     font-size: 44px; }
-
-  .s-crossfit .event-strip {
-    grid-template-columns: 1fr;
-    gap: 24px; }
 
   .s-crossfit .event-actions {
     flex-wrap: wrap;
@@ -4463,11 +4429,28 @@ height: 130px;
     display: block; }
 
   .s-crossfit .organizer-item {
-    display: grid;
-    grid-template-columns: 110px minmax(0, 1fr);
-    column-gap: 16px;
-    padding: 0 0 35px;
-    align-items: start; }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 0 35px; }
+
+  .s-crossfit .organizer-item h4::after {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%; }
+
+  .s-crossfit .organizer-item h4 {
+    text-align: center; }
+
+  .s-crossfit .organizer-item h4::before {
+    position: relative;
+    display: block;
+    text-align: center;
+    left: auto; }
+
+  .s-crossfit .organizer-item p {
+    text-align: center; }
 
   .s-crossfit .organizer-item + .organizer-item {
     padding: 35px 0 0;
@@ -4476,11 +4459,15 @@ height: 130px;
 
   .s-crossfit .organizer-item .organizer-logo {
     width: 90px !important;
-    height: 90px !important; }
+    height: 90px !important;
+    display: block;
+    margin-left: auto;
+    margin-right: auto; }
 
-  .s-crossfit .organizer-item .btn {
-    width: auto !important;
-    display: inline-flex !important;
+  .s-crossfit .organizer-item > div .btn {
+    width: 100%;
+    display: flex !important;
+    justify-content: center;
     white-space: nowrap; }
 
   .program-item {
