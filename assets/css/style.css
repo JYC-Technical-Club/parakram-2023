@@ -4697,7 +4697,7 @@ blockquote:before {
 .sports-arena {
     position: relative;
     overflow: hidden;
-    background: #070b0f;
+  background: #000;
 }
 
 .sports-arena-bg {
@@ -4761,7 +4761,7 @@ blockquote:before {
     );
 
     filter: blur(45px);
-    opacity: 0.9;
+    opacity: 0.35;
 }/* Concentrated glow directly behind the cards */
 .sports-track::before {
     content: "";
@@ -4796,13 +4796,7 @@ blockquote:before {
 
     pointer-events: none;
 
-    background:
-        linear-gradient(
-            135deg,
-            rgba(58, 171, 186, 0.04),
-            transparent 35%,
-            rgba(58, 171, 186, 0.03)
-        );
+    background: #000;
 }
 
 
