@@ -1960,66 +1960,205 @@ blockquote:before {
 
 /*-------------------- S-CROSSFIT --------------------*/
 .s-crossfit {
-  padding: 128px 0 140px; }
-  .s-crossfit .container {
-    position: relative; }
-    .s-crossfit .container > div {
-      position: relative;
-      z-index: 1; }
+  padding: 12px 0 120px;
+}
 
-.crossfit-col {
-  padding-top: 0px; }
-  .crossfit-col:nth-child(2) {
-    padding-top: 0; }
+.s-crossfit .container {
+  position: relative;
+}
 
-.crossfit-item {
-  text-align: center;
-  padding: 50px 40px;
-  min-height: 404px;
+.s-crossfit .container > div {
+  position: relative;
+  z-index: 1;
+}
+
+.s-crossfit .event-strip {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 260px;
+  align-items: center;
+  gap: 60px;
+  overflow: hidden;
+  background-color: #252830;
+  border: 1px solid #2e3240;
+  padding: 40px 40px;
+  margin-bottom: 50px;
+}
+.s-crossfit .event-strip::before {
+  content: '';
+  position: absolute;
+  right: 200px;
+  top: 0;
+  bottom: 0;
+  width: 350px;
+  background: linear-gradient(135deg, transparent 38%, #222530 39%, #252830 54%, transparent 55%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.s-crossfit .event-info {
+  position: relative;
+  z-index: 2;
+  max-width: 760px;
+}
+
+.s-crossfit .event-title {
+  margin: 0 0 14px;
+  font-size: clamp(44px, 5vw, 68px);
+  line-height: 1;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 2;
+}
+
+.s-crossfit .event-title span {
+  color: #ffd700;
+}
+
+.s-crossfit .event-info .label-text {
+  margin-bottom: 24px;
+  color: #3AABBA;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.s-crossfit .event-info .body-text {
+  max-width: 700px;
+  color: #bdbdbd;
+  font-size: 14px;
+  line-height: 1.8;
+  letter-spacing: 1px;
+}
+
+.s-crossfit .event-actions {
+  position: relative;
+  z-index: 3;
   display: flex;
   flex-direction: column;
+  align-items: stretch;
+  gap: 16px;
+  min-width: 0;
+  margin-top: 0;
+}
+
+.s-crossfit .event-actions .btn {
+  width: 100%;
+  min-height: 54px;
+}
+
+.s-crossfit .event-actions .btn:not(.btn-outline) {
+  background-color: #3AABBA;
+  border-color: #3AABBA;
+  color: #000;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.s-crossfit .event-actions .btn:not(.btn-outline):hover {
+  background-color: #2e96a4;
+  border-color: #2e96a4;
+  color: #000;
+}
+
+.s-crossfit .event-actions .btn-outline {
+  background-color: transparent;
+  border-color: #3AABBA;
+  color: #3AABBA;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.s-crossfit .event-actions .btn-outline:hover {
+  background-color: rgba(58, 171, 186, 0.12);
+  color: #3AABBA;
+}
+
+.s-crossfit .organizer-row {
+  display: flex;
+  gap: 0;
+  margin: 0;
+}
+
+.s-crossfit .organizer-item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 130px minmax(0, 1fr);
+  column-gap: 24px;
+  align-items: start;
+  flex: 1;
+  padding: 8px 45px 8px 0;
+}
+
+.s-crossfit .organizer-item + .organizer-item {
+  padding-left: 45px;
+  padding-right: 0;
+}
+
+.s-crossfit .organizer-item .organizer-logo {
+width: 130px;
+height: 130px;
+  padding: 12px;
+  border-radius: 50%;
+  object-fit: contain;
+  background-color: #202020;
+  border: 1.5px solid rgba(58, 171, 186, 0.35);
+  flex-shrink: 0;
+}
+
+.s-crossfit .organizer-item h4 {
+  position: relative;
+  margin: 0 0 17px;
+  padding-top: 22px;
+  padding-bottom: 13px;
+  font-size: 21px;
+  line-height: 1.25;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+}
+
+.s-crossfit .organizer-item h4::before {
+  content: 'ORGANIZER';
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 12.5px;
+  font-weight: 670;
+  letter-spacing: 3px;
+  color: #3AABBA;
+  font-family: "Poppins", sans-serif;
+}
+
+.s-crossfit .organizer-item h4::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #383c45;
+}
+
+.s-crossfit .organizer-item p {
+  max-width: 500px;
+  margin-bottom: 20px;
+  color: #a9a9a9;
+  font-size: 15px;
+  letter-spacing: 1px;
+  line-height: 1.75;
+}
+
+.s-crossfit .organizer-item .btn {
+  display: inline-flex;
   align-items: center;
-  background-color: #272a31;
-  position: relative; }
-  .crossfit-item:before {
-    content: '';
-    position: absolute;
-    width: 95%;
-    height: 95%;
-    left: 50%;
-    top: 50%;
-    opacity: 0;
-    margin-top: 40px;
-    transform: translate(-50%, -50%);
-    border: 7px solid #3AABBA;
-    transition: .4s ease-in-out;
-    pointer-events: none; }
-  .crossfit-item:hover:before {
-    margin-top: 0;
-    opacity: 1; }
-  .crossfit-item h3 {
-    text-transform: uppercase;
-    margin: 25px 0 6px; }
-  .crossfit-item p {
-    color: #bebebe;
-    font-size: 15px;
-    margin-bottom: 45px; }
-
-.crossfit-icon-1 {
-  position: absolute;
-  top: 29%;
-  left: 21%; }
-
-.crossfit-icon-2 {
-  position: absolute;
-  top: -12%;
-  left: 0%; }
-
-.crossfit-icon-3 {
-  position: absolute;
-  top: 8%;
-  right: 14%; }
-
+  width: auto;
+  min-height: 50px;
+  padding: 12px 36px;
+  font-size: 15px;
+  letter-spacing: 2px;
+}
 /*------------------ S-OUR-PROGRAMS ------------------*/
 .s-our-programs {
   padding: 128px 0 140px;
@@ -2908,81 +3047,147 @@ blockquote:before {
       margin-top: 20px; }
 
 /*------------------- S-OUT-TRAINER -------------------*/
+/*------------------- S-OUT-TRAINER -------------------*/
 .s-out-trainer {
   padding: 128px 0 140px;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 100% auto; }
+  background-size: 100% auto;
+}
 
+/* Ensure both columns align evenly without any shift */
 .out-trainer-col {
-  margin-bottom: 40px; }
-  .out-trainer-col:nth-child(2n) {
-    transform: translateY(30px); }
+  margin-bottom: 40px;
+  display: flex;
+}
 
+/* REMOVED translateY(30px) so both cards start at the exact same top line */
+.out-trainer-col:nth-child(2n) {
+  transform: none; 
+}
+
+/* Equal height container: both image and description start and end on the same line */
 .out-trainer-item {
   display: flex;
-  justify-content: space-between;
+  width: 100%;
+  height: 480px; /* Forces both cards to be the exact same height */
   background-color: #272a31;
   align-items: stretch;
-  transition: .25s ease-in; }
-  .out-trainer-item:hover {
-    background-color: #fff; }
-    .out-trainer-item:hover h3 a {
-      color: #000; }
-      .out-trainer-item:hover h3 a:hover {
-        color: #3AABBA; }
-    .out-trainer-item:hover p {
-      color: #4d4d4d; }
-    .out-trainer-item:hover .social-list li a {
-      color: #000; }
-      .out-trainer-item:hover .social-list li a:hover {
-        color: #3AABBA; }
+  transition: .25s ease-in;
+  overflow: hidden;
+}
 
+.out-trainer-item:hover {
+  background-color: #fff;
+}
+.out-trainer-item:hover h3 a {
+  color: #000;
+}
+.out-trainer-item:hover h3 a:hover {
+  color: #3AABBA;
+}
+.out-trainer-item:hover p {
+  color: #4d4d4d;
+}
+.out-trainer-item:hover .social-list li a {
+  color: #000;
+}
+.out-trainer-item:hover .social-list li a:hover {
+  color: #3AABBA;
+}
+
+/* Left side: Image covers top to bottom */
 .out-trainer-img {
-  flex: 0 0 50%;
-  max-width: 60%; }
-  .out-trainer-img img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; }
+  flex: 0 0 45%;
+  max-width: 45%;
+  height: 100%;
+}
 
-.out-trainer-info {
-  flex: 50 0 20%;
-  max-width: 70%;
+.out-trainer-img img {
   display: block;
-  flex-direction: column;
-  align-items: normal;
-  justify-content: space-evenly;
-  padding: 30px; }
-  .out-trainer-info h3 {
-    text-transform: uppercase;
-    transition: .25s ease-in; }
-  .out-trainer-info .prof {
-    font-size: 14px;
-    text-transform: uppercase;
-    margin-bottom: 36px;
-    color: #3AABBA;
-    transition: .25s ease-in;
-    font-weight: 500; }
-  .out-trainer-info p {
-    color: #bebebe;
-    margin-bottom: 17px;
-    margin-right: auto;
-    object-fit: center;
-    transition: .25s ease-in; }
-  .out-trainer-info .social-list li {
-    margin-right: 0px; }
-    .out-trainer-info .social-list li:last-child {
-      margin-right: 0; }
-    .out-trainer-info .social-list li a {
-      transition: .25s ease-in;
-      font-size: 23px; }
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
-@media(max-width:450px){
-  .out-trainer-info{
-    max-width: 50%;
-    font-size: 12px;
+/* Right side: Text fills top to bottom, pin contacts to bottom line */
+.out-trainer-info {
+  flex: 0 0 55%;
+  max-width: 55%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+.out-trainer-info h3 {
+  text-transform: uppercase;
+  margin-top: 0;
+  transition: .25s ease-in;
+}
+
+.out-trainer-info .prof {
+  font-size: 14px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  color: #3AABBA;
+  transition: .25s ease-in;
+  font-weight: 500;
+}
+
+.out-trainer-info p {
+  color: #bebebe;
+  margin-bottom: 0;
+  transition: .25s ease-in;
+}
+
+/* Pushes phone number and email to lock along the bottom edge */
+.out-trainer-info p:last-child {
+  margin-top: auto;
+  padding-top: 15px;
+}
+
+/* Responsive adjustment for mobile screens */
+@media (max-width: 575px) {
+  /* Allow the card height to adjust naturally to smaller screens */
+  .out-trainer-item {
+    height: auto;
+    min-height: 380px;
+  }
+
+  /* Compact the image side */
+  .out-trainer-img {
+    flex: 0 0 42%;
+    max-width: 42%;
+  }
+
+  /* Compact the text side and reduce padding/font sizes */
+  .out-trainer-info {
+    flex: 0 0 58%;
+    max-width: 58%;
+    padding: 16px 12px;
+  }
+
+  .out-trainer-info h3 {
+    font-size: 14px;
+    margin-bottom: 4px;
+  }
+
+  .out-trainer-info .prof {
+    font-size: 11px;
+    margin-bottom: 10px;
+    line-height: 1.2;
+  }
+
+  .out-trainer-info p {
+    font-size: 11px;
+    line-height: 1.35;
+  }
+
+  .out-trainer-info p:last-child {
+    padding-top: 8px;
+    font-size: 10.5px;
   }
 }
 
@@ -3744,16 +3949,12 @@ blockquote:before {
     border-width: 5px; }
 
   .welcome-fitness-info:before,
-  .club-card-item:before,
-  .crossfit-item:before {
+  .club-card-item:before{
     border-width: 5px; }
 
   .fitness-banner-effect,
   .s-trainer-awards .trainer-awards-effect,
   .our-programs-effect,
-  .crossfit-icon-1,
-  .crossfit-icon-2,
-  .crossfit-icon-3,
   .testimonials-effect,
   .crossfit-slider-effect {
     display: none !important; }
@@ -3792,14 +3993,15 @@ blockquote:before {
   .slider-navigation .slick-arrow svg {
     height: 28px; }
 
-  .crossfit-item {
-    padding: 40px 30px;
-    min-height: 360px; }
-    .crossfit-item img {
-      max-width: 121px; }
-    .crossfit-item p {
-      font-size: 14px;
-      margin-bottom: 27px; }
+  .s-crossfit .event-strip {
+    padding: 48px 45px 44px; }
+
+  .s-crossfit .organizer-item + .organizer-item {
+    padding-left: 30px; }
+
+  .s-crossfit .organizer-item .organizer-logo {
+    width: 85px;
+    height: 85px; }
 
   .program-item {
     height: 270px; }
@@ -4087,10 +4289,11 @@ blockquote:before {
   .s-crossfit-slider:before {
     height: 30px; }
 
-  .crossfit-item {
-    padding: 40px 20px; }
-    .crossfit-item img {
-      max-width: 111px; }
+  .s-crossfit .event-info .body-text {
+      max-width: 620px; }
+
+  .s-crossfit .event-actions {
+      width: 100%; }
 
   .btn {
     padding: 12px 30px 10px; }
@@ -4274,14 +4477,64 @@ blockquote:before {
   .crossfit-slide p {
     margin-bottom: 0; }
 
-  .crossfit-col {
-    padding-top: 0;
-    margin-bottom: 30px; }
-    .crossfit-col:last-child {
-      margin-bottom: 0; }
+  .s-crossfit .event-strip {
+    padding: 40px 30px;
+    margin-bottom: 25px;
+    grid-template-columns: 1fr;
+    gap: 24px; }
 
-  .crossfit-item {
-    min-height: auto; }
+  .s-crossfit .event-title {
+    font-size: 44px; }
+
+  .s-crossfit .event-actions {
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-top: 0; }
+
+  .s-crossfit .organizer-row {
+    display: block; }
+
+  .s-crossfit .organizer-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 0 35px; }
+
+  .s-crossfit .organizer-item h4::after {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%; }
+
+  .s-crossfit .organizer-item h4 {
+    text-align: center; }
+
+  .s-crossfit .organizer-item h4::before {
+    position: relative;
+    display: block;
+    text-align: center;
+    left: auto; }
+
+  .s-crossfit .organizer-item p {
+    text-align: center; }
+
+  .s-crossfit .organizer-item + .organizer-item {
+    padding: 35px 0 0;
+    border-left: none;
+    border-top: none; }
+
+  .s-crossfit .organizer-item .organizer-logo {
+    width: 90px !important;
+    height: 90px !important;
+    display: block;
+    margin-left: auto;
+    margin-right: auto; }
+
+  .s-crossfit .organizer-item > div .btn {
+    width: 100%;
+    display: flex !important;
+    justify-content: center;
+    white-space: nowrap; }
 
   .program-item {
     height: 280px; }
@@ -4685,3 +4938,858 @@ blockquote:before {
 
   .widget-instagram li img {
     height: 100px; } }
+
+/* =====================================================
+   PARAKRAM SPORTS ARENA
+===================================================== */
+
+/* =====================================================
+   SPORTS ARENA - BLUE GLOW BACKGROUND
+===================================================== */
+
+.sports-arena {
+    position: relative;
+    overflow: hidden;
+  background: #000;
+}
+
+.sports-arena-bg {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+
+    background:
+        radial-gradient(
+            ellipse at 50% 45%,
+            rgba(0, 140, 255, 0.20) 0%,
+            rgba(0, 100, 200, 0.10) 28%,
+            rgba(0, 0, 0, 0) 65%
+        );
+}
+
+/* Large blue glow behind the cards */
+.sports-arena-bg::before {
+    content: "";
+    position: absolute;
+
+    width: 700px;
+    height: 500px;
+
+    left: 50%;
+    top: 45%;
+
+    transform: translate(-50%, -50%);
+
+    background: radial-gradient(
+        ellipse,
+        rgba(0, 174, 255, 0.28) 0%,
+        rgba(0, 100, 255, 0.12) 35%,
+        transparent 72%
+    );
+
+    filter: blur(35px);
+}
+
+/* Subtle blue light at the bottom */
+.sports-arena-bg::before {
+    content: "";
+    position: absolute;
+
+    width: 850px;
+    height: 550px;
+
+    left: 50%;
+    top: 48%;
+
+    transform: translate(-50%, -50%);
+
+    background: radial-gradient(
+        ellipse at center,
+        rgba(0, 190, 255, 0.45) 0%,
+        rgba(0, 150, 255, 0.30) 18%,
+        rgba(0, 110, 255, 0.16) 38%,
+        rgba(0, 80, 200, 0.07) 55%,
+        transparent 75%
+    );
+
+    filter: blur(45px);
+    opacity: 0.35;
+}/* Concentrated glow directly behind the cards */
+.sports-track::before {
+    content: "";
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 500px;
+    height: 320px;
+
+    transform: translate(-50%, -50%);
+
+    background: radial-gradient(
+        ellipse,
+        rgba(0, 200, 255, 0.32) 0%,
+        rgba(0, 140, 255, 0.18) 35%,
+        transparent 70%
+    );
+
+    filter: blur(30px);
+    pointer-events: none;
+    z-index: 0;
+}
+
+
+/* BACKGROUND */
+
+.sports-arena-bg {
+    position: absolute;
+    inset: 0;
+
+    pointer-events: none;
+
+    background: #000;
+}
+
+
+/* =====================================================
+   HEADING
+===================================================== */
+
+.sports-heading {
+    position: relative;
+
+    text-align: center;
+
+    margin-bottom: 55px;
+
+    z-index: 2;
+}
+
+
+.sports-eyebrow {
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: #3AABBA;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 5px;
+}
+
+
+.sports-heading h2 {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: 48px;
+    font-weight: 600;
+
+    text-transform: uppercase;
+}
+
+
+.sports-heading h2 span {
+    color: #3AABBA;
+
+    text-shadow:
+        0 0 15px rgba(58, 171, 186, 0.45);
+}
+
+
+.sports-heading p {
+    margin-top: 12px;
+
+    color: rgba(255,255,255,0.65);
+
+    font-size: 15px;
+
+    letter-spacing: 1px;
+}
+
+
+.sports-heading-line {
+    width: 65px;
+    height: 4px;
+
+    margin: 22px auto 0;
+
+    background: #3AABBA;
+
+    box-shadow:
+        0 0 15px rgba(58,171,186,0.65);
+}
+
+
+/* =====================================================
+   SLIDER
+===================================================== */
+
+.sports-slider {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+
+    z-index: 2;
+}
+
+
+.sports-track {
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+
+    height: 470px;
+
+    overflow: hidden;
+}
+
+
+/* =====================================================
+   CARD
+===================================================== */
+
+.arena-card {
+    position: absolute;
+
+    width: 280px;
+    height: 410px;
+
+    border: 1px solid rgba(58,171,186,0.35);
+
+    overflow: hidden;
+
+    border-radius: 3px;
+
+    background: #071017;
+
+    opacity: 0;
+
+    transform:
+        translateX(0)
+        scale(0.75);
+
+    transition:
+        transform 0.65s cubic-bezier(.22,.61,.36,1),
+        opacity 0.55s ease,
+        filter 0.55s ease,
+        box-shadow 0.55s ease;
+
+    pointer-events: none;
+}
+
+
+/* CENTER */
+
+.arena-card.active {
+    opacity: 1;
+
+    transform:
+        translateX(0)
+        scale(1);
+
+    z-index: 5;
+
+    pointer-events: auto;
+
+    border-color: #3AABBA;
+
+    box-shadow:
+        0 0 35px rgba(58,171,186,0.28),
+        0 20px 45px rgba(0,0,0,0.65);
+}
+
+
+/* LEFT */
+
+.arena-card.left {
+    opacity: 0.65;
+
+    transform:
+        translateX(-330px)
+        scale(0.82);
+
+    z-index: 3;
+
+    filter: brightness(0.7);
+
+    pointer-events: auto;
+}
+
+
+/* RIGHT */
+
+.arena-card.right {
+    opacity: 0.65;
+
+    transform:
+        translateX(330px)
+        scale(0.82);
+
+    z-index: 3;
+
+    filter: brightness(0.7);
+
+    pointer-events: auto;
+}
+
+
+/* FAR LEFT */
+
+.arena-card.far-left {
+    opacity: 0.18;
+
+    transform:
+        translateX(-590px)
+        scale(0.65);
+
+    z-index: 1;
+
+    filter: blur(1px) brightness(0.5);
+}
+
+
+/* FAR RIGHT */
+
+.arena-card.far-right {
+    opacity: 0.18;
+
+    transform:
+        translateX(590px)
+        scale(0.65);
+
+    z-index: 1;
+
+    filter: blur(1px) brightness(0.5);
+}
+
+
+/* =====================================================
+   IMAGE
+===================================================== */
+
+.arena-card-image {
+    position: absolute;
+    inset: 0;
+
+    background-size: cover;
+    background-position: center;
+
+    transition:
+        transform 0.8s ease;
+}
+
+
+.arena-card.active:hover .arena-card-image {
+    transform: scale(1.07);
+}
+
+
+/* =====================================================
+   OVERLAY
+===================================================== */
+
+.arena-card-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(0,0,0,0.96) 0%,
+            rgba(0,0,0,0.60) 42%,
+            rgba(0,0,0,0.08) 100%
+        );
+}
+
+
+/* =====================================================
+   CYAN FRAME
+===================================================== */
+
+.arena-card-image::after {
+    content: "";
+
+    position: absolute;
+    inset: 10px;
+
+    border: 1px solid transparent;
+
+    transition:
+        border-color 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+
+.arena-card.active:hover .arena-card-image::after {
+    border-color: rgba(58,171,186,0.9);
+
+    box-shadow:
+        inset 0 0 25px rgba(58,171,186,0.18);
+}
+
+
+/* =====================================================
+   CARD CONTENT
+===================================================== */
+
+.arena-card-content {
+    position: absolute;
+
+    left: 28px;
+    right: 28px;
+    bottom: 30px;
+
+    z-index: 3;
+}
+
+
+.arena-number {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #3AABBA;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 3px;
+}
+
+
+.arena-card-content h3 {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: 27px;
+    font-weight: 600;
+
+    text-transform: uppercase;
+
+    transition:
+        color 0.35s ease,
+        text-shadow 0.35s ease;
+}
+
+
+.arena-card.active:hover h3 {
+    color: #3AABBA;
+
+    text-shadow:
+        0 0 12px rgba(58,171,186,0.7);
+}
+
+
+/* =====================================================
+   EXPLORE
+===================================================== */
+
+.arena-explore {
+    display: inline-block;
+
+    margin-top: 12px;
+
+    color: #3AABBA;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    opacity: 0;
+
+    transform: translateY(10px);
+
+    transition:
+        opacity 0.35s ease,
+        transform 0.35s ease;
+}
+
+
+.arena-card.active:hover .arena-explore {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* =====================================================
+   ARROWS
+===================================================== */
+
+.sports-arrow {
+    position: absolute;
+
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 54px;
+    height: 54px;
+
+    border: 1px solid #3AABBA;
+
+    border-radius: 50%;
+
+    background: rgba(0,0,0,0.45);
+
+    color: #3AABBA;
+
+    font-size: 20px;
+
+    z-index: 10;
+
+    cursor: pointer;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        box-shadow 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+.sports-prev {
+    left: 5px;
+}
+
+
+.sports-next {
+    right: 5px;
+}
+
+
+.sports-arrow:hover {
+    background: #3AABBA;
+
+    color: #111111;
+
+    box-shadow:
+        0 0 20px rgba(58,171,186,0.65);
+
+    transform:
+        translateY(-50%)
+        scale(1.08);
+}
+
+
+/* =====================================================
+   DOTS
+===================================================== */
+
+.sports-dots {
+    display: flex;
+
+    justify-content: center;
+    gap: 10px;
+
+    margin-top: 12px;
+}
+
+
+.sport-dot {
+    width: 9px;
+    height: 9px;
+
+    padding: 0;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,0.25);
+
+    cursor: pointer;
+
+    transition:
+        width 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.sport-dot.active {
+    width: 28px;
+
+    border-radius: 10px;
+
+    background: #3AABBA;
+
+    box-shadow:
+        0 0 10px rgba(58,171,186,0.7);
+}
+
+
+/* =====================================================
+   SPORT NAVIGATION
+===================================================== */
+
+.sports-navigation {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 0;
+
+    margin-top: 40px;
+
+    border-top: 1px solid rgba(255,255,255,0.08);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+
+    overflow-x: auto;
+}
+
+
+.sport-nav {
+    position: relative;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-width: 130px;
+
+    height: 80px;
+
+    padding: 10px 15px;
+
+    border: none;
+
+    background: transparent;
+
+    color: rgba(255,255,255,0.5);
+
+    cursor: pointer;
+
+    transition:
+        color 0.3s ease,
+        background 0.3s ease;
+}
+
+
+.sport-nav i {
+    margin-bottom: 8px;
+
+    font-size: 18px;
+}
+
+
+.sport-nav span {
+    font-size: 10px;
+    font-weight: 600;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+}
+
+
+.sport-nav::after {
+    content: "";
+
+    position: absolute;
+
+    bottom: 0;
+    left: 50%;
+
+    width: 0;
+    height: 3px;
+
+    background: #3AABBA;
+
+    transform: translateX(-50%);
+
+    transition: width 0.35s ease;
+}
+
+
+.sport-nav:hover,
+.sport-nav.active {
+    color: #3AABBA;
+
+    background: rgba(58,171,186,0.04);
+}
+
+
+.sport-nav.active::after {
+    width: 60%;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 1100px) {
+
+    .arena-card.left {
+        transform:
+            translateX(-280px)
+            scale(0.78);
+    }
+
+    .arena-card.right {
+        transform:
+            translateX(280px)
+            scale(0.78);
+    }
+
+    .arena-card.far-left,
+    .arena-card.far-right {
+        opacity: 0;
+    }
+
+}
+
+
+@media (max-width: 768px) {
+
+    .sports-arena {
+        padding: 70px 0 50px;
+    }
+
+    .sports-heading h2 {
+        font-size: 36px;
+    }
+
+    .sports-track {
+        height: 430px;
+    }
+
+    .arena-card {
+        width: 250px;
+        height: 370px;
+    }
+
+    .arena-card.left {
+        transform:
+            translateX(-180px)
+            scale(0.72);
+        opacity: 0.3;
+    }
+
+    .arena-card.right {
+        transform:
+            translateX(180px)
+            scale(0.72);
+        opacity: 0.3;
+    }
+
+    .sports-arrow {
+        width: 44px;
+        height: 44px;
+    }
+
+    .sports-navigation {
+        justify-content: flex-start;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .sports-heading h2 {
+        font-size: 30px;
+    }
+
+    .sports-heading p {
+        font-size: 13px;
+    }
+
+    .arena-card {
+        width: 230px;
+        height: 350px;
+    }
+
+    .arena-card.left,
+    .arena-card.right {
+        opacity: 0;
+    }
+
+    .sports-arrow {
+        width: 40px;
+        height: 40px;
+    }
+
+}
+.badminton-icon {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+}
+/* Parakram countdown finished state */
+.parakram-live {
+    width: 100%;
+    max-width: 850px;
+    margin: 25px auto 0;
+    padding: 35px 30px;
+    text-align: center;
+    position: relative;
+    border: 1px solid rgba(35, 184, 204, 0.45);
+    border-radius: 12px;
+    background: rgba(10, 10, 10, 0.65);
+    box-shadow:
+        0 0 25px rgba(35, 184, 204, 0.15),
+        inset 0 0 25px rgba(35, 184, 204, 0.05);
+    animation: parakramGlow 2.5s ease-in-out infinite;
+}
+.parakram-live h2 {
+    margin: 0 0 12px;
+    font-size: 42px;
+    line-height: 1.2;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+.parakram-live p {
+    margin: 0;
+    font-size: 20px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+@keyframes parakramGlow {
+    0%, 100% {
+        box-shadow:
+            0 0 20px rgba(35, 184, 204, 0.12),
+            inset 0 0 20px rgba(35, 184, 204, 0.04);
+    }
+    50% {
+        box-shadow:
+            0 0 35px rgba(35, 184, 204, 0.28),
+            inset 0 0 25px rgba(35, 184, 204, 0.08);
+    }
+}
+/* Mobile */
+@media (max-width: 600px) {
+    .parakram-live {
+        padding: 28px 18px;
+        margin-top: 20px;
+    }
+
+    .parakram-live h2 {
+        font-size: 27px;
+    }
+
+    .parakram-live p {
+        font-size: 15px;
+    }
+}
