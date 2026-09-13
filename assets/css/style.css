@@ -3047,81 +3047,147 @@ height: 130px;
       margin-top: 20px; }
 
 /*------------------- S-OUT-TRAINER -------------------*/
+/*------------------- S-OUT-TRAINER -------------------*/
 .s-out-trainer {
   padding: 128px 0 140px;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 100% auto; }
+  background-size: 100% auto;
+}
 
+/* Ensure both columns align evenly without any shift */
 .out-trainer-col {
-  margin-bottom: 40px; }
-  .out-trainer-col:nth-child(2n) {
-    transform: translateY(30px); }
+  margin-bottom: 40px;
+  display: flex;
+}
 
+/* REMOVED translateY(30px) so both cards start at the exact same top line */
+.out-trainer-col:nth-child(2n) {
+  transform: none; 
+}
+
+/* Equal height container: both image and description start and end on the same line */
 .out-trainer-item {
   display: flex;
-  justify-content: space-between;
+  width: 100%;
+  height: 480px; /* Forces both cards to be the exact same height */
   background-color: #272a31;
   align-items: stretch;
-  transition: .25s ease-in; }
-  .out-trainer-item:hover {
-    background-color: #fff; }
-    .out-trainer-item:hover h3 a {
-      color: #000; }
-      .out-trainer-item:hover h3 a:hover {
-        color: #3AABBA; }
-    .out-trainer-item:hover p {
-      color: #4d4d4d; }
-    .out-trainer-item:hover .social-list li a {
-      color: #000; }
-      .out-trainer-item:hover .social-list li a:hover {
-        color: #3AABBA; }
+  transition: .25s ease-in;
+  overflow: hidden;
+}
 
+.out-trainer-item:hover {
+  background-color: #fff;
+}
+.out-trainer-item:hover h3 a {
+  color: #000;
+}
+.out-trainer-item:hover h3 a:hover {
+  color: #3AABBA;
+}
+.out-trainer-item:hover p {
+  color: #4d4d4d;
+}
+.out-trainer-item:hover .social-list li a {
+  color: #000;
+}
+.out-trainer-item:hover .social-list li a:hover {
+  color: #3AABBA;
+}
+
+/* Left side: Image covers top to bottom */
 .out-trainer-img {
-  flex: 0 0 50%;
-  max-width: 60%; }
-  .out-trainer-img img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; }
+  flex: 0 0 45%;
+  max-width: 45%;
+  height: 100%;
+}
 
-.out-trainer-info {
-  flex: 50 0 20%;
-  max-width: 70%;
+.out-trainer-img img {
   display: block;
-  flex-direction: column;
-  align-items: normal;
-  justify-content: space-evenly;
-  padding: 30px; }
-  .out-trainer-info h3 {
-    text-transform: uppercase;
-    transition: .25s ease-in; }
-  .out-trainer-info .prof {
-    font-size: 14px;
-    text-transform: uppercase;
-    margin-bottom: 36px;
-    color: #3AABBA;
-    transition: .25s ease-in;
-    font-weight: 500; }
-  .out-trainer-info p {
-    color: #bebebe;
-    margin-bottom: 17px;
-    margin-right: auto;
-    object-fit: center;
-    transition: .25s ease-in; }
-  .out-trainer-info .social-list li {
-    margin-right: 0px; }
-    .out-trainer-info .social-list li:last-child {
-      margin-right: 0; }
-    .out-trainer-info .social-list li a {
-      transition: .25s ease-in;
-      font-size: 23px; }
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
-@media(max-width:450px){
-  .out-trainer-info{
-    max-width: 50%;
-    font-size: 12px;
+/* Right side: Text fills top to bottom, pin contacts to bottom line */
+.out-trainer-info {
+  flex: 0 0 55%;
+  max-width: 55%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+.out-trainer-info h3 {
+  text-transform: uppercase;
+  margin-top: 0;
+  transition: .25s ease-in;
+}
+
+.out-trainer-info .prof {
+  font-size: 14px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  color: #3AABBA;
+  transition: .25s ease-in;
+  font-weight: 500;
+}
+
+.out-trainer-info p {
+  color: #bebebe;
+  margin-bottom: 0;
+  transition: .25s ease-in;
+}
+
+/* Pushes phone number and email to lock along the bottom edge */
+.out-trainer-info p:last-child {
+  margin-top: auto;
+  padding-top: 15px;
+}
+
+/* Responsive adjustment for mobile screens */
+@media (max-width: 575px) {
+  /* Allow the card height to adjust naturally to smaller screens */
+  .out-trainer-item {
+    height: auto;
+    min-height: 380px;
+  }
+
+  /* Compact the image side */
+  .out-trainer-img {
+    flex: 0 0 42%;
+    max-width: 42%;
+  }
+
+  /* Compact the text side and reduce padding/font sizes */
+  .out-trainer-info {
+    flex: 0 0 58%;
+    max-width: 58%;
+    padding: 16px 12px;
+  }
+
+  .out-trainer-info h3 {
+    font-size: 14px;
+    margin-bottom: 4px;
+  }
+
+  .out-trainer-info .prof {
+    font-size: 11px;
+    margin-bottom: 10px;
+    line-height: 1.2;
+  }
+
+  .out-trainer-info p {
+    font-size: 11px;
+    line-height: 1.35;
+  }
+
+  .out-trainer-info p:last-child {
+    padding-top: 8px;
+    font-size: 10.5px;
   }
 }
 
