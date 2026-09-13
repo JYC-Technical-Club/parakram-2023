@@ -166,32 +166,40 @@
 			<img src="assets/img/placeholder-all.webp" data-src="assets/img/tringle-about-top.svg" alt="img" class="crossfit-icon-3 rx-lazy"> -->
 			<h2 class="title-decor">About <span>Us</span></h2>
 			<p class="slogan"></p>
-			<div class="row">
-				<div class="col-md-4 crossfit-col">
-					<div class="crossfit-item">
-						<img class="rx-lazy" src="photosc/logojyc white1.webp" data-src="photosc/logojyc white1.webp" alt="img">
-						<h3>Juit Youth Club</h3>
-						<p>JUIT Youth Club (JYC) fosters holistic student development through sports, culture, academics, leadership, and extracurricular activities, promoting growth and unity.</p>
-						<a class="btn" href="https://jyc.co.in">About JYC</a>
+
+			<div class="event-strip">
+				<div class="event-info">
+					<h3 class="event-title">Para<span>kram</span></h3>
+					<p class="label-text">1&ndash;4 October 2026</p>
+					<p class="body-text">Parakram, a thrilling sports event brings together universities for competitive matches in football, basketball, volleyball, cricket and more. JUIT hosts the event attracting students from all over to cheer for their teams.</p>
+				</div>
+
+				<div class="event-actions">
+					<a class="btn" href="https://drive.google.com/file/d/1c4CeWkOrEg84ByDQCl1pcZVrSqjVbeMW/view" target="_blank" rel="noopener">View Brochure</a>
+					<a class="btn btn-outline" href="./fixtures.html">View Fixtures</a>
+				</div>
+			</div>
+
+			<div class="organizer-row">
+				<div class="organizer-item">
+					<img class="rx-lazy organizer-logo" src="photosc/logojyc white1.webp" data-src="photosc/logojyc white1.webp" alt="JYC logo">
+					<div>
+						<h4>Juit Youth Club</h4>
+						<p class="body-text">Fostering holistic student development through sports, culture, academics, leadership and extracurricular activities.</p>
+						<a class="btn btn-outline" href="https://jyc.co.in">About JYC</a>
 					</div>
 				</div>
-				<div class="col-md-4 crossfit-col">
-					<div class="crossfit-item">
-						<img class="rx-lazy" src="photosc/parakarm.webp" data-src="photosc/parakarm.webp" alt="img">
-						<h3>Parakram</h3>
-						<p>Parakram, a thrilling sports event, brings together universities for competitive matches in football, basketball, volleyball, cricket, and more. Our university hosts the event, attracting students from all over to cheer for their teams.  </p>
-						<a class="btn" href="https://drive.google.com/file/d/1iVEYWKDQ9QWmXmvVRgrp--kGnA2_0JCL/view">Download Brochure</a>
-					</div>
-				</div>
-				<div class="col-md-4 crossfit-col">
-					<div class="crossfit-item">
-						<img class="rx-lazy" src="photosc/DDD.webp" data-src="photosc/DDD.webp" alt="img">
-						<h3>Sports Club</h3>
-						<p>JUIT Sports Club: Nurturing athleticism, teamwork, and competition, enhancing physical fitness, and fostering sportsmanship among JUIT students through various activities.</p>
-						<a class="btn" href="https://jyc.co.in/sports">About Sports Club</a>
+
+				<div class="organizer-item">
+					<img class="rx-lazy organizer-logo" src="photosc/logosports.webp" data-src="photosc/logosports.webp" alt="Sports Club logo">
+					<div>
+						<h4>Sports Club</h4>
+						<p class="body-text">Nurturing athleticism, teamwork and competition, enhancing physical fitness and sportsmanship among JUIT students.</p>
+						<a class="btn btn-outline" href="https://jyc.co.in/sports">About Sports Club</a>
 					</div>
 				</div>
 			</div>
+
 		</div>
 	</section>
 	<!-- ============== S-CROSSFIT END ============== -->
@@ -201,7 +209,7 @@
 		<div class="mask"></div>
 		<div class="container">
 			<h2 class="title-decor">Countdown to <span>Parakram</span></h2>
-			<p class="slogan">Event Date:  3-5 October  2025</p>
+			<p class="slogan">Event Date:  2-4 October  2026</p>
 			<div id="clockdiv">
 				<div class="clock-item">
 					<span id="days">0</span>
@@ -224,56 +232,77 @@
 	</section>
 
 	<script>
-		document.addEventListener("DOMContentLoaded", function() {
-			// Function to calculate the time remaining
-			function getTimeRemaining(endtime) {
-				var t = Date.parse(endtime) - Date.parse(new Date());
-				var seconds = Math.floor((t / 1000) % 60);
-				var minutes = Math.floor((t / 1000 / 60) % 60);
-				var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
-				var days = Math.floor(t / (1000 * 60 * 60 * 24));
-				return {
-					'total': t,
-					'days': days,
-					'hours': hours,
-					'minutes': minutes,
-					'seconds': seconds
-				};
-			}
-	
-			// Function to initialize and update the clock
-			function initializeClock(endtime) {
-				var daysSpan = document.getElementById('days');
-				var hoursSpan = document.getElementById('hours');
-				var minutesSpan = document.getElementById('minutes');
-				var secondsSpan = document.getElementById('seconds');
-	
-				function updateClock() {
-					var t = getTimeRemaining(endtime);
-	
-					daysSpan.innerHTML = t.days;
-					hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
-					minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
-					secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
-	
-					if (t.total <= 0) {
-						clearInterval(timeinterval);
-					}
-				}
-	
-				updateClock(); // Run the function immediately
-				var timeinterval = setInterval(updateClock, 1000); // Update every second
-			}
-	
-			var deadline = new Date('2025-10-03T00:00:00');
-			initializeClock(deadline);
-		});
+    document.addEventListener("DOMContentLoaded", function (){
+        var countdownEnd = new Date("2026-10-02T00:00:00+05:30");
+        var eventEnd = new Date("2026-10-05T00:00:00+05:30");
+        var clockdiv = document.getElementById("clockdiv");
+        var daysSpan = document.getElementById("days");
+        var hoursSpan = document.getElementById("hours");
+        var minutesSpan = document.getElementById("minutes");
+        var secondsSpan = document.getElementById("seconds");
+        function updateClock() {
+            var now = new Date();
+            if (now < countdownEnd) {
+                var t = countdownEnd - now;
+                var days = Math.floor(t / (1000 * 60 * 60 * 24));
+                var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+                var minutes = Math.floor((t / (1000 * 60)) % 60);
+                var seconds = Math.floor((t / 1000) % 60);
+                daysSpan.innerHTML = days;
+                hoursSpan.innerHTML = ("0" + hours).slice(-2);
+                minutesSpan.innerHTML = ("0" + minutes).slice(-2);
+                secondsSpan.innerHTML = ("0" + seconds).slice(-2);
+                return;
+            }
+            if (now < eventEnd) {
+                clockdiv.innerHTML = `
+                    <div class="parakram-live">
+                        <h2>🎉 Parakram is finally here!</h2>
+                        <p>Let the games begin! 🏆</p>
+                    </div>
+                `;
+                return;
+            }
+            var elapsed = now - eventEnd;
+            var negativeDays = Math.floor(
+                elapsed / (1000 * 60 * 60 * 24)
+            ) + 1;
+            var elapsedHours = Math.floor(
+                (elapsed / (1000 * 60 * 60)) % 24
+            );
+            var elapsedMinutes = Math.floor(
+                (elapsed / (1000 * 60)) % 60
+            );
+            var elapsedSeconds = Math.floor(
+                (elapsed / 1000) % 60
+            );
+            clockdiv.innerHTML = `
+                <div class="clock-item">
+                    <span>-${negativeDays}</span>
+                    <div class="smalltext">Days</div>
+                </div>
+
+                <div class="clock-item">
+                    <span>${("0" + elapsedHours).slice(-2)}</span>
+                    <div class="smalltext">Hours</div>
+                </div>
+
+                <div class="clock-item">
+                    <span>${("0" + elapsedMinutes).slice(-2)}</span>
+                    <div class="smalltext">Minutes</div>
+                </div>
+
+                <div class="clock-item">
+                    <span>${("0" + elapsedSeconds).slice(-2)}</span>
+                    <div class="smalltext">Seconds</div>
+                </div>
+            `;
+        }
+        updateClock();
+        setInterval(updateClock, 1000);
+    });
 	</script>
-	
 
-
-	
-	
 			<!-- <form class="subscribe-form">
 				<input class="inp-form" type="email" name="subscribe" placeholder="Your E-mail">
 				<button type="submit" class="btn">Subscribe</button>
@@ -668,91 +697,47 @@
 	<!-- ============ S-OUR-PROGRAMS END ============ -->
 
 	<!-- =============== S-OUT-TRAINER =============== -->
-	<section class="s-out-trainer" style="background-image: url(assets/img/bg-contacts.svg);">
+	<section class="s-out-trainer" style="background: #080808;">
 		<div class="container">
 			<h2 class="title-decor">Our <span>Coaches</span> <br>& <br><span>Faculty Coordinators</span></h2>
 			<p class="slogan"></p>
 			<div class="row">
 				<div class="col-md-6 out-trainer-col">
-					<div class="out-trainer-item">
-						<a href="" class="out-trainer-img"><img class="rx-lazy" src="photosc/couch.webp" data-src="photosc/couch.webp" alt="img"></a>
-						<div class="out-trainer-info">
-							<h3><a href="trainer.html">Paras Gautam</a></h3>
-							<div class="prof">Male Sports Coach</div>
-							<p>Qualifications: BPED, MPED in Physical Education, Diploma in Sports Coaching. Passionate about empowering individuals through innovative physical education techniques.</p>
-						<p>
-							8265895230
-                            <br> paras.gautam@juitsolan.in
-						</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6 out-trainer-col">
-					<div class="out-trainer-item">
-						<a href="" class="out-trainer-img"><img class="rx-lazy" src="photosc/rep.webp" data-src="photosc/rep.webp" alt="img"></a>
-						<div class="out-trainer-info">
-							<h3><a href="trainer.html">Nisha Hooda</a></h3>
-							<div class="prof">Female Sports Coach</div>
-							<p>Education qualification - B.A,B.ped,M.ped in physical education,Nis in basketball ball,4 times gold medalists in all india inter University.</p>
-							<p>
-								6280252494
-								<br>nisha@juit.ac.in
-							</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6 out-trainer-col">
-					<div class="out-trainer-item">
-						<a href="" class="out-trainer-img"><img class="rx-lazy" src="photosc/Sanjiv_phy.webp" data-src="photosc/Sanjiv_phy.webp" alt="img"></a>
-						<div class="out-trainer-info">
-							<h3><a href="trainer.html">Dr. Sanjiv Kumar Tiwari</a></h3>
-							<div class="prof">Associate Professor</div>
-							<p>Dr. Sanjiv Kumar Tiwari boasts a distinguished academic journey, earning his M.Sc. at Banaras Hindu University (1999) followed by a Ph.D. from IIT Kanpur (2007). He further enriched his research experience with postdocs at Tata Institute of Fundamental Research (Mumbai) and Weizmann Institute of Science (Israel).</p>
-							<p>
-								(91)-01792-239359
-								<br>sanjivkumar.tiwari@juit.ac.in
-							</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6 out-trainer-col">
-					<div class="out-trainer-item">
-						<a href="" class="out-trainer-img"><img class="rx-lazy" src="photosc/sudhir.webp" data-src="photosc/sudhir.webp" alt="img"></a>
-						<div class="out-trainer-info">
-							<h3><a href="trainer.html">Dr. Sudhir Kumar</a></h3>
-							<div class="prof">Professor and Head</div>
-							<p>Dr. Sudhir Kumar, an expert in Environmental Biotechnology, has a strong academic background from Panjab University and TIET, Patiala. His research focuses on bioleaching precious metals from e-waste, environmental impact assessment, and utilizing thermostable enzymes for various applications.</p>
-							<p>
-								(91)-1792-239231
-                                <br>sudhir.syal@juit.ac.in
-							</p>
-							
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6 out-trainer-col">
-					<div class="out-trainer-item">
-						<a href="" class="out-trainer-img"><img class="rx-lazy" src="photosc/Neena Jindal.webp" data-src="photosc/Neena Jindal.webp" alt="img"></a>
-						<div class="out-trainer-info">
-							<h3><a href="trainer.html">Dr. Neena Jindal</a></h3>
-							<div class="prof">Assistant Professor (Grade-II)</div>
-							<p>
-								Dr. Neena Jindal has taught Political Science for seven years. Presently, she is teaching engineering students at JUIT. She is also involved in various student activities in the campus. </p>
+						<div class="out-trainer-item">
+							<a href="" class="out-trainer-img">
+								<img class="rx-lazy"
+									src="photosc/amardeep_civil.webp"
+									data-src="photosc/amardeep_civil.webp"
+									alt="Dr. Amardeep">
+							</a>
+
+							<div class="out-trainer-info">
+								<h3><a href="trainer.html">Dr. Amardeep</a></h3>
+
+								<div class="prof">Associate Professor</div>
+
 								<p>
-									(91)01792- 239306
-                                     <br>neena.jindal@juit.ac.in
+									Dr. Amardeep is an Associate Professor in Civil Engineering.
+									He holds a B.Tech. in Civil Engineering from Kurukshetra University,
+									an M.Tech. in Transportation Engineering from NIT Kurukshetra,
+									and a Ph.D. in Transportation Engineering from IIT Roorkee.
 								</p>
-						
+
+								<p>
+									(91) 01792-239398
+									<br>amardeep@juit.ac.in
+								</p>
+							</div>
 						</div>
-					</div>
 				</div>
 				<div class="col-md-6 out-trainer-col">
 					<div class="out-trainer-item">
 						<a href="" class="out-trainer-img"><img class="rx-lazy" src="photosc/rajkumar.webp" data-src="photosc/rajkumar.webp" alt="img"></a>
 						<div class="out-trainer-info">
 							<h3><a href="trainer.html">Dr. Raj Kumar</a></h3>
-							<div class="prof">FAssistant Professor (SG)</div>
+							<div class="prof">Assistant Professor (SG)</div>
 							<p>Dr. Raj Kumar, specializes in Computer-Aided Drug Design and related fields. He holds a Ph.D. from Gyeongsang National University and has postdoctoral experience from Seoul National University.
+								
 							</p>
 							<p>
 								(91) 01792-239305
@@ -761,7 +746,37 @@
 						</div>
 					</div>
 				</div>
+				<div class="col-md-6 out-trainer-col">
+					<div class="out-trainer-item">
+						<a href="" class="out-trainer-img"><img class="rx-lazy" src="photosc/Himanshu.webp" data-src="photosc/Himanshu.webp" alt="img"></a>
+						<div class="out-trainer-info">
+							<h3><a href="trainer.html">Himanshu Rawat</a></h3>
+							<div class="prof">Male Sports Coach</div>
+							<p>Mr. Himanshu Rawat is a dedicated Volleyball Coach committed to promoting physical fitness, teamwork, sportsmanship among students through regular training and sports activities.</p>
+							<p>
+								<br>himanshu.rawat@juitsolan.in
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 out-trainer-col">
+					<div class="out-trainer-item">
+						<a href="" class="out-trainer-img"><img class="rx-lazy" src="photosc/Nisha.webp" data-src="photosc/Nisha.webp" alt="img"></a>
+						<div class="out-trainer-info">
+							<h3><a href="trainer.html">Nisha Hooda</a></h3>
+							<div class="prof">Female Sports Coach</div>
+							<p>Education qualification - B.A,B.ped,M.ped in physical education,Nis in basketball ball,4 times gold medalists in all india inter University.
+								
+							</p>
+							<p>
+								6280252494
+								<br>nisha@juit.ac.in
+							</p>
+						</div>
+					</div>
+				</div>
 				
+
 			</div>
 		</div>
 	</section>
