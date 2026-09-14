@@ -2,26 +2,28 @@
 <html lang="zxx">
 
 <head>
-	<meta charset="UTF-8">
-	<title>Parakram</title>
-	<!-- <a target="_blank" href="https://icons8.com/icon/111042/p">P</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a> -->
-	<!-- =================== META =================== -->
-	<meta name="keywords" content="">
-	<meta name="description" content="">
-	<meta name="format-detection" content="telephone=no">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link rel="shortcut icon" href="assets/img/favicon.webp">
-	<!-- =================== STYLE =================== -->
-	<link rel="stylesheet" href="assets/css/slick.min.css">
-	<link rel="stylesheet" href="assets/css/bootstrap-grid.css">
-	<link rel="stylesheet" href="assets/css/font-awesome.min.css">
-	<link rel="stylesheet" href="assets/css/style.css">
-	<link rel="stylesheet" href="assets/css/footer.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-	<link rel="stylesheet" href="assets/css/style.scss">
-	<link rel="stylesheet" href="assets/css/sstyle.css">
-	<link rel="icon" href="photosc/fevicon.avif">
-	
+    <meta charset="UTF-8">
+    <title>Parakram</title>
+    <!-- <a target="_blank" href="https://icons8.com/icon/111042/p">P</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a> -->
+    <!-- =================== META =================== -->
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="assets/img/favicon.webp">
+    <!-- =================== STYLE =================== -->
+    <link rel="stylesheet" href="assets/css/slick.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap-grid.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="assets/css/style.scss">
+    <link rel="stylesheet" href="assets/css/sstyle.css">
+    <link rel="icon" href="photosc/fevicon.avif">
+
 </head>
 
 <body id="home">
@@ -67,216 +69,256 @@
 						</li>
 						<li><a href="https://forms.google.com">Registrations</a></li>
 
+    <!-- ================= HEADER ================= -->
+    <header class="header">
+        <a href="#" class="nav-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </a>
 
-						<li><a href="fixtures.html">Fixture</a></li>
+
+        <div class="header-menu">
+            <div class="container">
+                <div class="logo">
+                    <img src="photosc/sc.webp" alt="Logo">
+                </div>
+                <div class="jyc-logo">
+                    <img src="photosc/logojyc white1.webp" alt="jyc-Logo">
+                </div>
+
+            </div>
+
+            <nav class="nav-menu">
+                <ul class="nav-list">
+                    <li class="">
+                        <a href="index.html">Home </a>
+                    </li>
+                    <li><a
+                            href="https://www.google.com/search?q=hello+world&sca_esv=16067ccfc9d0a6cf&sxsrf=APpeQnugx2CnSAzmnmcra9u6wH5dD8SYww%3A1788980663572&source=hp&ei=t62harn9ILGH4-EPjq3yqQI&iflsig=ABILxe8AAAAAaqG7x6I3_Z8c_RrLmufgbv5vjasdksla&ved=0ahUKEwj5tNenmOKWAxWxwzgGHY6WPCUQ4dUDCCs&uact=5&oq=hello+world&gs_lp=Egdnd3Mtd2l6IgtoZWxsbyB3b3JsZDILEAAYgAQYigUYkQIyCxAAGIAEGIoFGJECMgsQABiABBiKBRiRAjILEAAYgAQYsQMYgwEyCBAuGLEDGIAEMgUQABiABDIFEAAYgAQyCBAAGIAEGLEDMgUQABiABDIFEAAYgARIlxVQuQRY2hNwAXgAkAEAmAHHAaABlA6qAQQwLjExuAEDyAEA-AEBmAIMoALSDqgCCsICEBAjGJ0GGOgGGN0FGOoCGCfCAg0QLhjHARjRAxjqAhgnwgIHECMY6gIYJ8ICEBAjGPAFGJ4GGKIHGOoCGCfCAhAQIxiiBxieBhjwBRjqAhgnwgINECMYogcYngYY8AUYJ8ICBBAjGCfCAg0QIxjwBRieBhiiBxgnwgIREC4YgAQYigUYkQIYxwEY0QPCAhcQLhiABBiKBRiNBhixAxiDARjHARivAcICDRAAGIAEGIoFGEMYsQPCAgoQABiABBgCGMsBwgIIEC4YgAQYsQOYAwvxBVlpIOTzZH26kgcGMS4xMC4xoAeyVbIHBjAuMTAuMbgHxg7CBwcwLjUuNi4xyAcqgAgB&sclient=gws-wiz">Registrations</a>
+                    </li>
+
+
+                    <li><a href="fixtures.html">Fixture</a></li>
 
 
 
 
 
-						<li class="dropdown">
-							
-						</li>
-						<li><a href="contacts.html">Contacts</a></li>
-						<li><a href="galary.html">Gallery</a></li>
-						<!-- <li><a href="credits.html">Credits</a></li> -->
-					</ul>
-				</nav>
-			</div>
-		</div>
-	</header>
-	<!-- =============== HEADER END =============== -->
+                    <li class="dropdown">
 
-	<!-- ============ S-CROSSFIT-SLIDER ============ -->
-	<section class="s-crossfit-slider">
-		<div class="crossfit-slider">
-			<div class="crossfit-slide">
+                    </li>
+                    <li><a href="contacts.html">Contacts</a></li>
+                    <li><a href="galary.html">Gallery</a></li>
+                    <!-- <li><a href="credits.html">Credits</a></li> -->
+                </ul>
+            </nav>
+        </div>
+        </div>
+    </header>
+    <!-- =============== HEADER END =============== -->
+
+    <!-- ============ S-CROSSFIT-SLIDER ============ -->
+    <section class="s-crossfit-slider">
+        <div class="crossfit-slider">
+            <div class="crossfit-slide">
+                <div class="crossfit-slider-effect effect-1">
+                    <div data-hover-only="true" class="scene">
+                        <span class="scene-item" data-depth="0.2"
+                            style="background-image: url(assets/img/effect-1.svg);"></span>
+                    </div>
+                </div>
+                <div class="crossfit-slider-effect effect-2">
+                    <div data-hover-only="true" class="scene">
+                        <span class="scene-item" data-depth="0.4"
+                            style="background-image: url(assets/img/effect-2.svg);"></span>
+                    </div>
+                </div>
+                <div class="crossfit-slide-bg" style="background-image: url(photosc/main22.webp);"></div>
+                <div class="container">
+                    <div class="crossfit-slide-cover crossfit-slider-cover">
+                        <h2 class="title">Para<span>kram</span></h2>
+                        <h3>Parakram: Where <span>Champions</span> Rise and <span>Legends</span> are Forged.</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="crossfit-slide">
+                <div class="crossfit-slider-effect effect-1">
+                    <div data-hover-only="true" class="scene">
+                        <span class="scene-item" data-depth="0.2"
+                            style="background-image: url(assets/img/effect-1.svg);"></span>
+                    </div>
+                </div>
+                <div class="crossfit-slider-effect effect-2">
+                    <div data-hover-only="true" class="scene">
+                        <span class="scene-item" data-depth="0.4"
+                            style="background-image: url(assets/img/effect-2.svg);"></span>
+                    </div>
+                </div>
+                <div class="crossfit-slide-bg" style="background-image: url(photosc/main11.webp);"></div>
+                <div class="container">
+                    <div class="crossfit-slide-cover crossfit-slider-cover">
+                        <h1 class="title">Para<span>kram</span></h1>
+                        <h3>Parakram: Where <span>Champions</span> Rise and <span>Legends</span> are Forged.</h3>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="crossfit-slide">
 				<div class="crossfit-slider-effect effect-1">
 					<div data-hover-only="true" class="scene">
-						<span class="scene-item" data-depth="0.2" style="background-image: url(assets/img/effect-1.svg);"></span>
+						<span class="scene-item" data-depth="0.2"
+							style="background-image: url(assets/img/effect-1.svg);"></span>
 					</div>
 				</div>
 				<div class="crossfit-slider-effect effect-2">
 					<div data-hover-only="true" class="scene">
-						<span class="scene-item" data-depth="0.4" style="background-image: url(assets/img/effect-2.svg);"></span>
-					</div>
-				</div>
-				<div class="crossfit-slide-bg" style="background-image: url(photosc/main1.webp);"></div>
-				<div class="container">
-					<div class="crossfit-slide-cover">
-						<h2 class="title">Para<span>kram</span></h2>
-						
-					</div>
-					<h3>Parakram: Where <span>Champions</span>  Rise and <span>Legends</span> are Forged.</h3>
-						
-				</div>
-			</div>
-			<div class="crossfit-slide">
-				<div class="crossfit-slider-effect effect-1">
-					<div data-hover-only="true" class="scene">
-						<span class="scene-item" data-depth="0.2" style="background-image: url(assets/img/effect-1.svg);"></span>
-					</div>
-				</div>
-				<div class="crossfit-slider-effect effect-2">
-					<div data-hover-only="true" class="scene">
-						<span class="scene-item" data-depth="0.4" style="background-image: url(assets/img/effect-2.svg);"></span>
-					</div>
-				</div>
-				<div class="crossfit-slide-bg" style="background-image: url(photosc/mainn2.webp);"></div>
-				<div class="container">
-					<div class="crossfit-slide-cover">
-						<h1 class="title">Para<span>kram</span></h1>
-						<h3>Parakram: Where <span>Champions</span>  Rise and <span>Legends</span> are Forged.</h3>
-					</div>
-				</div>
-			</div>
-			<div class="crossfit-slide">
-				<div class="crossfit-slider-effect effect-1">
-					<div data-hover-only="true" class="scene">
-						<span class="scene-item" data-depth="0.2" style="background-image: url(assets/img/effect-1.svg);"></span>
-					</div>
-				</div>
-				<div class="crossfit-slider-effect effect-2">
-					<div data-hover-only="true" class="scene">
-						<span class="scene-item" data-depth="0.4" style="background-image: url(assets/img/effect-2.svg);"></span>
+						<span class="scene-item" data-depth="0.4"
+							style="background-image: url(assets/img/effect-2.svg);"></span>
 					</div>
 				</div>
 				<div class="crossfit-slide-bg" style="background-image: url(photosc/mainn3.webp);"></div>
 				<div class="container">
 					<div class="crossfit-slide-cover">
 						<h2 class="title">Para<span>kram</span></h2>
-						<h3>Parakram: Where <span>Champions</span>  Rise and <span>Legends</span> are Forged.</h3>
+						<h3>Parakram: Where <span>Champions</span> Rise and <span>Legends</span> are Forged.</h3>
 					</div>
 				</div>
-			</div>
-		</div>
-		<div class="slider-navigation">
-			<div class="container">
-				<div class="slider-navigation-cover"></div>
-			</div>
-		</div>
-	</section>
-	<!-- ========== S-CROSSFIT-SLIDER END ========== -->
+			</div> -->
+        </div>
+        <div class="slider-navigation">
+            <div class="container">
+                <div class="slider-navigation-cover"></div>
+            </div>
+        </div>
+    </section>
+    <!-- ========== S-CROSSFIT-SLIDER END ========== -->
 
-	<!-- ================ S-CROSSFIT ================ -->
-	<section class="s-crossfit">
-		<div class="container">
-			<!-- <img src="photosc/ddd.webp" data-src="assets/img/group-circle-2.svg" alt="img" class="crossfit-icon-1 rx-lazy">
+    <!-- ================ S-CROSSFIT ================ -->
+    <section class="s-crossfit">
+        <div class="container">
+            <!-- <img src="photosc/ddd.webp" data-src="assets/img/group-circle-2.svg" alt="img" class="crossfit-icon-1 rx-lazy">
 			<img src="assets/img/placeholder-all.webp" data-src="assets/img/line-red-1.svg" alt="img" class="crossfit-icon-2 rx-lazy">
 			<img src="assets/img/placeholder-all.webp" data-src="assets/img/tringle-about-top.svg" alt="img" class="crossfit-icon-3 rx-lazy"> -->
-			<h2 class="title-decor">About <span>Us</span></h2>
-			<p class="slogan"></p>
+            <h2 class="title-decor">About <span>Us</span></h2>
+            <p class="slogan"></p>
 
-			<div class="event-strip">
-				<div class="event-info">
-					<h3 class="event-title">Para<span>kram</span></h3>
-					<p class="label-text">1&ndash;4 October 2026</p>
-					<p class="body-text">Parakram, a thrilling sports event brings together universities for competitive matches in football, basketball, volleyball, cricket and more. JUIT hosts the event attracting students from all over to cheer for their teams.</p>
-				</div>
+            <div class="event-strip">
+                <div class="event-info">
+                    <h3 class="event-title">Para<span>kram</span></h3>
+                    <p class="label-text">1&ndash;4 October 2026</p>
+                    <p class="body-text">Parakram, a thrilling sports event brings together universities for competitive
+                        matches in football, basketball, volleyball, cricket and more. JUIT hosts the event attracting
+                        students from all over to cheer for their teams.</p>
+                </div>
 
-				<div class="event-actions">
-					<a class="btn" href="https://drive.google.com/file/d/1c4CeWkOrEg84ByDQCl1pcZVrSqjVbeMW/view" target="_blank" rel="noopener">View Brochure</a>
-					<a class="btn btn-outline" href="./fixtures.html">View Fixtures</a>
-				</div>
-			</div>
+                <div class="event-actions">
+                    <a class="btn" href="https://drive.google.com/file/d/1c4CeWkOrEg84ByDQCl1pcZVrSqjVbeMW/view"
+                        target="_blank" rel="noopener">View Brochure</a>
+                    <a class="btn btn-outline" href="./fixtures.html">View Fixtures</a>
+                </div>
+            </div>
 
-			<div class="organizer-row">
-				<div class="organizer-item">
-					<img class="rx-lazy organizer-logo" src="photosc/logojyc white1.webp" data-src="photosc/logojyc white1.webp" alt="JYC logo">
-					<div>
-						<h4>Juit Youth Club</h4>
-						<p class="body-text">Fostering holistic student development through sports, culture, academics, leadership and extracurricular activities.</p>
-						<a class="btn btn-outline" href="https://jyc.co.in">About JYC</a>
-					</div>
-				</div>
+            <div class="organizer-row">
+                <div class="organizer-item">
+                    <img class="rx-lazy organizer-logo" src="photosc/logojyc white1.webp"
+                        data-src="photosc/logojyc white1.webp" alt="JYC logo">
+                    <div>
+                        <h4>Juit Youth Club</h4>
+                        <p class="body-text">Fostering holistic student development through sports, culture, academics,
+                            leadership and extracurricular activities.</p>
+                        <a class="btn btn-outline" href="https://jyc.co.in">About JYC</a>
+                    </div>
+                </div>
 
-				<div class="organizer-item">
-					<img class="rx-lazy organizer-logo" src="photosc/logosports.webp" data-src="photosc/logosports.webp" alt="Sports Club logo">
-					<div>
-						<h4>Sports Club</h4>
-						<p class="body-text">Nurturing athleticism, teamwork and competition, enhancing physical fitness and sportsmanship among JUIT students.</p>
-						<a class="btn btn-outline" href="https://jyc.co.in/sports">About Sports Club</a>
-					</div>
-				</div>
-			</div>
+                <div class="organizer-item">
+                    <img class="rx-lazy organizer-logo" src="photosc/logosports.webp" data-src="photosc/logosports.webp"
+                        alt="Sports Club logo">
+                    <div>
+                        <h4>Sports Club</h4>
+                        <p class="body-text">Nurturing athleticism, teamwork and competition, enhancing physical fitness
+                            and sportsmanship among JUIT students.</p>
+                        <a class="btn btn-outline" href="https://jyc.co.in/sports">About Sports Club</a>
+                    </div>
+                </div>
+            </div>
 
-		</div>
-	</section>
-	<!-- ============== S-CROSSFIT END ============== -->
+        </div>
+    </section>
+    <!-- ============== S-CROSSFIT END ============== -->
 
-	<!-- countdown timer -->
-	<section class="s-counter" style="background-image: url(assets/img/bg-2.webp);">
-		<div class="mask"></div>
-		<div class="container">
-			<h2 class="title-decor">Countdown to <span>Parakram</span></h2>
-			<p class="slogan">Event Date:  1-4 October  2026</p>
-			<div id="clockdiv">
-				<div class="clock-item">
-					<span id="days">0</span>
-					<div class="smalltext">Days</div>
-				</div>
-				<div class="clock-item">
-					<span id="hours">0</span>
-					<div class="smalltext">Hours</div>
-				</div>
-				<div class="clock-item">
-					<span id="minutes">0</span>
-					<div class="smalltext">Minutes</div>
-				</div>
-				<div class="clock-item">
-					<span id="seconds">0</span>
-					<div class="smalltext">Seconds</div>
-				</div>
-			</div>
-		</div>
-	</section>
+    <!-- countdown timer -->
+    <section class="s-counter" style="background-image: url(assets/img/bg-2.webp);">
+        <div class="mask"></div>
+        <div class="container">
+            <h2 class="title-decor">Countdown to <span>Parakram</span></h2>
+            <p class="slogan">Event Date: 1-4 October 2026</p>
+            <div id="clockdiv">
+                <div class="clock-item">
+                    <span id="days">0</span>
+                    <div class="smalltext">Days</div>
+                </div>
+                <div class="clock-item">
+                    <span id="hours">0</span>
+                    <div class="smalltext">Hours</div>
+                </div>
+                <div class="clock-item">
+                    <span id="minutes">0</span>
+                    <div class="smalltext">Minutes</div>
+                </div>
+                <div class="clock-item">
+                    <span id="seconds">0</span>
+                    <div class="smalltext">Seconds</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-	<script>
-    document.addEventListener("DOMContentLoaded", function (){
-        var countdownEnd = new Date("2026-10-01T00:00:00+05:30");
-        var eventEnd = new Date("2026-10-05T00:00:00+05:30");
-        var clockdiv = document.getElementById("clockdiv");
-        var daysSpan = document.getElementById("days");
-        var hoursSpan = document.getElementById("hours");
-        var minutesSpan = document.getElementById("minutes");
-        var secondsSpan = document.getElementById("seconds");
-        function updateClock() {
-            var now = new Date();
-            if (now < countdownEnd) {
-                var t = countdownEnd - now;
-                var days = Math.floor(t / (1000 * 60 * 60 * 24));
-                var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
-                var minutes = Math.floor((t / (1000 * 60)) % 60);
-                var seconds = Math.floor((t / 1000) % 60);
-                daysSpan.innerHTML = days;
-                hoursSpan.innerHTML = ("0" + hours).slice(-2);
-                minutesSpan.innerHTML = ("0" + minutes).slice(-2);
-                secondsSpan.innerHTML = ("0" + seconds).slice(-2);
-                return;
-            }
-            if (now < eventEnd) {
-                clockdiv.innerHTML = `
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var countdownEnd = new Date("2026-10-01T00:00:00+05:30");
+            var eventEnd = new Date("2026-10-05T00:00:00+05:30");
+            var clockdiv = document.getElementById("clockdiv");
+            var daysSpan = document.getElementById("days");
+            var hoursSpan = document.getElementById("hours");
+            var minutesSpan = document.getElementById("minutes");
+            var secondsSpan = document.getElementById("seconds");
+            function updateClock() {
+                var now = new Date();
+                if (now < countdownEnd) {
+                    var t = countdownEnd - now;
+                    var days = Math.floor(t / (1000 * 60 * 60 * 24));
+                    var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+                    var minutes = Math.floor((t / (1000 * 60)) % 60);
+                    var seconds = Math.floor((t / 1000) % 60);
+                    daysSpan.innerHTML = days;
+                    hoursSpan.innerHTML = ("0" + hours).slice(-2);
+                    minutesSpan.innerHTML = ("0" + minutes).slice(-2);
+                    secondsSpan.innerHTML = ("0" + seconds).slice(-2);
+                    return;
+                }
+                if (now < eventEnd) {
+                    clockdiv.innerHTML = `
                     <div class="parakram-live">
                         <h2>🎉 Parakram is finally here!</h2>
                         <p>Let the games begin! 🏆</p>
                     </div>
                 `;
-                return;
-            }
-            var elapsed = now - eventEnd;
-            var negativeDays = Math.floor(
-                elapsed / (1000 * 60 * 60 * 24)
-            ) + 1;
-            var elapsedHours = Math.floor(
-                (elapsed / (1000 * 60 * 60)) % 24
-            );
-            var elapsedMinutes = Math.floor(
-                (elapsed / (1000 * 60)) % 60
-            );
-            var elapsedSeconds = Math.floor(
-                (elapsed / 1000) % 60
-            );
-            clockdiv.innerHTML = `
+                    return;
+                }
+                var elapsed = now - eventEnd;
+                var negativeDays = Math.floor(
+                    elapsed / (1000 * 60 * 60 * 24)
+                ) + 1;
+                var elapsedHours = Math.floor(
+                    (elapsed / (1000 * 60 * 60)) % 24
+                );
+                var elapsedMinutes = Math.floor(
+                    (elapsed / (1000 * 60)) % 60
+                );
+                var elapsedSeconds = Math.floor(
+                    (elapsed / 1000) % 60
+                );
+                clockdiv.innerHTML = `
                 <div class="clock-item">
                     <span>-${negativeDays}</span>
                     <div class="smalltext">Days</div>
@@ -297,490 +339,461 @@
                     <div class="smalltext">Seconds</div>
                 </div>
             `;
-        }
-        updateClock();
-        setInterval(updateClock, 1000);
-    });
-	</script>
+            }
+            updateClock();
+            setInterval(updateClock, 1000);
+        });
+    </script>
 
-			<!-- <form class="subscribe-form">
+    <!-- <form class="subscribe-form">
 				<input class="inp-form" type="email" name="subscribe" placeholder="Your E-mail">
 				<button type="submit" class="btn">Subscribe</button>
 			</form> -->
-		</div>
-	</section>
-	<!-- ============== S-OUR-PROGRAMS ============== -->
-<!-- ================= SPORTS ARENA ================= -->
-<!-- ================= SPORTS ARENA ================= -->
+    </div>
+    </section>
+    <!-- ============== S-OUR-PROGRAMS ============== -->
+    <!-- ================= SPORTS ARENA ================= -->
+    <!-- ================= SPORTS ARENA ================= -->
 
-<section class="sports-arena">
+    <section class="sports-arena">
 
-    <div class="sports-arena-bg"></div>
+        <div class="sports-arena-bg"></div>
 
-    <div class="container">
+        <div class="container">
 
-        <!-- HEADER -->
+            <!-- HEADER -->
 
-        <div class="sports-heading">
+            <div class="sports-heading">
 
-            <h2>
-                Our <span>Sports</span>
-            </h2>
+                <h2>
+                    Our <span>Sports</span>
+                </h2>
 
-            <p>
-                Different Games. One Spirit. Parakram.
-            </p>
+                <p>
+                    Different Games. One Spirit. Parakram.
+                </p>
 
-            <div class="sports-heading-line"></div>
+                <div class="sports-heading-line"></div>
 
-        </div>
-
-
-        <!-- SPORTS SLIDER -->
-
-        <div class="sports-slider">
-
-            <button class="sports-arrow sports-prev"
-                type="button"
-                aria-label="Previous sport">
-
-                <i class="fa-solid fa-angle-left"></i>
-
-            </button>
+            </div>
 
 
-            <div class="sports-track">
+            <!-- SPORTS SLIDER -->
+
+            <div class="sports-slider">
+
+                <button class="sports-arrow sports-prev" type="button" aria-label="Previous sport">
+
+                    <i class="fa-solid fa-angle-left"></i>
+
+                </button>
 
 
-                <!-- BADMINTON -->
+                <div class="sports-track">
 
-                <div class="arena-card"
-                    data-sport="badminton">
 
-                    <div class="arena-card-image"
-                        style="background-image:
+                    <!-- BADMINTON -->
+
+                    <div class="arena-card" data-sport="badminton">
+
+                        <div class="arena-card-image" style="background-image:
                         url('photosc/badminton-new.webp');">
 
-                        <div class="arena-card-overlay"></div>
+                            <div class="arena-card-overlay"></div>
 
-                        <div class="arena-card-content">
+                            <div class="arena-card-content">
 
-                            <span class="arena-number">
-                                SPORT 01
-                            </span>
+                                <span class="arena-number">
+                                    SPORT 01
+                                </span>
 
-                            <h3>
-                                Badminton
-                            </h3>
+                                <h3>
+                                    Badminton
+                                </h3>
 
-                          
+
+                            </div>
+
                         </div>
 
                     </div>
 
-                </div>
 
+                    <!-- BASKETBALL -->
 
-                <!-- BASKETBALL -->
+                    <div class="arena-card" data-sport="basketball">
 
-                <div class="arena-card"
-                    data-sport="basketball">
-
-                    <div class="arena-card-image"
-                        style="background-image:
+                        <div class="arena-card-image" style="background-image:
                         url('photosc/basketball.webp');">
 
-                        <div class="arena-card-overlay"></div>
+                            <div class="arena-card-overlay"></div>
 
-                        <div class="arena-card-content">
+                            <div class="arena-card-content">
 
-                            <span class="arena-number">
-                                SPORT 02
-                            </span>
+                                <span class="arena-number">
+                                    SPORT 02
+                                </span>
 
-                            <h3>
-                                Basketball
-                            </h3>
+                                <h3>
+                                    Basketball
+                                </h3>
 
-                         
+
+
+                            </div>
 
                         </div>
 
                     </div>
 
-                </div>
 
+                    <!-- CHESS -->
 
-                <!-- CHESS -->
+                    <div class="arena-card" data-sport="chess">
 
-                <div class="arena-card"
-                    data-sport="chess">
-
-                    <div class="arena-card-image"
-                        style="background-image:
+                        <div class="arena-card-image" style="background-image:
                         url('photosc/chess.webp');">
 
-                        <div class="arena-card-overlay"></div>
+                            <div class="arena-card-overlay"></div>
 
-                        <div class="arena-card-content">
+                            <div class="arena-card-content">
 
-                            <span class="arena-number">
-                                SPORT 03
-                            </span>
+                                <span class="arena-number">
+                                    SPORT 03
+                                </span>
 
-                            <h3>
-                                Chess
-                            </h3>
+                                <h3>
+                                    Chess
+                                </h3>
 
-                         
+
+
+                            </div>
 
                         </div>
 
                     </div>
 
-                </div>
 
+                    <!-- CRICKET -->
 
-                <!-- CRICKET -->
+                    <div class="arena-card" data-sport="cricket">
 
-                <div class="arena-card"
-                    data-sport="cricket">
-
-                    <div class="arena-card-image"
-                        style="background-image:
+                        <div class="arena-card-image" style="background-image:
                         url('photosc/cricket.webp');">
 
-                        <div class="arena-card-overlay"></div>
+                            <div class="arena-card-overlay"></div>
 
-                        <div class="arena-card-content">
+                            <div class="arena-card-content">
 
-                            <span class="arena-number">
-                                SPORT 04
-                            </span>
+                                <span class="arena-number">
+                                    SPORT 04
+                                </span>
 
-                            <h3>
-                                Cricket
-                            </h3>
+                                <h3>
+                                    Cricket
+                                </h3>
 
-                        
+
+
+                            </div>
 
                         </div>
 
                     </div>
 
-                </div>
 
+                    <!-- FOOTBALL -->
 
-                <!-- FOOTBALL -->
+                    <div class="arena-card" data-sport="football">
 
-                <div class="arena-card"
-                    data-sport="football">
-
-                    <div class="arena-card-image"
-                        style="background-image:
+                        <div class="arena-card-image" style="background-image:
                         url('photosc/football.webp');">
 
-                        <div class="arena-card-overlay"></div>
+                            <div class="arena-card-overlay"></div>
 
-                        <div class="arena-card-content">
+                            <div class="arena-card-content">
 
-                            <span class="arena-number">
-                                SPORT 05
-                            </span>
+                                <span class="arena-number">
+                                    SPORT 05
+                                </span>
 
-                            <h3>
-                                Football
-                            </h3>
+                                <h3>
+                                    Football
+                                </h3>
 
-                          
+
+                            </div>
+
                         </div>
 
                     </div>
 
-                </div>
 
-				
 
-                <!-- TABLE TENNIS -->
+                    <!-- TABLE TENNIS -->
 
-                <div class="arena-card"
-                    data-sport="table-tennis">
+                    <div class="arena-card" data-sport="table-tennis">
 
-                    <div class="arena-card-image"
-                        style="background-image:
+                        <div class="arena-card-image" style="background-image:
                         url('photosc/tabletennis.webp');">
 
-                        <div class="arena-card-overlay"></div>
+                            <div class="arena-card-overlay"></div>
 
-                        <div class="arena-card-content">
+                            <div class="arena-card-content">
 
-                            <span class="arena-number">
-                                SPORT 06
-                            </span>
+                                <span class="arena-number">
+                                    SPORT 06
+                                </span>
 
-                            <h3>
-                                Table Tennis
-                            </h3>
+                                <h3>
+                                    Table Tennis
+                                </h3>
 
-                            
+
+
+                            </div>
 
                         </div>
 
                     </div>
 
-                </div>
 
+                    <!-- VOLLEYBALL -->
 
-                <!-- VOLLEYBALL -->
+                    <div class="arena-card" data-sport="volleyball">
 
-                <div class="arena-card"
-                    data-sport="volleyball">
-
-                    <div class="arena-card-image"
-                        style="background-image:
+                        <div class="arena-card-image" style="background-image:
                         url('photosc/volleyball.webp');">
 
-                        <div class="arena-card-overlay"></div>
+                            <div class="arena-card-overlay"></div>
 
-                        <div class="arena-card-content">
+                            <div class="arena-card-content">
 
-                            <span class="arena-number">
-                                SPORT 07
-                            </span>
+                                <span class="arena-number">
+                                    SPORT 07
+                                </span>
 
-                            <h3>
-                                Volleyball
-                            </h3>
+                                <h3>
+                                    Volleyball
+                                </h3>
 
-                            
+
+
+                            </div>
 
                         </div>
 
                     </div>
 
-                </div>
 
-           
 
-			<!-- powerlifting -->
+                    <!-- powerlifting -->
 
-                <div class="arena-card"
-                    data-sport="powerlifting">
+                    <div class="arena-card" data-sport="powerlifting">
 
-                    <div class="arena-card-image"
-                        style="background-image:
+                        <div class="arena-card-image" style="background-image:
                         url('photosc/powerlifting.webp');">
 
-                        <div class="arena-card-overlay"></div>
+                            <div class="arena-card-overlay"></div>
 
-                        <div class="arena-card-content">
+                            <div class="arena-card-content">
 
-                            <span class="arena-number">
-                                SPORT 08
-                            </span>
+                                <span class="arena-number">
+                                    SPORT 08
+                                </span>
 
-                            <h3>
-                                powerlifting
-                            </h3>
+                                <h3>
+                                    powerlifting
+                                </h3>
 
-                           
+
+
+                            </div>
 
                         </div>
 
                     </div>
-
                 </div>
-				</div>
-				
 
 
-            <button class="sports-arrow sports-next"
-                type="button"
-                aria-label="Next sport">
 
-                <i class="fa-solid fa-angle-right"></i>
+                <button class="sports-arrow sports-next" type="button" aria-label="Next sport">
 
-            </button>
+                    <i class="fa-solid fa-angle-right"></i>
+
+                </button>
+
+            </div>
+
+
+            <!-- SLIDER DOTS -->
+
+            <div class="sports-dots">
+
+                <button class="sport-dot active" data-index="0"></button>
+
+                <button class="sport-dot" data-index="1"></button>
+
+                <button class="sport-dot" data-index="2"></button>
+
+                <button class="sport-dot" data-index="3"></button>
+
+                <button class="sport-dot" data-index="4"></button>
+
+                <button class="sport-dot" data-index="5"></button>
+
+                <button class="sport-dot" data-index="6"></button>
+
+                <button class="sport-dot" data-index="7"></button>
+
+            </div>
+
+
+
+
+            <!-- SPORT NAVIGATION -->
+
+            <div class="sports-navigation">
+
+                <button class="sport-nav" data-index="0">
+                    <i class="fa-solid fa-feather-pointed" aria-hidden="true"></i>
+                    <span>Badminton</span>
+                </button>
+
+                <button class="sport-nav" data-index="1">
+                    <i class="fa-solid fa-basketball"></i>
+                    <span>Basketball</span>
+                </button>
+
+                <button class="sport-nav" data-index="2">
+                    <i class="fa-solid fa-chess-knight"></i>
+                    <span>Chess</span>
+                </button>
+
+                <button class="sport-nav" data-index="3">
+                    <i class="fa-solid fa-baseball-bat-ball"></i>
+                    <span>Cricket</span>
+                </button>
+
+                <button class="sport-nav" data-index="4">
+                    <i class="fa-solid fa-futbol"></i>
+                    <span>Football</span>
+                </button>
+
+                <button class="sport-nav" data-index="5">
+                    <i class="fa-solid fa-table-tennis-paddle-ball"></i>
+                    <span>Table Tennis</span>
+                </button>
+
+                <button class="sport-nav" data-index="6">
+                    <i class="fa-solid fa-volleyball"></i>
+                    <span>Volleyball</span>
+                </button>
+
+
+                <button class="sport-nav" data-index="7">
+                    <i class="fa-solid fa-trophy"></i>
+                    <span>Powerlifting</span>
+                </button>
+            </div>
 
         </div>
 
+    </section>
+    <!-- ============ S-OUR-PROGRAMS END ============ -->
 
-        <!-- SLIDER DOTS -->
+    <!-- =============== S-OUT-TRAINER =============== -->
+    <section class="s-out-trainer" style="background: #080808;">
+        <div class="container">
+            <h2 class="title-decor">Our <span>Coaches</span> <br>& <br><span>Faculty Coordinators</span></h2>
+            <p class="slogan"></p>
+            <div class="row">
+                <div class="col-md-6 out-trainer-col">
+                    <div class="out-trainer-item">
+                        <a href="" class="out-trainer-img">
+                            <img class="rx-lazy" src="photosc/amardeep_civil.webp"
+                                data-src="photosc/amardeep_civil.webp" alt="Dr. Amardeep">
+                        </a>
 
-        <div class="sports-dots">
+                        <div class="out-trainer-info">
+                            <h3><a href="trainer.html">Dr. Amardeep</a></h3>
 
-            <button class="sport-dot active"
-                data-index="0"></button>
+                            <div class="prof">Associate Professor</div>
 
-            <button class="sport-dot"
-                data-index="1"></button>
+                            <p>
+                                Dr. Amardeep is an Associate Professor in Civil Engineering.
+                                He holds a B.Tech. in Civil Engineering from Kurukshetra University,
+                                an M.Tech. in Transportation Engineering from NIT Kurukshetra,
+                                and a Ph.D. in Transportation Engineering from IIT Roorkee.
+                            </p>
 
-            <button class="sport-dot"
-                data-index="2"></button>
+                            <p>
+                                (91) 01792-239398
+                                <br>amardeep@juit.ac.in
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 out-trainer-col">
+                    <div class="out-trainer-item">
+                        <a href="" class="out-trainer-img"><img class="rx-lazy" src="photosc/rajkumar.webp"
+                                data-src="photosc/rajkumar.webp" alt="img"></a>
+                        <div class="out-trainer-info">
+                            <h3><a href="trainer.html">Dr. Raj Kumar</a></h3>
+                            <div class="prof">Assistant Professor (SG)</div>
+                            <p>Dr. Raj Kumar, specializes in Computer-Aided Drug Design and related fields. He holds a
+                                Ph.D. from Gyeongsang National University and has postdoctoral experience from Seoul
+                                National University.
 
-            <button class="sport-dot"
-                data-index="3"></button>
+                            </p>
+                            <p>
+                                (91) 01792-239305
+                                <br>raj.kumar@juit.ac.in
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 out-trainer-col">
+                    <div class="out-trainer-item">
+                        <a href="" class="out-trainer-img"><img class="rx-lazy" src="photosc/Himanshu.webp"
+                                data-src="photosc/Himanshu.webp" alt="img"></a>
+                        <div class="out-trainer-info">
+                            <h3><a href="trainer.html">Himanshu Rawat</a></h3>
+                            <div class="prof">Male Sports Coach</div>
+                            <p>Mr. Himanshu Rawat is a dedicated Volleyball Coach committed to promoting physical
+                                fitness, teamwork, sportsmanship among students through regular training and sports
+                                activities.</p>
+                            <p>
+                                <br>himanshu.rawat@juitsolan.in
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 out-trainer-col">
+                    <div class="out-trainer-item">
+                        <a href="" class="out-trainer-img"><img class="rx-lazy" src="photosc/Nisha.webp"
+                                data-src="photosc/Nisha.webp" alt="img"></a>
+                        <div class="out-trainer-info">
+                            <h3><a href="trainer.html">Nisha Hooda</a></h3>
+                            <div class="prof">Female Sports Coach</div>
+                            <p>Education qualification - B.A,B.ped,M.ped in physical education,Nis in basketball ball,4
+                                times gold medalists in all india inter University.
 
-            <button class="sport-dot"
-                data-index="4"></button>
+                            </p>
+                            <p>
+                                6280252494
+                                <br>nisha@juit.ac.in
+                            </p>
+                        </div>
+                    </div>
+                </div>
 
-            <button class="sport-dot"
-                data-index="5"></button>
 
-            <button class="sport-dot"
-                data-index="6"></button>
-
-			<button class="sport-dot"
-            data-index="7"></button>	
-
+            </div>
         </div>
-
-		
-
-
-        <!-- SPORT NAVIGATION -->
-
-        <div class="sports-navigation">
-
-          <button class="sport-nav" data-index="0">
-    <i class="fa-solid fa-feather-pointed" aria-hidden="true"></i>
-    <span>Badminton</span>
-</button>
-
-            <button class="sport-nav"
-                data-index="1">
-                <i class="fa-solid fa-basketball"></i>
-                <span>Basketball</span>
-            </button>
-
-            <button class="sport-nav"
-                data-index="2">
-                <i class="fa-solid fa-chess-knight"></i>
-                <span>Chess</span>
-            </button>
-
-            <button class="sport-nav"
-                data-index="3">
-                <i class="fa-solid fa-baseball-bat-ball"></i>
-                <span>Cricket</span>
-            </button>
-
-            <button class="sport-nav"
-                data-index="4">
-                <i class="fa-solid fa-futbol"></i>
-                <span>Football</span>
-            </button>
-
-            <button class="sport-nav"
-                data-index="5">
-                <i class="fa-solid fa-table-tennis-paddle-ball"></i>
-                <span>Table Tennis</span>
-            </button>
-
-			<button class="sport-nav"
-    data-index="6">
-    <i class="fa-solid fa-volleyball"></i>
-    <span>Volleyball</span>
-</button>
-
-
-		<button class="sport-nav"
-        data-index="7">
-    <i class="fa-solid fa-trophy"></i>
-    <span>Powerlifting</span>
-</button>
-        </div>
-
-    </div>
-
-</section>
-	<!-- ============ S-OUR-PROGRAMS END ============ -->
-
-	<!-- =============== S-OUT-TRAINER =============== -->
-	<section class="s-out-trainer" style="background: #080808;">
-		<div class="container">
-			<h2 class="title-decor">Our <span>Coaches</span> <br>& <br><span>Faculty Coordinators</span></h2>
-			<p class="slogan"></p>
-			<div class="row">
-				<div class="col-md-6 out-trainer-col">
-						<div class="out-trainer-item">
-							<a href="" class="out-trainer-img">
-								<img class="rx-lazy"
-									src="photosc/amardeep_civil.webp"
-									data-src="photosc/amardeep_civil.webp"
-									alt="Dr. Amardeep">
-							</a>
-
-							<div class="out-trainer-info">
-								<h3><a href="trainer.html">Dr. Amardeep</a></h3>
-
-								<div class="prof">Associate Professor</div>
-
-								<p>
-									Dr. Amardeep is an Associate Professor in Civil Engineering.
-									He holds a B.Tech. in Civil Engineering from Kurukshetra University,
-									an M.Tech. in Transportation Engineering from NIT Kurukshetra,
-									and a Ph.D. in Transportation Engineering from IIT Roorkee.
-								</p>
-
-								<p>
-									(91) 01792-239398
-									<br>amardeep@juit.ac.in
-								</p>
-							</div>
-						</div>
-				</div>
-				<div class="col-md-6 out-trainer-col">
-					<div class="out-trainer-item">
-						<a href="" class="out-trainer-img"><img class="rx-lazy" src="photosc/rajkumar.webp" data-src="photosc/rajkumar.webp" alt="img"></a>
-						<div class="out-trainer-info">
-							<h3><a href="trainer.html">Dr. Raj Kumar</a></h3>
-							<div class="prof">Assistant Professor (SG)</div>
-							<p>Dr. Raj Kumar, specializes in Computer-Aided Drug Design and related fields. He holds a Ph.D. from Gyeongsang National University and has postdoctoral experience from Seoul National University.
-								
-							</p>
-							<p>
-								(91) 01792-239305
-								<br>raj.kumar@juit.ac.in
-							</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6 out-trainer-col">
-					<div class="out-trainer-item">
-						<a href="" class="out-trainer-img"><img class="rx-lazy" src="photosc/Himanshu.webp" data-src="photosc/Himanshu.webp" alt="img"></a>
-						<div class="out-trainer-info">
-							<h3><a href="trainer.html">Himanshu Rawat</a></h3>
-							<div class="prof">Male Sports Coach</div>
-							<p>Mr. Himanshu Rawat is a dedicated Volleyball Coach committed to promoting physical fitness, teamwork, sportsmanship among students through regular training and sports activities.</p>
-							<p>
-								<br>himanshu.rawat@juitsolan.in
-							</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6 out-trainer-col">
-					<div class="out-trainer-item">
-						<a href="" class="out-trainer-img"><img class="rx-lazy" src="photosc/Nisha.webp" data-src="photosc/Nisha.webp" alt="img"></a>
-						<div class="out-trainer-info">
-							<h3><a href="trainer.html">Nisha Hooda</a></h3>
-							<div class="prof">Female Sports Coach</div>
-							<p>Education qualification - B.A,B.ped,M.ped in physical education,Nis in basketball ball,4 times gold medalists in all india inter University.
-								
-							</p>
-							<p>
-								6280252494
-								<br>nisha@juit.ac.in
-							</p>
-						</div>
-					</div>
-				</div>
-				
-
-			</div>
-		</div>
-	</section>
-	<!-- ============= S-OUT-TRAINER END ============= -->
+    </section>
+    <!-- ============= S-OUT-TRAINER END ============= -->
 
 	<!-- ============ S-CROSSFIT-BANNER ============ -->
 	<section class="s-crossfit-banner">
@@ -794,12 +807,12 @@
 	</section>
 	<!-- ========== S-CROSSFIT-BANNER END ========== -->
 
-	<!-- ============== S-CLUB-CARDS ============== -->
+    <!-- ============== S-CLUB-CARDS ============== -->
 
-	<!-- ============ S-CLUB-CARDS END ============ -->
+    <!-- ============ S-CLUB-CARDS END ============ -->
 
-	<!-- ============== S-TESTIMONIALS ============== -->
-	<!-- <section class="s-testimonials" style="background-image: url(/photosc/bjjuit.webp);">
+    <!-- ============== S-TESTIMONIALS ============== -->
+    <!-- <section class="s-testimonials" style="background-image: url(/photosc/bjjuit.webp);">
 		<div class="mask"></div>
 		
 		<div class="container">
@@ -825,12 +838,12 @@
 					<img src="./sponsers/images.jpeg" alt="img">
 					
 				</div> -->
-				<!-- <div class="testimonial-slide">
+    <!-- <div class="testimonial-slide">
 				
 					<img src="./sponsers/y.png" alt="img">
 					*
 				</div> -->
-				<!-- <div class="testimonial-slide">
+    <!-- <div class="testimonial-slide">
 				
 					<img src="./sponsers/hyundai-logo-341.jpg" alt="img">
 					
@@ -855,236 +868,243 @@
 					<img src="./sponsers/vivo-logo-vector-1.svg" alt="img">
 					
 				</div> -->
-			</div> 
-		</div>
-	</section>
-	<!-- ============ S-TESTIMONIALS END ============ -->
+    </div>
+    </div>
+    </section>
+    <!-- ============ S-TESTIMONIALS END ============ -->
 
-	<!--================ RELATED POSTS ================-->
-<!-- =========================================
+    <!--================ RELATED POSTS ================-->
+    <!-- =========================================
      COORDINATORS SECTION
      ========================================= -->
 
 
-<!-- ================= COORDINATORS ================= -->
+    <!-- ================= COORDINATORS ================= -->
 
-<section class="coordinator-arena" id="coordinators">
+    <section class="coordinator-arena" id="coordinators">
 
-    <div class="coordinator-glow coordinator-glow-one"></div>
-    <div class="coordinator-glow coordinator-glow-two"></div>
+        <div class="coordinator-glow coordinator-glow-one"></div>
+        <div class="coordinator-glow coordinator-glow-two"></div>
 
-    <div class="container">
+        <div class="container">
 
-        <!-- Heading -->
-        <div class="coordinator-heading">
-            <h2>Our <strong>Coordinators</strong></h2>
+            <!-- Heading -->
+            <div class="coordinator-heading">
+                <h2>Our <strong>Coordinators</strong></h2>
 
-            <p>
-                Guiding. Supporting. Building a Bigger Tomorrow.
-            </p>
+                <p>
+                    Guiding. Supporting. Building a Bigger Tomorrow.
+                </p>
 
-            <div class="coordinator-line"></div>
+                <div class="coordinator-line"></div>
+            </div>
+
+
+            <!-- Carousel -->
+            <div class="coordinator-carousel">
+
+                <button class="coordinator-arrow coordinator-prev" aria-label="Previous coordinator">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+
+                <div class="coordinator-window">
+
+                    <div class="coordinator-track">
+
+                        <!-- 01 -->
+                        <div class="coordinator-card">
+                            <div class="coordinator-photo">
+                                <div class="photo-glow"></div>
+                                <img src="photosc/viraj-bhasra-coord.webp" alt="Viraj Bhasra" loading="lazy"
+                                    decoding="async" fetchpriority="low">
+                            </div>
+
+                            <div class="coordinator-details">
+                                <span class="coordinator-number">01</span>
+                                <h3>Viraj Bhasra</h3>
+                                <p><i class="fas fa-user"></i> Coordinator</p>
+                            </div>
+                        </div>
+
+
+                        <!-- 02 -->
+                        <div class="coordinator-card">
+                            <div class="coordinator-photo">
+                                <div class="photo-glow"></div>
+                                <img src="photosc/arushi-singh-coord.webp" alt="Arushi Singh" loading="lazy"
+                                    decoding="async" fetchpriority="low">
+                            </div>
+
+                            <div class="coordinator-details">
+                                <span class="coordinator-number">02</span>
+                                <h3>Arushi Singh</h3>
+                                <p><i class="fas fa-user"></i> Coordinator</p>
+                            </div>
+                        </div>
+
+
+                        <!-- 03 -->
+                        <div class="coordinator-card">
+                            <div class="coordinator-photo">
+                                <div class="photo-glow"></div>
+                                <img src="photosc/shaurya-agarwal-coord.webp" alt="Shaurya Agarwal" loading="lazy"
+                                    decoding="async" fetchpriority="low">
+                            </div>
+
+                            <div class="coordinator-details">
+                                <span class="coordinator-number">03</span>
+                                <h3>Shaurya Agarwal</h3>
+                                <p><i class="fas fa-user"></i> Coordinator</p>
+                            </div>
+                        </div>
+
+
+                        <!-- 04 -->
+                        <div class="coordinator-card">
+                            <div class="coordinator-photo">
+                                <div class="photo-glow"></div>
+                                <img src="photosc/ayush-puri-coord.webp" alt="Ayush Puri" loading="lazy"
+                                    decoding="async" fetchpriority="low">
+                            </div>
+
+                            <div class="coordinator-details">
+                                <span class="coordinator-number">04</span>
+                                <h3>Ayush Puri</h3>
+                                <p><i class="fas fa-user"></i> Coordinator</p>
+                            </div>
+                        </div>
+
+
+                        <!-- 05 -->
+                        <div class="coordinator-card">
+                            <div class="coordinator-photo">
+                                <div class="photo-glow"></div>
+                                <img src="photosc/anahika-singh-coord.webp" alt="Anahika Singh" loading="lazy"
+                                    decoding="async" fetchpriority="low">
+                            </div>
+
+                            <div class="coordinator-details">
+                                <span class="coordinator-number">05</span>
+                                <h3>Anahika Singh</h3>
+                                <p><i class="fas fa-user"></i> Coordinator</p>
+                            </div>
+                        </div>
+
+
+                        <!-- 06 -->
+                        <div class="coordinator-card">
+                            <div class="coordinator-photo">
+                                <div class="photo-glow"></div>
+                                <img src="photosc/puroorava-maitre-coord.webp" alt="Puroorava Maitre" loading="lazy"
+                                    decoding="async" fetchpriority="low">
+                            </div>
+
+                            <div class="coordinator-details">
+                                <span class="coordinator-number">06</span>
+                                <h3>Puroorava Maitre</h3>
+                                <p><i class="fas fa-user"></i> Coordinator</p>
+                            </div>
+                        </div>
+
+
+                        <!-- 07 -->
+                        <div class="coordinator-card">
+                            <div class="coordinator-photo">
+                                <div class="photo-glow"></div>
+                                <img src="photosc/nishit-coord.webp" alt="Nishit" loading="lazy" decoding="async"
+                                    fetchpriority="low">
+                            </div>
+
+                            <div class="coordinator-details">
+                                <span class="coordinator-number">07</span>
+                                <h3>Nishit</h3>
+                                <p><i class="fas fa-user"></i> Coordinator</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <button class="coordinator-arrow coordinator-next" aria-label="Next coordinator">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+
+            </div>
+
+
+            <!-- Dots -->
+            <div class="coordinator-dots">
+                <button class="coordinator-dot active" data-index="0"></button>
+                <button class="coordinator-dot" data-index="1"></button>
+                <button class="coordinator-dot" data-index="2"></button>
+                <button class="coordinator-dot" data-index="3"></button>
+                <button class="coordinator-dot" data-index="4"></button>
+                <button class="coordinator-dot" data-index="5"></button>
+                <button class="coordinator-dot" data-index="6"></button>
+            </div>
+
+
+            <!-- Bottom Feature Strip -->
+            <div class="coordinator-features">
+
+                <div class="coordinator-feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div>
+                        <strong>CREATIVE MINDS</strong>
+                        <span>Ideas to Action</span>
+                    </div>
+                </div>
+
+                <div class="feature-divider"></div>
+
+                <div class="coordinator-feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <div>
+                        <strong>STRONGER TOGETHER</strong>
+                        <span>Teamwork Builds Success</span>
+                    </div>
+                </div>
+
+                <div class="feature-divider"></div>
+
+                <div class="coordinator-feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div>
+                        <strong>LASTING IMPACT</strong>
+                        <span>Beyond the Event</span>
+                    </div>
+                </div>
+
+                <div class="feature-divider"></div>
+
+                <div class="coordinator-feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <div>
+                        <strong>TECHNICAL EXCELLENCE</strong>
+                        <span>Move. Create. Inspire.</span>
+                    </div>
+                </div>
+
+            </div>
+
         </div>
 
+    </section>
 
-        <!-- Carousel -->
-        <div class="coordinator-carousel">
+    <!-- ================= COORDINATORS END ================= -->
 
-            <button class="coordinator-arrow coordinator-prev" aria-label="Previous coordinator">
-                <i class="fas fa-chevron-left"></i>
-            </button>
-
-            <div class="coordinator-window">
-
-                <div class="coordinator-track">
-
-                    <!-- 01 -->
-                    <div class="coordinator-card">
-                        <div class="coordinator-photo">
-                            <div class="photo-glow"></div>
-                            <img src="photosc/viraj-bhasra-coord.webp" alt="Viraj Bhasra" loading="lazy" decoding="async" fetchpriority="low">
-                        </div>
-
-                        <div class="coordinator-details">
-                            <span class="coordinator-number">01</span>
-                            <h3>Viraj Bhasra</h3>
-                            <p><i class="fas fa-user"></i> Coordinator</p>
-                        </div>
-                    </div>
-
-
-                    <!-- 02 -->
-                    <div class="coordinator-card">
-                        <div class="coordinator-photo">
-                            <div class="photo-glow"></div>
-                            <img src="photosc/arushi-singh-coord.webp" alt="Arushi Singh" loading="lazy" decoding="async" fetchpriority="low">
-                        </div>
-
-                        <div class="coordinator-details">
-                            <span class="coordinator-number">02</span>
-                            <h3>Arushi Singh</h3>
-                            <p><i class="fas fa-user"></i> Coordinator</p>
-                        </div>
-                    </div>
-
-
-                    <!-- 03 -->
-                    <div class="coordinator-card">
-                        <div class="coordinator-photo">
-                            <div class="photo-glow"></div>
-                            <img src="photosc/shaurya-agarwal-coord.webp" alt="Shaurya Agarwal" loading="lazy" decoding="async" fetchpriority="low">
-                        </div>
-
-                        <div class="coordinator-details">
-                            <span class="coordinator-number">03</span>
-                            <h3>Shaurya Agarwal</h3>
-                            <p><i class="fas fa-user"></i> Coordinator</p>
-                        </div>
-                    </div>
-
-
-                    <!-- 04 -->
-                    <div class="coordinator-card">
-                        <div class="coordinator-photo">
-                            <div class="photo-glow"></div>
-                            <img src="photosc/ayush-puri-coord.webp" alt="Ayush Puri" loading="lazy" decoding="async" fetchpriority="low">
-                        </div>
-
-                        <div class="coordinator-details">
-                            <span class="coordinator-number">04</span>
-                            <h3>Ayush Puri</h3>
-                            <p><i class="fas fa-user"></i> Coordinator</p>
-                        </div>
-                    </div>
-
-
-                    <!-- 05 -->
-                    <div class="coordinator-card">
-                        <div class="coordinator-photo">
-                            <div class="photo-glow"></div>
-                            <img src="photosc/anahika-singh-coord.webp" alt="Anahika Singh" loading="lazy" decoding="async" fetchpriority="low">
-                        </div>
-
-                        <div class="coordinator-details">
-                            <span class="coordinator-number">05</span>
-                            <h3>Anahika Singh</h3>
-                            <p><i class="fas fa-user"></i> Coordinator</p>
-                        </div>
-                    </div>
-
-
-                    <!-- 06 -->
-                    <div class="coordinator-card">
-                        <div class="coordinator-photo">
-                            <div class="photo-glow"></div>
-                            <img src="photosc/puroorava-maitre-coord.webp" alt="Puroorava Maitre" loading="lazy" decoding="async" fetchpriority="low">
-                        </div>
-
-                        <div class="coordinator-details">
-                            <span class="coordinator-number">06</span>
-                            <h3>Puroorava Maitre</h3>
-                            <p><i class="fas fa-user"></i> Coordinator</p>
-                        </div>
-                    </div>
-
-
-                    <!-- 07 -->
-                    <div class="coordinator-card">
-                        <div class="coordinator-photo">
-                            <div class="photo-glow"></div>
-                            <img src="photosc/nishit-coord.webp" alt="Nishit" loading="lazy" decoding="async" fetchpriority="low">
-                        </div>
-
-                        <div class="coordinator-details">
-                            <span class="coordinator-number">07</span>
-                            <h3>Nishit</h3>
-                            <p><i class="fas fa-user"></i> Coordinator</p>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <button class="coordinator-arrow coordinator-next" aria-label="Next coordinator">
-                <i class="fas fa-chevron-right"></i>
-            </button>
-
-        </div>
-
-
-        <!-- Dots -->
-        <div class="coordinator-dots">
-            <button class="coordinator-dot active" data-index="0"></button>
-            <button class="coordinator-dot" data-index="1"></button>
-            <button class="coordinator-dot" data-index="2"></button>
-            <button class="coordinator-dot" data-index="3"></button>
-            <button class="coordinator-dot" data-index="4"></button>
-            <button class="coordinator-dot" data-index="5"></button>
-            <button class="coordinator-dot" data-index="6"></button>
-        </div>
-
-
-        <!-- Bottom Feature Strip -->
-        <div class="coordinator-features">
-
-            <div class="coordinator-feature">
-                <div class="feature-icon">
-                    <i class="fas fa-users"></i>
-                </div>
-                <div>
-                    <strong>CREATIVE MINDS</strong>
-                    <span>Ideas to Action</span>
-                </div>
-            </div>
-
-            <div class="feature-divider"></div>
-
-            <div class="coordinator-feature">
-                <div class="feature-icon">
-                    <i class="fas fa-handshake"></i>
-                </div>
-                <div>
-                    <strong>STRONGER TOGETHER</strong>
-                    <span>Teamwork Builds Success</span>
-                </div>
-            </div>
-
-            <div class="feature-divider"></div>
-
-            <div class="coordinator-feature">
-                <div class="feature-icon">
-                    <i class="fas fa-star"></i>
-                </div>
-                <div>
-                    <strong>LASTING IMPACT</strong>
-                    <span>Beyond the Event</span>
-                </div>
-            </div>
-
-            <div class="feature-divider"></div>
-
-            <div class="coordinator-feature">
-                <div class="feature-icon">
-                    <i class="fas fa-cogs"></i>
-                </div>
-                <div>
-                    <strong>TECHNICAL EXCELLENCE</strong>
-                    <span>Move. Create. Inspire.</span>
-                </div>
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- ================= COORDINATORS END ================= -->
-
-	<!-- =========== S-TRAINING-SCHEDULE =========== -->
-	<!-- <section class="s-training-schedule" style="background-image: url(assets/img/bg-table-1.svg);">
+    <!-- =========== S-TRAINING-SCHEDULE =========== -->
+    <!-- <section class="s-training-schedule" style="background-image: url(assets/img/bg-table-1.svg);">
 		<div class="container">
 			<h2 class="title-decor">Event <span>Schedule</span></h2>
 			<p class="slogan">Parakram spans three exhilarating days: Opening & Competition, Finals & Championships, and a Grand Closing Ceremony with awards, encapsulating the essence of sports at JUIT.</p>
@@ -1094,8 +1114,8 @@
 				<div class="training-schedule-table">
 					<table>
 						<thead> -->
-							<!-- <th></th> -->
-							<!-- <th>Basketball</th>
+    <!-- <th></th> -->
+    <!-- <th>Basketball</th>
 							<th>volleyball</th>
 							<th>cricket</th>
 							<th>table tennis</th>
@@ -1105,8 +1125,8 @@
 						</thead>
 						<tbody>
 							<tr> -->
-								<!-- <td>11-00</td> -->
-								<!-- <td>
+    <!-- <td>11-00</td> -->
+    <!-- <td>
 									<h4>IIT Ropar vs Chitkara Rajpura</h4>
 									<div class="date">11:00 AM</div>
 									<div class="name">Pool - Girls</div>
@@ -1139,8 +1159,8 @@
 								</td>
 							</tr>
 							<tr> -->
-								<!-- <td>12-00</td> -->
-								<!-- <td>
+    <!-- <td>12-00</td> -->
+    <!-- <td>
 									<h4>Juit A vs Doon Business</h4>
 									<div class="date">12:00 PM</div>
 									<div class="name">Pool - 1</div>
@@ -1157,8 +1177,8 @@
 								<td></td>
 							</tr>
 							<tr> -->
-								<!-- <td>1-00</td> -->
-								<!-- <td></td>
+    <!-- <td>1-00</td> -->
+    <!-- <td></td>
 								<td></td>
 								<td></td>
 								<td>
@@ -1171,8 +1191,8 @@
 								<td></td>
 							</tr>
 							<tr> -->
-								<!-- <td>2-00</td> -->
-								<!-- <td>
+    <!-- <td>2-00</td> -->
+    <!-- <td>
 									<h4>Chitkara Rajpura vs Chitkara Baddi</h4>
 									<div class="date">2:00 PM</div>
 									<div class="name">Pool - Girls</div>
@@ -1201,8 +1221,8 @@
 								</td>
 							</tr>
 							<tr> -->
-								<!-- <td>3-00</td> -->
-								<!-- <td>
+    <!-- <td>3-00</td> -->
+    <!-- <td>
 									<h4>Juit B vs Bahara</h4>
 									<div class="date">3:00 PM</div>
 									<div class="name">Pool - 2</div>
@@ -1223,8 +1243,8 @@
 								</td>
 							</tr>
 							<tr> -->
-								<!-- <td>4-00</td> -->
-								<!-- <td>
+    <!-- <td>4-00</td> -->
+    <!-- <td>
 									<h4>IIT Ropar vs Doon Business</h4>
 									<div class="date">4:00 PM</div>
 									<div class="name">Pool - 1</div>
@@ -1249,8 +1269,8 @@
 								</td>
 							</tr>
 							<tr> -->
-								<!-- <td>5-00</td> -->
-								<!-- <td>
+    <!-- <td>5-00</td> -->
+    <!-- <td>
 									<h4>UIET Punjab vs Chitkara Baddi</h4>
 									<div class="date">5:00 PM</div>
 									<div class="name">Pool - 2</div>
@@ -1271,8 +1291,8 @@
 								</td>
 							</tr>
 							<tr> -->
-								<!-- <td>6-00</td> -->
-								<!-- <td>
+    <!-- <td>6-00</td> -->
+    <!-- <td>
 									<h4>Juit vs Chitkara Baddi</h4>
 									<div class="date">6:00 PM</div>
 									<div class="name">Pool - Girls</div>
@@ -1289,8 +1309,8 @@
 								<td></td>
 							</tr>
 							<tr> -->
-								<!-- <td>7-00</td> -->
-								<!-- <td>
+    <!-- <td>7-00</td> -->
+    <!-- <td>
 									<h4>Juit A vs Chitkara Rajpura</h4>
 									<div class="date">7:00 PM</div>
 									<div class="name">Pool - 1</div>
@@ -1307,8 +1327,8 @@
 								<td></td>
 							</tr>
 							<tr> -->
-								<!-- <td>8-00</td> -->
-								<!-- <td>
+    <!-- <td>8-00</td> -->
+    <!-- <td>
 									<h4>Juit B vs Chitkara Baddi</h4>
 									<div class="date">8:00 PM</div>
 									<div class="name">Pool - 2</div>
@@ -1326,28 +1346,28 @@
 			</div>
 		</div>
 	</section> -->
-	<!-- ========= S-TRAINING-SCHEDULE END ========= -->
+    <!-- ========= S-TRAINING-SCHEDULE END ========= -->
 
-	<!-- ================== FOOTER ================== -->
-	
-	<!-- ================== FOOTER ================== -->
+    <!-- ================== FOOTER ================== -->
 
-	<!-- ================== FOOTER ================== -->
-	<!-- end main -->
-   
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<footer class="footer">
+    <!-- ================== FOOTER ================== -->
+
+    <!-- ================== FOOTER ================== -->
+    <!-- end main -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <footer class="footer">
         <div class="container">
             <div class="footer-top">
                 <a href="index.html">
@@ -1417,1031 +1437,1033 @@
     <script src="js/footer.js"></script> -->
 
 
-	<!-- ================ FOOTER END ================ -->
+    <!-- ================ FOOTER END ================ -->
 
-	<!--=================== TO TOP ===================-->
-	<a class="to-top" href="#home">
-		<i class="fa fa-chevron-up" aria-hidden="true"></i>
-	</a>
-	<!--================= TO TOP END =================-->
+    <!--=================== TO TOP ===================-->
+    <a class="to-top" href="#home">
+        <i class="fa fa-chevron-up" aria-hidden="true"></i>
+    </a>
+    <!--================= TO TOP END =================-->
 
-	<!--=================== SCRIPT	===================-->
-	<script src="assets/js/jquery-2.2.4.min.js"></script>
-	<script src="assets/js/slick.min.js"></script>
-	<script src="assets/js/parallax.min.js"></script>
-	<script src="assets/js/scripts.js"></script>
-	<script src="assets/js/sscript.js"></script>
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Poppins:wght@300;400;500;600;700;800;900&family=Tektur:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!--=================== SCRIPT	===================-->
+    <script src="assets/js/jquery-2.2.4.min.js"></script>
+    <script src="assets/js/slick.min.js"></script>
+    <script src="assets/js/parallax.min.js"></script>
+    <script src="assets/js/scripts.js"></script>
+    <script src="assets/js/sscript.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Poppins:wght@300;400;500;600;700;800;900&family=Tektur:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
 
-<script>
+    <script>
 
-/* =====================================================
-   PARAKRAM SPORTS ARENA SLIDER
-===================================================== */
+        /* =====================================================
+           PARAKRAM SPORTS ARENA SLIDER
+        ===================================================== */
 
-document.addEventListener("DOMContentLoaded", function () {
+        document.addEventListener("DOMContentLoaded", function () {
 
-    const cards = document.querySelectorAll(".arena-card");
+            const cards = document.querySelectorAll(".arena-card");
 
-    const dots = document.querySelectorAll(".sport-dot");
+            const dots = document.querySelectorAll(".sport-dot");
 
-    const navButtons = document.querySelectorAll(".sport-nav");
+            const navButtons = document.querySelectorAll(".sport-nav");
 
-    const nextButton =
-        document.querySelector(".sports-next");
+            const nextButton =
+                document.querySelector(".sports-next");
 
-    const prevButton =
-        document.querySelector(".sports-prev");
+            const prevButton =
+                document.querySelector(".sports-prev");
 
 
-    let currentIndex = 0;
+            let currentIndex = 0;
 
-    let autoSlide;
+            let autoSlide;
 
 
-    function updateSlider() {
+            function updateSlider() {
 
-        const total = cards.length;
+                const total = cards.length;
 
 
-        cards.forEach((card, index) => {
+                cards.forEach((card, index) => {
 
-            card.classList.remove(
-                "active",
-                "left",
-                "right",
-                "far-left",
-                "far-right"
-            );
-
-
-            let difference =
-                (index - currentIndex + total) % total;
-
-
-            if (difference === 0) {
-
-                card.classList.add("active");
-
-            }
-
-            else if (difference === 1) {
-
-                card.classList.add("right");
-
-            }
-
-            else if (difference === total - 1) {
-
-                card.classList.add("left");
-
-            }
-
-            else if (difference === 2) {
-
-                card.classList.add("far-right");
-
-            }
-
-            else if (difference === total - 2) {
-
-                card.classList.add("far-left");
-
-            }
-
-        });
-
-
-        /* DOTS */
-
-        dots.forEach((dot, index) => {
-
-            dot.classList.toggle(
-                "active",
-                index === currentIndex
-            );
-
-        });
-
-
-        /* SPORT NAVIGATION */
-
-        navButtons.forEach((button, index) => {
-
-            button.classList.toggle(
-                "active",
-                index === currentIndex
-            );
-
-        });
-
-    }
-
-
-    function nextSport() {
-
-        currentIndex++;
-
-        if (currentIndex >= cards.length) {
-            currentIndex = 0;
-        }
-
-        updateSlider();
-
-        restartAutoSlide();
-
-    }
-
-
-    function previousSport() {
-
-        currentIndex--;
-
-        if (currentIndex < 0) {
-            currentIndex = cards.length - 1;
-        }
-
-        updateSlider();
-
-        restartAutoSlide();
-
-    }
-
-
-    /* NEXT */
-
-    nextButton.addEventListener(
-        "click",
-        nextSport
-    );
-
-
-    /* PREVIOUS */
-
-    prevButton.addEventListener(
-        "click",
-        previousSport
-    );
-
-
-    /* DOTS */
-
-    dots.forEach((dot) => {
-
-        dot.addEventListener(
-            "click",
-            function () {
-
-                currentIndex =
-                    Number(this.dataset.index);
-
-                updateSlider();
-
-                restartAutoSlide();
-
-            }
-        );
-
-    });
-
-
-    /* SPORT NAVIGATION */
-
-    navButtons.forEach((button) => {
-
-        button.addEventListener(
-            "click",
-            function () {
-
-                currentIndex =
-                    Number(this.dataset.index);
-
-                updateSlider();
-
-                restartAutoSlide();
-
-            }
-        );
-
-    });
-
-
-    /* AUTO SLIDE */
-
-    function startAutoSlide() {
-
-        autoSlide = setInterval(
-            nextSport,
-            4000
-        );
-
-    }
-
-
-    function restartAutoSlide() {
-
-        clearInterval(autoSlide);
-
-        startAutoSlide();
-
-    }
-
-
-    /* INITIALIZE */
-
-    updateSlider();
-
-    startAutoSlide();
-
-});
-
-</script>
-
-
-<script>
-
-/* =====================================================
-   PARAKRAM 2026
-   SMOOTH INFINITE COORDINATOR CAROUSEL
-===================================================== */
-
-document.addEventListener("DOMContentLoaded", function () {
-
-    const track = document.querySelector(".coordinator-track");
-    const windowElement =
-        document.querySelector(".coordinator-window");
-
-    const nextBtn =
-        document.querySelector(".coordinator-next");
-
-    const prevBtn =
-        document.querySelector(".coordinator-prev");
-
-    const dots =
-        document.querySelectorAll(".coordinator-dot");
-
-    if (!track || !windowElement) {
-        return;
-    }
-
-
-    /* -------------------------------------------------
-       ORIGINAL CARDS
-    ------------------------------------------------- */
-
-    const originalCards =
-        Array.from(track.children);
-
-    const totalCards =
-        originalCards.length;
-
-    if (totalCards === 0) {
-        return;
-    }
-
-
-    /* -------------------------------------------------
-       SETTINGS
-    ------------------------------------------------- */
-
-    let visibleCards = 3;
-    let currentPosition = 0;
-    let isAnimating = false;
-    let autoSlide = null;
-
-    let cloneCount = 3;
-
-
-    /* -------------------------------------------------
-       GET NUMBER OF VISIBLE CARDS
-    ------------------------------------------------- */
-
-    function getVisibleCards() {
-
-        const value =
-            getComputedStyle(windowElement)
-                .getPropertyValue("--visible-cards")
-                .trim();
-
-        return Number(value) || 1;
-    }
-
-
-    /* -------------------------------------------------
-       CREATE INFINITE LOOP
-    ------------------------------------------------- */
-
-    function createInfiniteLoop() {
-
-        /*
-           Remove old clones first.
-        */
-
-        track
-            .querySelectorAll(".coordinator-clone")
-            .forEach(function (clone) {
-                clone.remove();
-            });
-
-
-        visibleCards = getVisibleCards();
-
-        cloneCount =
-            Math.min(visibleCards, totalCards);
-
-
-        /*
-           Clone last cards and place them
-           before the original cards.
-        */
-
-        const beforeClones =
-            originalCards
-                .slice(-cloneCount)
-                .map(function (card) {
-
-                    const clone =
-                        card.cloneNode(true);
-
-                    clone.classList.add(
-                        "coordinator-clone"
+                    card.classList.remove(
+                        "active",
+                        "left",
+                        "right",
+                        "far-left",
+                        "far-right"
                     );
 
-                    return clone;
+
+                    let difference =
+                        (index - currentIndex + total) % total;
+
+
+                    if (difference === 0) {
+
+                        card.classList.add("active");
+
+                    }
+
+                    else if (difference === 1) {
+
+                        card.classList.add("right");
+
+                    }
+
+                    else if (difference === total - 1) {
+
+                        card.classList.add("left");
+
+                    }
+
+                    else if (difference === 2) {
+
+                        card.classList.add("far-right");
+
+                    }
+
+                    else if (difference === total - 2) {
+
+                        card.classList.add("far-left");
+
+                    }
+
                 });
 
 
-        /*
-           Clone first cards and place them
-           after the original cards.
-        */
+                /* DOTS */
 
-        const afterClones =
-            originalCards
-                .slice(0, cloneCount)
-                .map(function (card) {
+                dots.forEach((dot, index) => {
 
-                    const clone =
-                        card.cloneNode(true);
-
-                    clone.classList.add(
-                        "coordinator-clone"
+                    dot.classList.toggle(
+                        "active",
+                        index === currentIndex
                     );
 
-                    return clone;
                 });
 
 
-        /*
-           Add clones.
-        */
+                /* SPORT NAVIGATION */
 
-        beforeClones
-            .reverse()
-            .forEach(function (clone) {
-                track.prepend(clone);
-            });
+                navButtons.forEach((button, index) => {
 
-
-        afterClones
-            .forEach(function (clone) {
-                track.appendChild(clone);
-            });
-
-
-        /*
-           Start on the first REAL card.
-        */
-
-        currentPosition = cloneCount;
-
-        updateCarousel(false);
-    }
-
-
-    /* -------------------------------------------------
-       GET CARD STEP
-    ------------------------------------------------- */
-
-    function getCardStep() {
-
-        const allCards =
-            track.children;
-
-        if (!allCards.length) {
-            return 0;
-        }
-
-
-        const card =
-            allCards[0];
-
-        const cardWidth =
-            card.getBoundingClientRect().width;
-
-
-        const styles =
-            getComputedStyle(track);
-
-        const gap =
-            parseFloat(styles.columnGap || styles.gap) || 0;
-
-
-        return cardWidth + gap;
-    }
-
-
-    /* -------------------------------------------------
-       MOVE CAROUSEL
-    ------------------------------------------------- */
-
-function updateCarousel(animate = true) {
-
-    const allCards = track.children;
-
-    if (!allCards.length) {
-        return;
-    }
-
-    const card = allCards[currentPosition];
-
-    if (!card) {
-        return;
-    }
-
-    /*
-       Get the REAL position of the card inside
-       the track instead of calculating it
-       using currentPosition * step.
-    */
-
-    const cardWidth =
-        card.getBoundingClientRect().width;
-
-    const windowWidth =
-        windowElement.getBoundingClientRect().width;
-
-    const cardLeft =
-        card.offsetLeft;
-
-
-    /*
-       Calculate exactly how far the track
-       must move to put this card in the
-       CENTER of the window.
-    */
-
-    const translateX =
-        (windowWidth / 2) -
-        (cardWidth / 2) -
-        cardLeft;
-
-
-    /*
-       Animation
-    */
-
-    if (!animate) {
-
-        track.style.transition = "none";
-
-    } else {
-
-        track.style.transition =
-            "transform 0.65s cubic-bezier(0.22, 0.61, 0.36, 1)";
-    }
-
-
-    track.style.transform =
-        "translate3d(" +
-        translateX +
-        "px, 0, 0)";
-
-
-    /*
-       Active card
-    */
-
-    Array.from(allCards).forEach(function (item) {
-
-        item.classList.remove("active");
-
-    });
-
-    card.classList.add("active");
-
-
-    /*
-       Find logical original card number
-    */
-
-    let logicalIndex =
-        currentPosition - cloneCount;
-
-
-    if (logicalIndex < 0) {
-
-        logicalIndex =
-            totalCards + logicalIndex;
-
-    }
-
-    if (logicalIndex >= totalCards) {
-
-        logicalIndex =
-            logicalIndex - totalCards;
-
-    }
-
-
-    /*
-       Update dots
-    */
-
-    dots.forEach(function (dot, index) {
-
-        dot.classList.toggle(
-            "active",
-            index === logicalIndex
-        );
-
-    });
-}
-
-    function highlightCenterCard() {
-
-        const carouselRect =
-            windowElement.getBoundingClientRect();
-
-        const centerX =
-            carouselRect.left + carouselRect.width / 2;
-
-        let closestCard = null;
-        let closestDistance = Infinity;
-
-        Array.from(track.children).forEach(function (card) {
-
-            const cardRect = card.getBoundingClientRect();
-            const distance = Math.abs(
-                centerX - (cardRect.left + cardRect.width / 2)
-            );
-
-            if (distance < closestDistance) {
-                closestDistance = distance;
-                closestCard = card;
-            }
-
-            card.classList.remove("active");
-        });
-
-        if (!closestCard) {
-            return;
-        }
-
-        closestCard.classList.add("active");
-
-        let logicalIndex =
-            Array.from(track.children).indexOf(closestCard) - cloneCount;
-
-        logicalIndex =
-            ((logicalIndex % totalCards) + totalCards) % totalCards;
-
-        dots.forEach(function (dot, index) {
-            dot.classList.toggle("active", index === logicalIndex);
-        });
-    }
-
-    let carouselVisible = true;
-    const visibilityObserver =
-        new IntersectionObserver(function (entries) {
-            carouselVisible = entries[0].isIntersecting;
-        }, { threshold: 0.01 });
-
-    visibilityObserver.observe(windowElement);
-
-    const centerHighlightTimer = setInterval(function () {
-        if (carouselVisible) {
-            highlightCenterCard();
-        }
-    }, 120);
-
-    function getCenteredTranslate(position) {
-
-        const card = track.children[position];
-
-        if (!card) {
-            return 0;
-        }
-
-        const cardWidth = card.getBoundingClientRect().width;
-        const windowWidth = windowElement.getBoundingClientRect().width;
-
-        return (windowWidth / 2) -
-            (cardWidth / 2) -
-            card.offsetLeft;
-    }
-
-    function startContinuousCarousel() {
-
-        const startPosition = cloneCount;
-        const endPosition = cloneCount + totalCards;
-
-        track.style.setProperty(
-            "--coordinator-start",
-            getCenteredTranslate(startPosition) + "px"
-        );
-
-        track.style.setProperty(
-            "--coordinator-end",
-            getCenteredTranslate(endPosition) + "px"
-        );
-
-        track.classList.remove("coordinator-continuous");
-        void track.offsetWidth;
-        track.classList.add("coordinator-continuous");
-    }
-
-    function getContinuousAnimation() {
-
-        return track.getAnimations().find(function (animation) {
-            return animation.animationName ===
-                "coordinator-continuous";
-        });
-    }
-
-    function moveCarouselBy(cardCount) {
-
-        const animation = getContinuousAnimation();
-
-        if (!animation) {
-            return;
-        }
-
-        const duration =
-            animation.effect.getComputedTiming().duration;
-
-        const cardStep = duration / totalCards;
-        const startTime = Number(animation.currentTime) || 0;
-        const targetTime = startTime + cardCount * cardStep;
-        const wasRunning = animation.playState === "running";
-        const startTimestamp = performance.now();
-        const moveDuration = 600;
-
-        if (animation.coordinatorArrowFrame) {
-            cancelAnimationFrame(animation.coordinatorArrowFrame);
-        }
-
-        animation.pause();
-
-        function animateArrow(timestamp) {
-
-            const progress = Math.min(
-                (timestamp - startTimestamp) / moveDuration,
-                1
-            );
-
-            const easedProgress =
-                progress < 0.5
-                    ? 2 * progress * progress
-                    : 1 - Math.pow(-2 * progress + 2, 2) / 2;
-
-            animation.currentTime =
-                startTime + (targetTime - startTime) * easedProgress;
-
-            if (progress < 1) {
-                animation.coordinatorArrowFrame =
-                    requestAnimationFrame(animateArrow);
-                return;
-            }
-
-            animation.currentTime =
-                ((targetTime % duration) + duration) % duration;
-
-            animation.coordinatorArrowFrame = null;
-
-            if (wasRunning) {
-                animation.play();
-            }
-
-            highlightCenterCard();
-        }
-
-        animation.coordinatorArrowFrame =
-            requestAnimationFrame(animateArrow);
-    }
-
-    /* -------------------------------------------------
-       NEXT
-    ------------------------------------------------- */
-
-    function nextCoordinator() {
-        moveCarouselBy(1);
-    }
-
-
-    /* -------------------------------------------------
-       PREVIOUS
-    ------------------------------------------------- */
-
-    function previousCoordinator() {
-        moveCarouselBy(-1);
-    }
-
-
-    /* -------------------------------------------------
-       DOT CLICK
-    ------------------------------------------------- */
-
-    dots.forEach(function (dot) {
-
-        dot.addEventListener("click", function () {
-
-            const target =
-                Number(this.dataset.index);
-
-
-            if (
-                Number.isNaN(target) ||
-                target < 0 ||
-                target >= totalCards
-            ) {
-                return;
-            }
-
-
-            const currentDot =
-                Array.from(dots).findIndex(function (item) {
-                    return item.classList.contains("active");
-                });
-
-            moveCarouselBy(target - currentDot);
-
-        });
-
-    });
-
-
-    /* -------------------------------------------------
-       NEXT BUTTON
-    ------------------------------------------------- */
-
-    if (nextBtn) {
-
-        nextBtn.addEventListener(
-            "click",
-            nextCoordinator
-        );
-
-    }
-
-
-    /* -------------------------------------------------
-       PREVIOUS BUTTON
-    ------------------------------------------------- */
-
-    if (prevBtn) {
-
-        prevBtn.addEventListener(
-            "click",
-            previousCoordinator
-        );
-
-    }
-
-    track.addEventListener("pointerover", function (event) {
-
-        const photo = event.target.closest(".coordinator-photo");
-
-        if (photo && !photo.contains(event.relatedTarget)) {
-            const animation = getContinuousAnimation();
-
-            if (animation) {
-                animation.pause();
-            }
-        }
-    });
-
-    track.addEventListener("pointerout", function (event) {
-
-        const photo = event.target.closest(".coordinator-photo");
-
-        if (photo && !photo.contains(event.relatedTarget)) {
-            const animation = getContinuousAnimation();
-
-            if (animation) {
-                animation.play();
-            }
-        }
-    });
-
-
-    /* -------------------------------------------------
-       INFINITE LOOP RESET
-    ------------------------------------------------- */
-
-    track.addEventListener(
-        "transitionend",
-        function (event) {
-
-            if (
-                event.propertyName !== "transform"
-            ) {
-                return;
-            }
-
-
-            /*
-               We reached the cloned cards
-               after the final real card.
-            */
-
-            if (
-                currentPosition >=
-                cloneCount + totalCards
-            ) {
-
-                currentPosition =
-                    cloneCount;
-
-
-                updateCarousel(false);
-            }
-
-
-            /*
-               We reached the cloned cards
-               before the first real card.
-            */
-
-            else if (
-                currentPosition < cloneCount
-            ) {
-
-                currentPosition =
-                    cloneCount +
-                    totalCards -
-                    1;
-
-
-                updateCarousel(false);
-            }
-
-
-            /*
-               Allow next movement.
-            */
-
-            requestAnimationFrame(function () {
-
-                requestAnimationFrame(function () {
-
-                    isAnimating = false;
+                    button.classList.toggle(
+                        "active",
+                        index === currentIndex
+                    );
 
                 });
 
-            });
-
-        }
-    );
+            }
 
 
-    /* -------------------------------------------------
-       AUTO SLIDE
-    ------------------------------------------------- */
+            function nextSport() {
 
-    function startAutoSlide() {
+                currentIndex++;
 
-        clearInterval(autoSlide);
-
-
-        autoSlide =
-            setInterval(function () {
-
-                if (!isAnimating) {
-                    nextCoordinator();
+                if (currentIndex >= cards.length) {
+                    currentIndex = 0;
                 }
 
-            }, 4000);
-    }
+                updateSlider();
+
+                restartAutoSlide();
+
+            }
 
 
-    function restartAutoSlide() {
+            function previousSport() {
 
-        clearInterval(autoSlide);
+                currentIndex--;
 
-        startAutoSlide();
+                if (currentIndex < 0) {
+                    currentIndex = cards.length - 1;
+                }
 
-    }
+                updateSlider();
 
+                restartAutoSlide();
 
-    const carousel =
-        document.querySelector(
-            ".coordinator-carousel"
-        );
-
-
-    /* -------------------------------------------------
-       TOUCH / SWIPE
-    ------------------------------------------------- */
-
-    let touchStartX = 0;
-    let touchEndX = 0;
+            }
 
 
-    if (carousel) {
+            /* NEXT */
 
-        carousel.addEventListener(
-            "touchstart",
-            function (event) {
-
-                touchStartX =
-                    event.changedTouches[0].screenX;
-
-            },
-            { passive: true }
-        );
+            nextButton.addEventListener(
+                "click",
+                nextSport
+            );
 
 
-        carousel.addEventListener(
-            "touchend",
-            function (event) {
+            /* PREVIOUS */
 
-                touchEndX =
-                    event.changedTouches[0].screenX;
-
-
-                const difference =
-                    touchStartX - touchEndX;
+            prevButton.addEventListener(
+                "click",
+                previousSport
+            );
 
 
-                if (Math.abs(difference) < 50) {
+            /* DOTS */
+
+            dots.forEach((dot) => {
+
+                dot.addEventListener(
+                    "click",
+                    function () {
+
+                        currentIndex =
+                            Number(this.dataset.index);
+
+                        updateSlider();
+
+                        restartAutoSlide();
+
+                    }
+                );
+
+            });
+
+
+            /* SPORT NAVIGATION */
+
+            navButtons.forEach((button) => {
+
+                button.addEventListener(
+                    "click",
+                    function () {
+
+                        currentIndex =
+                            Number(this.dataset.index);
+
+                        updateSlider();
+
+                        restartAutoSlide();
+
+                    }
+                );
+
+            });
+
+
+            /* AUTO SLIDE */
+
+            function startAutoSlide() {
+
+                autoSlide = setInterval(
+                    nextSport,
+                    4000
+                );
+
+            }
+
+
+            function restartAutoSlide() {
+
+                clearInterval(autoSlide);
+
+                startAutoSlide();
+
+            }
+
+
+            /* INITIALIZE */
+
+            updateSlider();
+
+            startAutoSlide();
+
+        });
+
+    </script>
+
+
+    <script>
+
+        /* =====================================================
+           PARAKRAM 2026
+           SMOOTH INFINITE COORDINATOR CAROUSEL
+        ===================================================== */
+
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const track = document.querySelector(".coordinator-track");
+            const windowElement =
+                document.querySelector(".coordinator-window");
+
+            const nextBtn =
+                document.querySelector(".coordinator-next");
+
+            const prevBtn =
+                document.querySelector(".coordinator-prev");
+
+            const dots =
+                document.querySelectorAll(".coordinator-dot");
+
+            if (!track || !windowElement) {
+                return;
+            }
+
+
+            /* -------------------------------------------------
+               ORIGINAL CARDS
+            ------------------------------------------------- */
+
+            const originalCards =
+                Array.from(track.children);
+
+            const totalCards =
+                originalCards.length;
+
+            if (totalCards === 0) {
+                return;
+            }
+
+
+            /* -------------------------------------------------
+               SETTINGS
+            ------------------------------------------------- */
+
+            let visibleCards = 3;
+            let currentPosition = 0;
+            let isAnimating = false;
+            let autoSlide = null;
+
+            let cloneCount = 3;
+
+
+            /* -------------------------------------------------
+               GET NUMBER OF VISIBLE CARDS
+            ------------------------------------------------- */
+
+            function getVisibleCards() {
+
+                const value =
+                    getComputedStyle(windowElement)
+                        .getPropertyValue("--visible-cards")
+                        .trim();
+
+                return Number(value) || 1;
+            }
+
+
+            /* -------------------------------------------------
+               CREATE INFINITE LOOP
+            ------------------------------------------------- */
+
+            function createInfiniteLoop() {
+
+                /*
+                   Remove old clones first.
+                */
+
+                track
+                    .querySelectorAll(".coordinator-clone")
+                    .forEach(function (clone) {
+                        clone.remove();
+                    });
+
+
+                visibleCards = getVisibleCards();
+
+                cloneCount =
+                    Math.min(visibleCards, totalCards);
+
+
+                /*
+                   Clone last cards and place them
+                   before the original cards.
+                */
+
+                const beforeClones =
+                    originalCards
+                        .slice(-cloneCount)
+                        .map(function (card) {
+
+                            const clone =
+                                card.cloneNode(true);
+
+                            clone.classList.add(
+                                "coordinator-clone"
+                            );
+
+                            return clone;
+                        });
+
+
+                /*
+                   Clone first cards and place them
+                   after the original cards.
+                */
+
+                const afterClones =
+                    originalCards
+                        .slice(0, cloneCount)
+                        .map(function (card) {
+
+                            const clone =
+                                card.cloneNode(true);
+
+                            clone.classList.add(
+                                "coordinator-clone"
+                            );
+
+                            return clone;
+                        });
+
+
+                /*
+                   Add clones.
+                */
+
+                beforeClones
+                    .reverse()
+                    .forEach(function (clone) {
+                        track.prepend(clone);
+                    });
+
+
+                afterClones
+                    .forEach(function (clone) {
+                        track.appendChild(clone);
+                    });
+
+
+                /*
+                   Start on the first REAL card.
+                */
+
+                currentPosition = cloneCount;
+
+                updateCarousel(false);
+            }
+
+
+            /* -------------------------------------------------
+               GET CARD STEP
+            ------------------------------------------------- */
+
+            function getCardStep() {
+
+                const allCards =
+                    track.children;
+
+                if (!allCards.length) {
+                    return 0;
+                }
+
+
+                const card =
+                    allCards[0];
+
+                const cardWidth =
+                    card.getBoundingClientRect().width;
+
+
+                const styles =
+                    getComputedStyle(track);
+
+                const gap =
+                    parseFloat(styles.columnGap || styles.gap) || 0;
+
+
+                return cardWidth + gap;
+            }
+
+
+            /* -------------------------------------------------
+               MOVE CAROUSEL
+            ------------------------------------------------- */
+
+            function updateCarousel(animate = true) {
+
+                const allCards = track.children;
+
+                if (!allCards.length) {
                     return;
                 }
 
+                const card = allCards[currentPosition];
 
-                if (difference > 0) {
+                if (!card) {
+                    return;
+                }
 
-                    nextCoordinator();
+                /*
+                   Get the REAL position of the card inside
+                   the track instead of calculating it
+                   using currentPosition * step.
+                */
+
+                const cardWidth =
+                    card.getBoundingClientRect().width;
+
+                const windowWidth =
+                    windowElement.getBoundingClientRect().width;
+
+                const cardLeft =
+                    card.offsetLeft;
+
+
+                /*
+                   Calculate exactly how far the track
+                   must move to put this card in the
+                   CENTER of the window.
+                */
+
+                const translateX =
+                    (windowWidth / 2) -
+                    (cardWidth / 2) -
+                    cardLeft;
+
+
+                /*
+                   Animation
+                */
+
+                if (!animate) {
+
+                    track.style.transition = "none";
 
                 } else {
 
-                    previousCoordinator();
+                    track.style.transition =
+                        "transform 0.65s cubic-bezier(0.22, 0.61, 0.36, 1)";
+                }
+
+
+                track.style.transform =
+                    "translate3d(" +
+                    translateX +
+                    "px, 0, 0)";
+
+
+                /*
+                   Active card
+                */
+
+                Array.from(allCards).forEach(function (item) {
+
+                    item.classList.remove("active");
+
+                });
+
+                card.classList.add("active");
+
+
+                /*
+                   Find logical original card number
+                */
+
+                let logicalIndex =
+                    currentPosition - cloneCount;
+
+
+                if (logicalIndex < 0) {
+
+                    logicalIndex =
+                        totalCards + logicalIndex;
 
                 }
 
-            },
-            { passive: true }
-        );
+                if (logicalIndex >= totalCards) {
 
-    }
+                    logicalIndex =
+                        logicalIndex - totalCards;
 
-
-    /* -------------------------------------------------
-       RESIZE
-    ------------------------------------------------- */
-
-    let resizeTimer;
+                }
 
 
-    window.addEventListener(
-        "resize",
-        function () {
+                /*
+                   Update dots
+                */
 
-            clearTimeout(resizeTimer);
+                dots.forEach(function (dot, index) {
+
+                    dot.classList.toggle(
+                        "active",
+                        index === logicalIndex
+                    );
+
+                });
+            }
+
+            function highlightCenterCard() {
+
+                const carouselRect =
+                    windowElement.getBoundingClientRect();
+
+                const centerX =
+                    carouselRect.left + carouselRect.width / 2;
+
+                let closestCard = null;
+                let closestDistance = Infinity;
+
+                Array.from(track.children).forEach(function (card) {
+
+                    const cardRect = card.getBoundingClientRect();
+                    const distance = Math.abs(
+                        centerX - (cardRect.left + cardRect.width / 2)
+                    );
+
+                    if (distance < closestDistance) {
+                        closestDistance = distance;
+                        closestCard = card;
+                    }
+
+                    card.classList.remove("active");
+                });
+
+                if (!closestCard) {
+                    return;
+                }
+
+                closestCard.classList.add("active");
+
+                let logicalIndex =
+                    Array.from(track.children).indexOf(closestCard) - cloneCount;
+
+                logicalIndex =
+                    ((logicalIndex % totalCards) + totalCards) % totalCards;
+
+                dots.forEach(function (dot, index) {
+                    dot.classList.toggle("active", index === logicalIndex);
+                });
+            }
+
+            let carouselVisible = true;
+            const visibilityObserver =
+                new IntersectionObserver(function (entries) {
+                    carouselVisible = entries[0].isIntersecting;
+                }, { threshold: 0.01 });
+
+            visibilityObserver.observe(windowElement);
+
+            const centerHighlightTimer = setInterval(function () {
+                if (carouselVisible) {
+                    highlightCenterCard();
+                }
+            }, 120);
+
+            function getCenteredTranslate(position) {
+
+                const card = track.children[position];
+
+                if (!card) {
+                    return 0;
+                }
+
+                const cardWidth = card.getBoundingClientRect().width;
+                const windowWidth = windowElement.getBoundingClientRect().width;
+
+                return (windowWidth / 2) -
+                    (cardWidth / 2) -
+                    card.offsetLeft;
+            }
+
+            function startContinuousCarousel() {
+
+                const startPosition = cloneCount;
+                const endPosition = cloneCount + totalCards;
+
+                track.style.setProperty(
+                    "--coordinator-start",
+                    getCenteredTranslate(startPosition) + "px"
+                );
+
+                track.style.setProperty(
+                    "--coordinator-end",
+                    getCenteredTranslate(endPosition) + "px"
+                );
+
+                track.classList.remove("coordinator-continuous");
+                void track.offsetWidth;
+                track.classList.add("coordinator-continuous");
+            }
+
+            function getContinuousAnimation() {
+
+                return track.getAnimations().find(function (animation) {
+                    return animation.animationName ===
+                        "coordinator-continuous";
+                });
+            }
+
+            function moveCarouselBy(cardCount) {
+
+                const animation = getContinuousAnimation();
+
+                if (!animation) {
+                    return;
+                }
+
+                const duration =
+                    animation.effect.getComputedTiming().duration;
+
+                const cardStep = duration / totalCards;
+                const startTime = Number(animation.currentTime) || 0;
+                const targetTime = startTime + cardCount * cardStep;
+                const wasRunning = animation.playState === "running";
+                const startTimestamp = performance.now();
+                const moveDuration = 600;
+
+                if (animation.coordinatorArrowFrame) {
+                    cancelAnimationFrame(animation.coordinatorArrowFrame);
+                }
+
+                animation.pause();
+
+                function animateArrow(timestamp) {
+
+                    const progress = Math.min(
+                        (timestamp - startTimestamp) / moveDuration,
+                        1
+                    );
+
+                    const easedProgress =
+                        progress < 0.5
+                            ? 2 * progress * progress
+                            : 1 - Math.pow(-2 * progress + 2, 2) / 2;
+
+                    animation.currentTime =
+                        startTime + (targetTime - startTime) * easedProgress;
+
+                    if (progress < 1) {
+                        animation.coordinatorArrowFrame =
+                            requestAnimationFrame(animateArrow);
+                        return;
+                    }
+
+                    animation.currentTime =
+                        ((targetTime % duration) + duration) % duration;
+
+                    animation.coordinatorArrowFrame = null;
+
+                    if (wasRunning) {
+                        animation.play();
+                    }
+
+                    highlightCenterCard();
+                }
+
+                animation.coordinatorArrowFrame =
+                    requestAnimationFrame(animateArrow);
+            }
+
+            /* -------------------------------------------------
+               NEXT
+            ------------------------------------------------- */
+
+            function nextCoordinator() {
+                moveCarouselBy(1);
+            }
 
 
-            resizeTimer =
-                setTimeout(function () {
+            /* -------------------------------------------------
+               PREVIOUS
+            ------------------------------------------------- */
+
+            function previousCoordinator() {
+                moveCarouselBy(-1);
+            }
+
+
+            /* -------------------------------------------------
+               DOT CLICK
+            ------------------------------------------------- */
+
+            dots.forEach(function (dot) {
+
+                dot.addEventListener("click", function () {
+
+                    const target =
+                        Number(this.dataset.index);
+
+
+                    if (
+                        Number.isNaN(target) ||
+                        target < 0 ||
+                        target >= totalCards
+                    ) {
+                        return;
+                    }
+
+
+                    const currentDot =
+                        Array.from(dots).findIndex(function (item) {
+                            return item.classList.contains("active");
+                        });
+
+                    moveCarouselBy(target - currentDot);
+
+                });
+
+            });
+
+
+            /* -------------------------------------------------
+               NEXT BUTTON
+            ------------------------------------------------- */
+
+            if (nextBtn) {
+
+                nextBtn.addEventListener(
+                    "click",
+                    nextCoordinator
+                );
+
+            }
+
+
+            /* -------------------------------------------------
+               PREVIOUS BUTTON
+            ------------------------------------------------- */
+
+            if (prevBtn) {
+
+                prevBtn.addEventListener(
+                    "click",
+                    previousCoordinator
+                );
+
+            }
+
+            track.addEventListener("pointerover", function (event) {
+
+                const photo = event.target.closest(".coordinator-photo");
+
+                if (photo && !photo.contains(event.relatedTarget)) {
+                    const animation = getContinuousAnimation();
+
+                    if (animation) {
+                        animation.pause();
+                    }
+                }
+            });
+
+            track.addEventListener("pointerout", function (event) {
+
+                const photo = event.target.closest(".coordinator-photo");
+
+                if (photo && !photo.contains(event.relatedTarget)) {
+                    const animation = getContinuousAnimation();
+
+                    if (animation) {
+                        animation.play();
+                    }
+                }
+            });
+
+
+            /* -------------------------------------------------
+               INFINITE LOOP RESET
+            ------------------------------------------------- */
+
+            track.addEventListener(
+                "transitionend",
+                function (event) {
+
+                    if (
+                        event.propertyName !== "transform"
+                    ) {
+                        return;
+                    }
+
 
                     /*
-                       Rebuild because the number
-                       of visible cards may change.
+                       We reached the cloned cards
+                       after the final real card.
                     */
 
-                    createInfiniteLoop();
-                    startContinuousCarousel();
+                    if (
+                        currentPosition >=
+                        cloneCount + totalCards
+                    ) {
 
-                    isAnimating = false;
-
-                }, 150);
-
-        }
-    );
+                        currentPosition =
+                            cloneCount;
 
 
-    /* -------------------------------------------------
-       INITIALIZE
-    ------------------------------------------------- */
+                        updateCarousel(false);
+                    }
 
-    createInfiniteLoop();
-    startContinuousCarousel();
-    highlightCenterCard();
 
-});
+                    /*
+                       We reached the cloned cards
+                       before the first real card.
+                    */
 
-</script>
-</body>	
+                    else if (
+                        currentPosition < cloneCount
+                    ) {
+
+                        currentPosition =
+                            cloneCount +
+                            totalCards -
+                            1;
+
+
+                        updateCarousel(false);
+                    }
+
+
+                    /*
+                       Allow next movement.
+                    */
+
+                    requestAnimationFrame(function () {
+
+                        requestAnimationFrame(function () {
+
+                            isAnimating = false;
+
+                        });
+
+                    });
+
+                }
+            );
+
+
+            /* -------------------------------------------------
+               AUTO SLIDE
+            ------------------------------------------------- */
+
+            function startAutoSlide() {
+
+                clearInterval(autoSlide);
+
+
+                autoSlide =
+                    setInterval(function () {
+
+                        if (!isAnimating) {
+                            nextCoordinator();
+                        }
+
+                    }, 4000);
+            }
+
+
+            function restartAutoSlide() {
+
+                clearInterval(autoSlide);
+
+                startAutoSlide();
+
+            }
+
+
+            const carousel =
+                document.querySelector(
+                    ".coordinator-carousel"
+                );
+
+
+            /* -------------------------------------------------
+               TOUCH / SWIPE
+            ------------------------------------------------- */
+
+            let touchStartX = 0;
+            let touchEndX = 0;
+
+
+            if (carousel) {
+
+                carousel.addEventListener(
+                    "touchstart",
+                    function (event) {
+
+                        touchStartX =
+                            event.changedTouches[0].screenX;
+
+                    },
+                    { passive: true }
+                );
+
+
+                carousel.addEventListener(
+                    "touchend",
+                    function (event) {
+
+                        touchEndX =
+                            event.changedTouches[0].screenX;
+
+
+                        const difference =
+                            touchStartX - touchEndX;
+
+
+                        if (Math.abs(difference) < 50) {
+                            return;
+                        }
+
+
+                        if (difference > 0) {
+
+                            nextCoordinator();
+
+                        } else {
+
+                            previousCoordinator();
+
+                        }
+
+                    },
+                    { passive: true }
+                );
+
+            }
+
+
+            /* -------------------------------------------------
+               RESIZE
+            ------------------------------------------------- */
+
+            let resizeTimer;
+
+
+            window.addEventListener(
+                "resize",
+                function () {
+
+                    clearTimeout(resizeTimer);
+
+
+                    resizeTimer =
+                        setTimeout(function () {
+
+                            /*
+                               Rebuild because the number
+                               of visible cards may change.
+                            */
+
+                            createInfiniteLoop();
+                            startContinuousCarousel();
+
+                            isAnimating = false;
+
+                        }, 150);
+
+                }
+            );
+
+
+            /* -------------------------------------------------
+               INITIALIZE
+            ------------------------------------------------- */
+
+            createInfiniteLoop();
+            startContinuousCarousel();
+            highlightCenterCard();
+
+        });
+
+    </script>
+</body>
 
 </html>
