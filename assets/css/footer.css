@@ -1,74 +1,94 @@
+/* ==========================================
+   Responsive Footer Design System
+   ========================================== */
 
 .footer {
   width: 100%;
-position: relative;
-left: 0;
-bottom: 0;
-display: flex;
-flex-wrap: wrap;
-padding-top: 100px;
-color: #fff;
-background: url(../images/footer-bg.png) top center no-repeat;
-background-size: 80% auto;
+  position: relative;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  padding-top: 80px;
+  padding-bottom: 2.5rem;
+  color: #ffffff;
+  background: #111111 url(../images/footer-bg.png) top center no-repeat;
+  background-size: cover;
   animation: fadeInUp 0.5s ease forwards;
-  padding-bottom: 2rem;
+  box-sizing: border-box;
 }
 
 @keyframes fadeInUp {
   from {
-      opacity: 0;
-      transform: translateY(50px);
+    opacity: 0;
+    transform: translateY(30px);
   }
   to {
-      opacity: 1;
-      transform: translateY(0);
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-.container {
+.footer .container {
   max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 1.5rem;
+  box-sizing: border-box;
 }
 
+/* Footer Top (Logos) */
 .footer-top {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 3rem;
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  gap: 1.5rem;
 }
 
-.logo {
-  width: auto;
-  height: 60px;
-  transition: transform 0.3s ease;
+.footer-top a {
+  display: inline-block;
 }
 
-.logo:hover {
-  transform: scale(1.1) rotate(5deg);
+.footer .logo {
+  max-width: 180px;
+  height: auto;
+  max-height: 65px;
+  object-fit: contain;
+  transition: transform 0.3s ease, filter 0.3s ease;
 }
 
+.footer .logo:hover {
+  transform: scale(1.05);
+  filter: brightness(1.15);
+}
+
+/* Footer Grid Content */
 .footer-content {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 2rem;
-  margin-bottom: 3rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2.5rem;
+  margin-bottom: 2.5rem;
 }
 
 .footer-section {
-  flex: 1;
-  min-width: 200px;
+  display: flex;
+  flex-direction: column;
   animation: fadeInUp 0.5s ease forwards;
-  animation-delay: 0.2s;
+  animation-delay: 0.15s;
   opacity: 0;
 }
 
 .footer-section h3 {
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
   position: relative;
-  padding-bottom: 0.5rem;
+  padding-bottom: 0.6rem;
+  color: #ffffff;
+  letter-spacing: 0.5px;
 }
 
 .footer-section h3::after {
@@ -76,138 +96,189 @@ background-size: 80% auto;
   position: absolute;
   left: 0;
   bottom: 0;
-  width: 40px;
-  height: 2px;
-  background-color: #75dab4;
-  transform: scaleX(0);
-  transition: transform 0.3s ease;
+  width: 45px;
+  height: 3px;
+  background: linear-gradient(90deg, #75dab4, #3aabba);
+  border-radius: 2px;
+  transform-origin: left;
+  transition: transform 0.3s ease, width 0.3s ease;
 }
 
 .footer-section:hover h3::after {
-  transform: scaleX(1);
+  width: 65px;
 }
 
 .footer-section ul {
-  list-style-type: none;
+  list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 .footer-section ul li {
-  margin-bottom: 0.5rem;
-  transition: transform 0.2s ease, color 0.2s ease;
+  margin-bottom: 0.75rem;
 }
 
-.footer-section ul li:hover {
-  transform: translateX(5px);
+.footer-section ul li a {
+  text-decoration: none;
+  color: #cbd5e0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  display: inline-block;
+  transition: transform 0.25s ease, color 0.25s ease;
+  padding: 2px 0;
+}
+
+.footer-section ul li a:hover {
+  transform: translateX(6px);
   color: #75dab4;
 }
 
-.footer-section a {
-  text-decoration: none;
-  color: inherit;
-}
-
+/* Social Icons */
 .social-icons {
   display: flex;
-  gap: 1rem;
-  margin-top: 1rem;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  margin-top: 0.5rem;
 }
 
 .social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
   color: #ffffff;
-  font-size: 1.5rem;
-  transition: color 0.3s ease, transform 0.3s ease;
+  font-size: 1.2rem;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .social-icon:hover {
-  transform: scale(1.2) rotate(15deg);
+  transform: translateY(-4px) scale(1.1);
+  background: #ffffff;
 }
 
+.social-icons a[aria-label="Facebook"]:hover { color: #3b5998; background: #ffffff; }
+.social-icons a[aria-label="Instagram"]:hover { color: #e1306c; background: #ffffff; }
+.social-icons a[aria-label="Twitter"]:hover { color: #1da1f2; background: #ffffff; }
+.social-icons a[aria-label="LinkedIn"]:hover { color: #0077b5; background: #ffffff; }
+.social-icons a[aria-label="YouTube"]:hover { color: #ff0000; background: #ffffff; }
+
+/* Footer Bottom */
 .footer-bottom {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
-  padding-top: 2rem;
+  padding-top: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
   text-align: center;
   animation: fadeInUp 0.5s ease forwards;
-  animation-delay: 0.4s;
+  animation-delay: 0.3s;
   opacity: 0;
 }
 
 .footer-bottom nav {
-  margin-bottom: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
 }
 
 .footer-bottom a {
   color: #a0aec0;
   text-decoration: none;
-  margin: 0 1rem;
+  font-size: 0.95rem;
+  font-weight: 500;
   transition: color 0.3s ease, transform 0.3s ease;
   display: inline-block;
 }
 
 .footer-bottom a:hover {
-  color: #ffffff;
+  color: #75dab4;
   transform: translateY(-2px);
 }
 
 .copyright {
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   color: #718096;
+  line-height: 1.5;
 }
 
+/* ==========================================
+   Responsive Breakpoints
+   ========================================== */
+
+/* Tablet & Mobile (<= 768px) */
 @media (max-width: 768px) {
+  .footer {
+    padding-top: 50px;
+    padding-bottom: 2rem;
+  }
+
   .footer-top {
-      flex-direction: column;
-      gap: 2rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+  }
+
+  .footer .logo {
+    max-height: 55px;
   }
 
   .footer-content {
-      flex-direction: column;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
   }
 
   .footer-section {
-      text-align: center;
+    align-items: center;
   }
 
   .footer-section h3::after {
-      left: 50%;
-      transform: translateX(-50%) scaleX(0);
+    left: 50%;
+    transform: translateX(-50%);
   }
 
-  .footer-section:hover h3::after {
-      transform: translateX(-50%) scaleX(1);
+  .footer-section ul li a:hover {
+    transform: translateY(-2px);
   }
 
   .social-icons {
-      justify-content: center;
-  }
-
-  .footer-bottom a {
-      display: block;
-      margin: 0.5rem 0;
+    justify-content: center;
   }
 }
 
+/* Small Mobile Devices (<= 480px) */
+@media (max-width: 480px) {
+  .footer .container {
+    padding: 0 1rem;
+  }
 
-.footer-section .social-icons a:hover {
-  color: #000; /* General hover color, which will be overridden */
-}
+  .footer .logo {
+    max-height: 48px;
+    max-width: 150px;
+  }
 
-.footer-section .social-icons a[aria-label="Facebook"]:hover {
-  color: #3b5998; /* Facebook blue */
-}
+  .footer-section h3 {
+    font-size: 1.15rem;
+  }
 
-.footer-section .social-icons a[aria-label="Instagram"]:hover {
-  color: #e1306c; /* Instagram pink */
-}
+  .footer-section ul li a {
+    font-size: 0.9rem;
+  }
 
-.footer-section .social-icons a[aria-label="Twitter"]:hover {
-  color: #1da1f2; /* Twitter blue */
-}
-
-.footer-section .social-icons a[aria-label="LinkedIn"]:hover {
-  color: #0077b5; /* LinkedIn blue */
-}
-
-.footer-section .social-icons a[aria-label="YouTube"]:hover {
-  color: #ff0000; /* YouTube red */
+  .social-icon {
+    width: 38px;
+    height: 38px;
+    font-size: 1.05rem;
+  }
 }
