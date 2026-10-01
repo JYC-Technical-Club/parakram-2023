@@ -17,16 +17,34 @@
 <link rel="stylesheet" href="assets/css/footer.css">
 <link rel="icon" href="photosc/fevicon.avif">
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
 <style>
-  /* Fixtures page — day-tab styling only, reuses the site's existing look */
-  .fixtures-tabs { display:flex; justify-content:center; gap:16px; margin: 20px 0 40px; flex-wrap:wrap; }
-  .fixtures-tab-btn { padding:10px 28px; border:2px solid #3AABBA; border-radius:30px; background:transparent; color:#fff; font-weight:600; cursor:pointer; transition:all .25s ease; font-family:inherit; font-size:15px; }
-  .fixtures-tab-btn.active, .fixtures-tab-btn:hover { background:#3AABBA; color:#0b0b0b; }
+  /* Fixtures page styling */
+  .fixtures-tabs { display:flex; justify-content:center; gap:16px; margin: 20px 0 25px; flex-wrap:wrap; }
+  .fixtures-tab-btn { padding:10px 32px; border:2px solid #3AABBA; border-radius:30px; background:transparent; color:#fff; font-weight:700; cursor:pointer; transition:all .25s ease; font-family:inherit; font-size:16px; letter-spacing:0.5px; }
+  .fixtures-tab-btn.active, .fixtures-tab-btn:hover { background:#3AABBA; color:#0b0b0b; box-shadow: 0 0 15px rgba(58, 171, 186, 0.4); }
+  
+  .sport-filter-tabs { display:flex; justify-content:center; gap:10px; margin: 0 auto 35px; flex-wrap:wrap; max-width:960px; }
+  .sport-filter-btn { padding:7px 18px; border:1px solid rgba(58, 171, 186, 0.35); border-radius:20px; background:rgba(255, 255, 255, 0.03); color:#cbd5e1; font-size:13px; font-weight:600; cursor:pointer; transition:all 0.2s ease; font-family:inherit; }
+  .sport-filter-btn:hover, .sport-filter-btn.active { background:#3AABBA; color:#0b0b0b; border-color:#3AABBA; }
+
   .fixtures-day { display:none; }
   .fixtures-day.active { display:block; }
-  .fixtures-day table { width:100%; border-collapse:collapse; margin-top:16px; }
-  .fixtures-day th, .fixtures-day td { padding:12px 16px; text-align:left; border-bottom:1px solid rgba(255,255,255,0.15); color:#fff; }
-  .fixtures-day th { color:#3AABBA; text-transform:uppercase; font-size:13px; letter-spacing:1px; }
+  
+  .fixture-sport-block { margin-bottom: 35px; background: rgba(255, 255, 255, 0.02); border-radius: 4px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.05); }
+  .training-schedule-top { border-top: 2px solid #3AABBA; background-color: #272a31; line-height: 44px; padding: 0 18px; margin: 0; color: #fff; font-size: 20px; display: flex; align-items: center; gap: 10px; letter-spacing: 0.5px; }
+  .training-schedule-top i { color: #3AABBA; font-size: 18px; }
+  
+  .fixtures-table-wrap { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .fixtures-day table { width:100%; border-collapse:collapse; margin: 0; }
+  .fixtures-day th, .fixtures-day td { padding:14px 18px; text-align:left; border-bottom:1px solid rgba(255,255,255,0.12); color:#fff; }
+  .fixtures-day th { color:#3AABBA; text-transform:uppercase; font-size:13px; letter-spacing:1px; background: rgba(0, 0, 0, 0.25); font-weight: 700; }
+  .fixtures-day tbody tr { transition: background-color 0.2s ease; }
+  .fixtures-day tbody tr:hover { background-color: rgba(58, 171, 186, 0.08); }
+  .fixtures-day td.fixture-time { font-weight: 600; color: #3AABBA; white-space: nowrap; width: 20%; min-width: 110px; }
+  .fixtures-day td.fixture-match { color: #ffffff; font-weight: 500; min-width: 220px; }
+  .fixtures-day td.fixture-venue { color: #cbd5e1; width: 25%; min-width: 140px; }
 </style>
 </head>
 
@@ -92,48 +110,396 @@
 <section class="s-crossfit">
   <div class="container">
     <h2 class="title-decor">Parakram <span><b>Fixtures</b></span></h2>
-    <p class="slogan">Day-wise match schedule — sample data, will be updated once fixtures are finalised.</p>
+    <p class="slogan">Sport-wise match schedule across all three tournament days.</p>
 
+    <!-- Day Navigation Tabs -->
     <div class="fixtures-tabs">
-
       <button class="fixtures-tab-btn active" data-day="day1">Day 1</button>
       <button class="fixtures-tab-btn" data-day="day2">Day 2</button>
       <button class="fixtures-tab-btn" data-day="day3">Day 3</button>
     </div>
 
+    <!-- Sport Quick Filter Bar -->
+    <div class="sport-filter-tabs">
+      <button class="sport-filter-btn active" data-sport-filter="all">All Sports</button>
+      <button class="sport-filter-btn" data-sport-filter="badminton"><i class="fa-solid fa-feather-pointed"></i> Badminton</button>
+      <button class="sport-filter-btn" data-sport-filter="basketball"><i class="fa-solid fa-basketball"></i> Basketball</button>
+      <button class="sport-filter-btn" data-sport-filter="chess"><i class="fa-solid fa-chess-knight"></i> Chess</button>
+      <button class="sport-filter-btn" data-sport-filter="cricket"><i class="fa-solid fa-baseball-bat-ball"></i> Cricket</button>
+      <button class="sport-filter-btn" data-sport-filter="football"><i class="fa-solid fa-futbol"></i> Football</button>
+      <button class="sport-filter-btn" data-sport-filter="table-tennis"><i class="fa-solid fa-table-tennis-paddle-ball"></i> Table Tennis</button>
+      <button class="sport-filter-btn" data-sport-filter="volleyball"><i class="fa-solid fa-volleyball"></i> Volleyball</button>
+      <button class="sport-filter-btn" data-sport-filter="powerlifting"><i class="fa-solid fa-dumbbell"></i> Powerlifting</button>
+    </div>
+
+    <!-- ==================== DAY 1 ==================== -->
     <div id="day1" class="fixtures-day active">
-      <h3 class="training-schedule-top">DAY 1 — Sample Fixtures</h3>
-      <table>
-        <thead><tr><th>Time</th><th>Sport</th><th>Match</th><th>Venue</th></tr></thead>
-        <tbody>
-          <tr><td>11:00 AM</td><td>Basketball</td><td>JUIT A vs JIIT</td><td>Court 1</td></tr>
-          <tr><td>12:00 PM</td><td>Cricket</td><td>JUIT B vs JUET</td><td>Main Ground</td></tr>
-          <tr><td>2:00 PM</td><td>Lawn Tennis</td><td>JUIT C vs VIT</td><td>Court 2</td></tr>
-           <tr><td>4:00 PM</td><td>Chess</td><td>JUIT D vs GEU</td><td>Court 3</td></tr>
-        </tbody>
-      </table>
+
+      <!-- Badminton -->
+      <div class="fixture-sport-block" data-sport="badminton">
+        <h3 class="training-schedule-top"><i class="fa-solid fa-feather-pointed"></i> Badminton</h3>
+        <div class="fixtures-table-wrap">
+          <table>
+            <thead><tr><th>Time</th><th>Match</th><th>Venue</th></tr></thead>
+            <tbody>
+              <tr><td class="fixture-time">09:30 AM</td><td class="fixture-match">JUIT Men vs JIIT Noida (Round 1)</td><td class="fixture-venue">Indoor Badminton Court 1</td></tr>
+              <tr><td class="fixture-time">11:00 AM</td><td class="fixture-match">IIT Ropar vs Chitkara Baddi (Round 1)</td><td class="fixture-venue">Indoor Badminton Court 2</td></tr>
+              <tr><td class="fixture-time">02:00 PM</td><td class="fixture-match">JUIT Women vs Chitkara Rajpura (Round 1)</td><td class="fixture-venue">Indoor Badminton Court 1</td></tr>
+              <tr><td class="fixture-time">04:00 PM</td><td class="fixture-match">JUET Guna vs UIET Chandigarh (Round 1)</td><td class="fixture-venue">Indoor Badminton Court 2</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Basketball -->
+      <div class="fixture-sport-block" data-sport="basketball">
+        <h3 class="training-schedule-top"><i class="fa-solid fa-basketball"></i> Basketball</h3>
+        <div class="fixtures-table-wrap">
+          <table>
+            <thead><tr><th>Time</th><th>Match</th><th>Venue</th></tr></thead>
+            <tbody>
+              <tr><td class="fixture-time">09:00 AM</td><td class="fixture-match">JUIT A vs JIIT Noida (Pool A)</td><td class="fixture-venue">Basketball Court 1</td></tr>
+              <tr><td class="fixture-time">11:00 AM</td><td class="fixture-match">JUET Guna vs Chitkara University (Pool B)</td><td class="fixture-venue">Basketball Court 1</td></tr>
+              <tr><td class="fixture-time">02:30 PM</td><td class="fixture-match">IIT Ropar vs Graphic Era University (Pool A)</td><td class="fixture-venue">Basketball Court 1</td></tr>
+              <tr><td class="fixture-time">04:30 PM</td><td class="fixture-match">JUIT B vs UIET Chandigarh (Pool B)</td><td class="fixture-venue">Basketball Court 1</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Chess -->
+      <div class="fixture-sport-block" data-sport="chess">
+        <h3 class="training-schedule-top"><i class="fa-solid fa-chess-knight"></i> Chess</h3>
+        <div class="fixtures-table-wrap">
+          <table>
+            <thead><tr><th>Time</th><th>Match</th><th>Venue</th></tr></thead>
+            <tbody>
+              <tr><td class="fixture-time">10:00 AM</td><td class="fixture-match">Round 1 — JUIT vs Graphic Era University</td><td class="fixture-venue">Annexe Hall (Boards 1–4)</td></tr>
+              <tr><td class="fixture-time">11:30 AM</td><td class="fixture-match">Round 1 — JIIT Noida vs IIT Ropar</td><td class="fixture-venue">Annexe Hall (Boards 5–8)</td></tr>
+              <tr><td class="fixture-time">02:30 PM</td><td class="fixture-match">Round 2 — Chitkara University vs JUET Guna</td><td class="fixture-venue">Annexe Hall (Boards 1–4)</td></tr>
+              <tr><td class="fixture-time">04:30 PM</td><td class="fixture-match">Round 2 — UIET Chandigarh vs VIT</td><td class="fixture-venue">Annexe Hall (Boards 5–8)</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Cricket -->
+      <div class="fixture-sport-block" data-sport="cricket">
+        <h3 class="training-schedule-top"><i class="fa-solid fa-baseball-bat-ball"></i> Cricket</h3>
+        <div class="fixtures-table-wrap">
+          <table>
+            <thead><tr><th>Time</th><th>Match</th><th>Venue</th></tr></thead>
+            <tbody>
+              <tr><td class="fixture-time">09:00 AM</td><td class="fixture-match">Match 1 (Group A) — JUIT Warriors vs JUET Guna</td><td class="fixture-venue">Main Ground</td></tr>
+              <tr><td class="fixture-time">01:30 PM</td><td class="fixture-match">Match 2 (Group B) — JIIT Noida vs Chitkara Rajpura</td><td class="fixture-venue">Main Ground</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Football -->
+      <div class="fixture-sport-block" data-sport="football">
+        <h3 class="training-schedule-top"><i class="fa-solid fa-futbol"></i> Football</h3>
+        <div class="fixtures-table-wrap">
+          <table>
+            <thead><tr><th>Time</th><th>Match</th><th>Venue</th></tr></thead>
+            <tbody>
+              <tr><td class="fixture-time">09:30 AM</td><td class="fixture-match">Match 1 — JUIT FC vs Rayat Bahra University</td><td class="fixture-venue">Football Ground</td></tr>
+              <tr><td class="fixture-time">11:30 AM</td><td class="fixture-match">Match 2 — JIIT Noida vs Chitkara University</td><td class="fixture-venue">Football Ground</td></tr>
+              <tr><td class="fixture-time">02:30 PM</td><td class="fixture-match">Match 3 — IIT Ropar vs UIET Chandigarh</td><td class="fixture-venue">Football Ground</td></tr>
+              <tr><td class="fixture-time">04:30 PM</td><td class="fixture-match">Match 4 — JUET Guna vs Graphic Era University</td><td class="fixture-venue">Football Ground</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Table Tennis -->
+      <div class="fixture-sport-block" data-sport="table-tennis">
+        <h3 class="training-schedule-top"><i class="fa-solid fa-table-tennis-paddle-ball"></i> Table Tennis</h3>
+        <div class="fixtures-table-wrap">
+          <table>
+            <thead><tr><th>Time</th><th>Match</th><th>Venue</th></tr></thead>
+            <tbody>
+              <tr><td class="fixture-time">10:00 AM</td><td class="fixture-match">Men's Singles (Round 1) — JUIT vs JIIT Noida</td><td class="fixture-venue">TT Arena (Tables 1 & 2)</td></tr>
+              <tr><td class="fixture-time">11:30 AM</td><td class="fixture-match">Women's Singles (Round 1) — Chitkara vs IIT Ropar</td><td class="fixture-venue">TT Arena (Tables 1 & 2)</td></tr>
+              <tr><td class="fixture-time">02:00 PM</td><td class="fixture-match">Men's Doubles (Round 1) — JUET Guna vs UIET Chandigarh</td><td class="fixture-venue">TT Arena (Tables 1 & 2)</td></tr>
+              <tr><td class="fixture-time">03:30 PM</td><td class="fixture-match">Mixed Doubles (Round 1) — JUIT vs VIT</td><td class="fixture-venue">TT Arena (Tables 1 & 2)</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Volleyball -->
+      <div class="fixture-sport-block" data-sport="volleyball">
+        <h3 class="training-schedule-top"><i class="fa-solid fa-volleyball"></i> Volleyball</h3>
+        <div class="fixtures-table-wrap">
+          <table>
+            <thead><tr><th>Time</th><th>Match</th><th>Venue</th></tr></thead>
+            <tbody>
+              <tr><td class="fixture-time">09:30 AM</td><td class="fixture-match">Men's League Match 1 — JUIT Spikers vs Chitkara Rajpura</td><td class="fixture-venue">Outdoor Volleyball Court</td></tr>
+              <tr><td class="fixture-time">11:30 AM</td><td class="fixture-match">Men's League Match 2 — JIIT Noida vs JUET Guna</td><td class="fixture-venue">Outdoor Volleyball Court</td></tr>
+              <tr><td class="fixture-time">02:00 PM</td><td class="fixture-match">Women's League Match 1 — JUIT vs IIT Ropar</td><td class="fixture-venue">Outdoor Volleyball Court</td></tr>
+              <tr><td class="fixture-time">04:00 PM</td><td class="fixture-match">Men's League Match 3 — UIET Chandigarh vs Graphic Era</td><td class="fixture-venue">Outdoor Volleyball Court</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Powerlifting -->
+      <div class="fixture-sport-block" data-sport="powerlifting">
+        <h3 class="training-schedule-top"><i class="fa-solid fa-dumbbell"></i> Powerlifting</h3>
+        <div class="fixtures-table-wrap">
+          <table>
+            <thead><tr><th>Time</th><th>Match</th><th>Venue</th></tr></thead>
+            <tbody>
+              <tr><td class="fixture-time">10:00 AM</td><td class="fixture-match">Official Athlete Weigh-ins & Equipment Check</td><td class="fixture-venue">Central Gymnasium</td></tr>
+              <tr><td class="fixture-time">12:30 PM</td><td class="fixture-match">Men's U-66kg Category (Squat, Bench Press, Deadlift)</td><td class="fixture-venue">Main Stage Arena</td></tr>
+              <tr><td class="fixture-time">03:30 PM</td><td class="fixture-match">Men's U-74kg Category (Squat, Bench Press, Deadlift)</td><td class="fixture-venue">Main Stage Arena</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
     </div>
 
+    <!-- ==================== DAY 2 ==================== -->
     <div id="day2" class="fixtures-day">
-      <h3 class="training-schedule-top">DAY 2 — Sample Fixtures</h3>
-      <table>
-        <thead><tr><th>Time</th><th>Sport</th><th>Match</th><th>Venue</th></tr></thead>
-        <tbody>
-          <tr><td>10:00 AM</td><td>Football</td><td>JUIT A vs Bahara</td><td>Football Ground</td></tr>
-          <tr><td>1:00 PM</td><td>Badminton</td><td>JUIT vs IIT Ropar</td><td>Indoor Court</td></tr>
-        </tbody>
-      </table>
+
+      <!-- Badminton -->
+      <div class="fixture-sport-block" data-sport="badminton">
+        <h3 class="training-schedule-top"><i class="fa-solid fa-feather-pointed"></i> Badminton</h3>
+        <div class="fixtures-table-wrap">
+          <table>
+            <thead><tr><th>Time</th><th>Match</th><th>Venue</th></tr></thead>
+            <tbody>
+              <tr><td class="fixture-time">10:00 AM</td><td class="fixture-match">Men's Semi-Final 1 — JUIT vs Chitkara University</td><td class="fixture-venue">Indoor Badminton Court 1</td></tr>
+              <tr><td class="fixture-time">11:30 AM</td><td class="fixture-match">Men's Semi-Final 2 — JIIT Noida vs IIT Ropar</td><td class="fixture-venue">Indoor Badminton Court 2</td></tr>
+              <tr><td class="fixture-time">02:30 PM</td><td class="fixture-match">Women's Semi-Final 1 — JUIT vs VIT</td><td class="fixture-venue">Indoor Badminton Court 1</td></tr>
+              <tr><td class="fixture-time">04:00 PM</td><td class="fixture-match">Women's Semi-Final 2 — Graphic Era vs Chitkara Rajpura</td><td class="fixture-venue">Indoor Badminton Court 2</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Basketball -->
+      <div class="fixture-sport-block" data-sport="basketball">
+        <h3 class="training-schedule-top"><i class="fa-solid fa-basketball"></i> Basketball</h3>
+        <div class="fixtures-table-wrap">
+          <table>
+            <thead><tr><th>Time</th><th>Match</th><th>Venue</th></tr></thead>
+            <tbody>
+              <tr><td class="fixture-time">10:30 AM</td><td class="fixture-match">Semi-Final 1 — Winner Pool A vs Runner-Up Pool B</td><td class="fixture-venue">Basketball Court 1</td></tr>
+              <tr><td class="fixture-time">03:00 PM</td><td class="fixture-match">Semi-Final 2 — Winner Pool B vs Runner-Up Pool A</td><td class="fixture-venue">Basketball Court 1</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Chess -->
+      <div class="fixture-sport-block" data-sport="chess">
+        <h3 class="training-schedule-top"><i class="fa-solid fa-chess-knight"></i> Chess</h3>
+        <div class="fixtures-table-wrap">
+          <table>
+            <thead><tr><th>Time</th><th>Match</th><th>Venue</th></tr></thead>
+            <tbody>
+              <tr><td class="fixture-time">10:30 AM</td><td class="fixture-match">Round 3 (Swiss League) — Top 8 Qualifiers</td><td class="fixture-venue">Annexe Hall (Boards 1–4)</td></tr>
+              <tr><td class="fixture-time">02:30 PM</td><td class="fixture-match">Semi-Finals — Board A & Board B Showdown</td><td class="fixture-venue">Annexe Hall (Boards 1–2)</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Cricket -->
+      <div class="fixture-sport-block" data-sport="cricket">
+        <h3 class="training-schedule-top"><i class="fa-solid fa-baseball-bat-ball"></i> Cricket</h3>
+        <div class="fixtures-table-wrap">
+          <table>
+            <thead><tr><th>Time</th><th>Match</th><th>Venue</th></tr></thead>
+            <tbody>
+              <tr><td class="fixture-time">09:00 AM</td><td class="fixture-match">Semi-Final 1 — JUIT Warriors vs UIET Chandigarh</td><td class="fixture-venue">Main Ground</td></tr>
+              <tr><td class="fixture-time">01:30 PM</td><td class="fixture-match">Semi-Final 2 — IIT Ropar vs Chitkara Rajpura</td><td class="fixture-venue">Main Ground</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Football -->
+      <div class="fixture-sport-block" data-sport="football">
+        <h3 class="training-schedule-top"><i class="fa-solid fa-futbol"></i> Football</h3>
+        <div class="fixtures-table-wrap">
+          <table>
+            <thead><tr><th>Time</th><th>Match</th><th>Venue</th></tr></thead>
+            <tbody>
+              <tr><td class="fixture-time">11:00 AM</td><td class="fixture-match">Semi-Final 1 — JUIT FC vs Chitkara University</td><td class="fixture-venue">Football Ground</td></tr>
+              <tr><td class="fixture-time">03:30 PM</td><td class="fixture-match">Semi-Final 2 — IIT Ropar vs Graphic Era University</td><td class="fixture-venue">Football Ground</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Table Tennis -->
+      <div class="fixture-sport-block" data-sport="table-tennis">
+        <h3 class="training-schedule-top"><i class="fa-solid fa-table-tennis-paddle-ball"></i> Table Tennis</h3>
+        <div class="fixtures-table-wrap">
+          <table>
+            <thead><tr><th>Time</th><th>Match</th><th>Venue</th></tr></thead>
+            <tbody>
+              <tr><td class="fixture-time">10:00 AM</td><td class="fixture-match">Men's Singles Semi-Finals — Top 4 Contenders</td><td class="fixture-venue">TT Arena (Table 1)</td></tr>
+              <tr><td class="fixture-time">11:30 AM</td><td class="fixture-match">Women's Singles Semi-Finals — Top 4 Contenders</td><td class="fixture-venue">TT Arena (Table 2)</td></tr>
+              <tr><td class="fixture-time">02:30 PM</td><td class="fixture-match">Team Championship Semi-Finals — JUIT vs Chitkara</td><td class="fixture-venue">TT Arena (Tables 1 & 2)</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Volleyball -->
+      <div class="fixture-sport-block" data-sport="volleyball">
+        <h3 class="training-schedule-top"><i class="fa-solid fa-volleyball"></i> Volleyball</h3>
+        <div class="fixtures-table-wrap">
+          <table>
+            <thead><tr><th>Time</th><th>Match</th><th>Venue</th></tr></thead>
+            <tbody>
+              <tr><td class="fixture-time">10:00 AM</td><td class="fixture-match">Women's Semi-Final — JUIT vs Chitkara Baddi</td><td class="fixture-venue">Outdoor Volleyball Court</td></tr>
+              <tr><td class="fixture-time">12:00 PM</td><td class="fixture-match">Men's Semi-Final 1 — JUIT Spikers vs JUET Guna</td><td class="fixture-venue">Outdoor Volleyball Court</td></tr>
+              <tr><td class="fixture-time">03:30 PM</td><td class="fixture-match">Men's Semi-Final 2 — JIIT Noida vs UIET Chandigarh</td><td class="fixture-venue">Outdoor Volleyball Court</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Powerlifting -->
+      <div class="fixture-sport-block" data-sport="powerlifting">
+        <h3 class="training-schedule-top"><i class="fa-solid fa-dumbbell"></i> Powerlifting</h3>
+        <div class="fixtures-table-wrap">
+          <table>
+            <thead><tr><th>Time</th><th>Match</th><th>Venue</th></tr></thead>
+            <tbody>
+              <tr><td class="fixture-time">11:00 AM</td><td class="fixture-match">Women's Open Powerlifting Championship (All Categories)</td><td class="fixture-venue">Main Stage Arena</td></tr>
+              <tr><td class="fixture-time">02:30 PM</td><td class="fixture-match">Men's U-83kg & U-93kg Championship (Squat, Bench, Deadlift)</td><td class="fixture-venue">Main Stage Arena</td></tr>
+              <tr><td class="fixture-time">05:00 PM</td><td class="fixture-match">Maximum Bench Press Showdown (Open Challenge)</td><td class="fixture-venue">Main Stage Arena</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
     </div>
 
+    <!-- ==================== DAY 3 ==================== -->
     <div id="day3" class="fixtures-day">
-      <h3 class="training-schedule-top">DAY 3 — Finals (Sample)</h3>
-      <table>
-        <thead><tr><th>Time</th><th>Sport</th><th>Match</th><th>Venue</th></tr></thead>
-        <tbody>
-          <tr><td>11:00 AM</td><td>Cricket</td><td>Final — TBD</td><td>Main Ground</td></tr>
-          <tr><td>3:00 PM</td><td>Basketball</td><td>Final — TBD</td><td>Court 1</td></tr>
-        </tbody>
-      </table>
+
+      <!-- Badminton -->
+      <div class="fixture-sport-block" data-sport="badminton">
+        <h3 class="training-schedule-top"><i class="fa-solid fa-feather-pointed"></i> Badminton</h3>
+        <div class="fixtures-table-wrap">
+          <table>
+            <thead><tr><th>Time</th><th>Match</th><th>Venue</th></tr></thead>
+            <tbody>
+              <tr><td class="fixture-time">10:00 AM</td><td class="fixture-match">3rd Place Playoff — Loser SF1 vs Loser SF2</td><td class="fixture-venue">Indoor Badminton Court 1</td></tr>
+              <tr><td class="fixture-time">01:30 PM</td><td class="fixture-match">Women's Championship Grand Final</td><td class="fixture-venue">Indoor Badminton Court 1</td></tr>
+              <tr><td class="fixture-time">03:30 PM</td><td class="fixture-match">Men's Championship Grand Final</td><td class="fixture-venue">Indoor Badminton Court 1</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Basketball -->
+      <div class="fixture-sport-block" data-sport="basketball">
+        <h3 class="training-schedule-top"><i class="fa-solid fa-basketball"></i> Basketball</h3>
+        <div class="fixtures-table-wrap">
+          <table>
+            <thead><tr><th>Time</th><th>Match</th><th>Venue</th></tr></thead>
+            <tbody>
+              <tr><td class="fixture-time">11:00 AM</td><td class="fixture-match">3rd Place Match — Loser SF1 vs Loser SF2</td><td class="fixture-venue">Basketball Court 1</td></tr>
+              <tr><td class="fixture-time">04:00 PM</td><td class="fixture-match">Grand Championship Final — Finalist 1 vs Finalist 2</td><td class="fixture-venue">Basketball Court 1</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Chess -->
+      <div class="fixture-sport-block" data-sport="chess">
+        <h3 class="training-schedule-top"><i class="fa-solid fa-chess-knight"></i> Chess</h3>
+        <div class="fixtures-table-wrap">
+          <table>
+            <thead><tr><th>Time</th><th>Match</th><th>Venue</th></tr></thead>
+            <tbody>
+              <tr><td class="fixture-time">10:00 AM</td><td class="fixture-match">Classical Chess Championship Grand Final</td><td class="fixture-venue">Annexe Hall (Board 1)</td></tr>
+              <tr><td class="fixture-time">02:00 PM</td><td class="fixture-match">Parakram Rapid & Blitz Open Showcase</td><td class="fixture-venue">Annexe Hall</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Cricket -->
+      <div class="fixture-sport-block" data-sport="cricket">
+        <h3 class="training-schedule-top"><i class="fa-solid fa-baseball-bat-ball"></i> Cricket</h3>
+        <div class="fixtures-table-wrap">
+          <table>
+            <thead><tr><th>Time</th><th>Match</th><th>Venue</th></tr></thead>
+            <tbody>
+              <tr><td class="fixture-time">10:30 AM</td><td class="fixture-match">3rd Place Playoff (10 Overs) — Loser SF1 vs Loser SF2</td><td class="fixture-venue">Main Ground</td></tr>
+              <tr><td class="fixture-time">01:00 PM</td><td class="fixture-match">Parakram Cricket Cup Final (20 Overs) — Finalist 1 vs Finalist 2</td><td class="fixture-venue">Main Ground</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Football -->
+      <div class="fixture-sport-block" data-sport="football">
+        <h3 class="training-schedule-top"><i class="fa-solid fa-futbol"></i> Football</h3>
+        <div class="fixtures-table-wrap">
+          <table>
+            <thead><tr><th>Time</th><th>Match</th><th>Venue</th></tr></thead>
+            <tbody>
+              <tr><td class="fixture-time">11:00 AM</td><td class="fixture-match">3rd Place Match — Loser SF1 vs Loser SF2</td><td class="fixture-venue">Football Ground</td></tr>
+              <tr><td class="fixture-time">03:00 PM</td><td class="fixture-match">Parakram Football Grand Finale — Finalist 1 vs Finalist 2</td><td class="fixture-venue">Football Ground</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Table Tennis -->
+      <div class="fixture-sport-block" data-sport="table-tennis">
+        <h3 class="training-schedule-top"><i class="fa-solid fa-table-tennis-paddle-ball"></i> Table Tennis</h3>
+        <div class="fixtures-table-wrap">
+          <table>
+            <thead><tr><th>Time</th><th>Match</th><th>Venue</th></tr></thead>
+            <tbody>
+              <tr><td class="fixture-time">10:30 AM</td><td class="fixture-match">Men's & Women's Singles Championship Finals</td><td class="fixture-venue">TT Arena (Tables 1 & 2)</td></tr>
+              <tr><td class="fixture-time">02:00 PM</td><td class="fixture-match">Team Championship Grand Finale</td><td class="fixture-venue">TT Arena (Table 1)</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Volleyball -->
+      <div class="fixture-sport-block" data-sport="volleyball">
+        <h3 class="training-schedule-top"><i class="fa-solid fa-volleyball"></i> Volleyball</h3>
+        <div class="fixtures-table-wrap">
+          <table>
+            <thead><tr><th>Time</th><th>Match</th><th>Venue</th></tr></thead>
+            <tbody>
+              <tr><td class="fixture-time">11:00 AM</td><td class="fixture-match">Women's Volleyball Championship Final</td><td class="fixture-venue">Outdoor Volleyball Court</td></tr>
+              <tr><td class="fixture-time">02:30 PM</td><td class="fixture-match">Men's Volleyball Grand Finale — Finalist 1 vs Finalist 2</td><td class="fixture-venue">Outdoor Volleyball Court</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Powerlifting -->
+      <div class="fixture-sport-block" data-sport="powerlifting">
+        <h3 class="training-schedule-top"><i class="fa-solid fa-dumbbell"></i> Powerlifting</h3>
+        <div class="fixtures-table-wrap">
+          <table>
+            <thead><tr><th>Time</th><th>Match</th><th>Venue</th></tr></thead>
+            <tbody>
+              <tr><td class="fixture-time">11:00 AM</td><td class="fixture-match">Men's 93kg+ Heavyweight Powerlifting Finals</td><td class="fixture-venue">Main Stage Arena</td></tr>
+              <tr><td class="fixture-time">02:30 PM</td><td class="fixture-match">Strongman Showcase & "Best Lifter of Parakram" Ceremony</td><td class="fixture-venue">Main Stage Arena</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
     </div>
 
   </div>
@@ -204,19 +570,49 @@
 </a>
 <!--================= TO TOP END =================-->
 
-<!-- Day-tab switching -->
+<!-- Day-tab and Sport-filter switching -->
 <script>
 document.addEventListener("DOMContentLoaded", function () {
-  var buttons = document.querySelectorAll(".fixtures-tab-btn");
+  var dayButtons = document.querySelectorAll(".fixtures-tab-btn");
   var days = document.querySelectorAll(".fixtures-day");
-  buttons.forEach(function (btn) {
+  var sportFilterButtons = document.querySelectorAll(".sport-filter-btn");
+  var currentSportFilter = "all";
+
+  function applySportFilter() {
+    var activeDay = document.querySelector(".fixtures-day.active");
+    if (!activeDay) return;
+    var sportBlocks = activeDay.querySelectorAll(".fixture-sport-block");
+    sportBlocks.forEach(function (block) {
+      if (currentSportFilter === "all" || block.dataset.sport === currentSportFilter) {
+        block.style.display = "block";
+      } else {
+        block.style.display = "none";
+      }
+    });
+  }
+
+  dayButtons.forEach(function (btn) {
     btn.addEventListener("click", function () {
-      buttons.forEach(function (b) { b.classList.remove("active"); });
+      dayButtons.forEach(function (b) { b.classList.remove("active"); });
       days.forEach(function (d) { d.classList.remove("active"); });
       btn.classList.add("active");
-      document.getElementById(btn.dataset.day).classList.add("active");
+      var targetDay = document.getElementById(btn.dataset.day);
+      if (targetDay) {
+        targetDay.classList.add("active");
+      }
+      applySportFilter();
     });
   });
+
+  sportFilterButtons.forEach(function (sBtn) {
+    sBtn.addEventListener("click", function () {
+      sportFilterButtons.forEach(function (b) { b.classList.remove("active"); });
+      sBtn.classList.add("active");
+      currentSportFilter = sBtn.dataset.sportFilter;
+      applySportFilter();
+    });
+  });
+
   var yearSpan = document.getElementById("current-year");
   if (yearSpan) { yearSpan.textContent = new Date().getFullYear(); }
 });
