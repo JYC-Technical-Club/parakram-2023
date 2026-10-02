@@ -23,6 +23,40 @@
     <link rel="stylesheet" href="assets/css/style.scss">
     <link rel="stylesheet" href="assets/css/sstyle.css">
     <link rel="icon" href="photosc/fevicon.avif">
+    <style>
+        .fixture-gradient-link {
+            position: relative;
+            border-radius: 9px;
+            isolation: isolate;
+            height: 30px;
+        }
+
+        .fixture-gradient-link::before {
+            content: "";
+            position: absolute;
+            inset: -3px;
+            padding: 2px;
+            border-radius: inherit;
+            background: linear-gradient(90deg, #3AABBA, #7b61ff, #f4c95d, #3AABBA);
+            background-size: 300% 100%;
+            pointer-events: none;
+            z-index: -1;
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask-composite: exclude;
+            animation: fixtureGradientShift 3s linear infinite;
+        }
+
+        @keyframes fixtureGradientShift {
+            from { background-position: 0% 50%; }
+            to { background-position: 100% 50%; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .fixture-gradient-link::before { animation: none; }
+        }
+    </style>
 
 </head>
 
@@ -72,7 +106,7 @@
                     </li>
 
 
-                    <li><a href="fixtures.html">Fixture</a></li>
+                    <li><a class="fixture-gradient-link" href="fixtures.html">Fixture</a></li>
 
 
 
