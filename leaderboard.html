@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Parakram | Leaderboard</title>
+
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="shortcut icon" href="assets/img/favicon.webp">
+
+  <link rel="stylesheet" href="assets/css/bootstrap-grid.css">
+  <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/footer.css">
+  <link rel="icon" href="photosc/fevicon.avif">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+  <style>
+    /* Fixtures page styling */
+    .fixtures-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin: 20px 0 25px;
+      flex-wrap: wrap;
+    }
+
+    .fixtures-tab-btn {
+      padding: 10px 32px;
+      border: 2px solid #3AABBA;
+      border-radius: 30px;
+      background: transparent;
+      color: #fff;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all .25s ease;
+      font-family: inherit;
+      font-size: 16px;
+      letter-spacing: 0.5px;
+    }
+
+    .fixtures-tab-btn.active,
+    .fixtures-tab-btn:hover {
+      background: #3AABBA;
+      color: #0b0b0b;
+      box-shadow: 0 0 15px rgba(58, 171, 186, 0.4);
+    }
+
+    .sport-filter-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin: 0 auto 35px;
+      flex-wrap: wrap;
+      max-width: 960px;
+    }
+
+    .sport-filter-btn {
+      padding: 7px 18px;
+      border: 1px solid rgba(58, 171, 186, 0.35);
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.03);
+      color: #cbd5e1;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-family: inherit;
+    }
+
+    .sport-filter-btn:hover,
+    .sport-filter-btn.active {
+      background: #3AABBA;
+      color: #0b0b0b;
+      border-color: #3AABBA;
+    }
+
+    .fixtures-day {
+      display: none;
+    }
+
+    .fixtures-day.active {
+      display: block;
+    }
+
+    .fixture-sport-block {
+      margin-bottom: 35px;
+      background: rgba(255, 255, 255, 0.02);
+      border-radius: 4px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .training-schedule-top {
+      border-top: 2px solid #3AABBA;
+      background-color: #272a31;
+      line-height: 44px;
+      padding: 0 18px;
+      margin: 0;
+      color: #fff;
+      font-size: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      letter-spacing: 0.5px;
+    }
+
+    .training-schedule-top i {
+      color: #3AABBA;
+      font-size: 18px;
+    }
+
+    .fixtures-table-wrap {
+      width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .fixtures-day table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 0;
+    }
+
+    .fixtures-day th,
+    .fixtures-day td {
+      padding: 14px 18px;
+      text-align: left;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      color: #fff;
+    }
+
+    .fixtures-day th {
+      color: #3AABBA;
+      text-transform: uppercase;
+      font-size: 13px;
+      letter-spacing: 1px;
+      background: rgba(0, 0, 0, 0.25);
+      font-weight: 700;
+    }
+
+    .fixtures-day tbody tr {
+      transition: background-color 0.2s ease;
+    }
+
+    .fixtures-day tbody tr:hover {
+      background-color: rgba(58, 171, 186, 0.08);
+    }
+
+    .fixtures-day td.fixture-match {
+      color: #ffffff;
+      font-weight: 500;
+      min-width: 220px;
+    }
+
+    .fixtures-day td.fixture-winner {
+      color: #50d890;
+      font-weight: 600;
+      white-space: nowrap;
+      width: 30%;
+      min-width: 140px;
+    }
+  </style>
+</head>
+
+<body id="home">
+
+  <!--================ PRELOADER ================-->
+  <div class="preloader-cover">
+    <div id="cube-loader">
+      <div class="caption">
+        <div class="cube-loader">
+          <div class="cube loader-1"></div>
+          <div class="cube loader-2"></div>
+          <div class="cube loader-4"></div>
+          <div class="cube loader-3"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--============== PRELOADER END ==============-->
+
+  <!-- ================= HEADER ================= -->
+  <header class="header">
+    <a href="#" class="nav-btn">
+      <span></span>
+      <span></span>
+      <span></span>
+    </a>
+    <div class="header-menu">
+      <div class="container">
+        <div class="logo">
+          <img src="photosc/sc.webp" alt="Logo">
+        </div>
+        <div class="jyc-logo">
+          <img src="photosc/logojyc white1.webp" alt="jyc-Logo">
+        </div>
+      </div>
+      <nav class="nav-menu">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a
+              href="https://docs.google.com/forms/d/e/1FAIpQLScREtKUjTz8677K5cJU_o6K3oQECteW427tZa65d4EBI_Ej6w/viewform">Registrations</a>
+          </li>
+          <li><a href="fixtures.html">Fixture</a></li>
+          <li><a href="leaderboard.html" class="active">Leaderboard</a></li>
+          <li><a href="contacts.html">Contacts</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <!-- =============== HEADER END =============== -->
+
+  <!-- =============== HEADER-TITLE =============== -->
+  <section class="s-header-title" style="background-image: url(assets/img/bg-1-min.webp);">
+    <div class="container">
+      <h1 class="title">Leaderboard</h1>
+      <ul class="breadcrambs">
+        <li><a href="index.html">Home</a></li>
+        <li>Leaderboard</li>
+      </ul>
+    </div>
+  </section>
+  <!-- ============= HEADER-TITLE END ============= -->
+
+  <!-- =============== FIXTURES =============== -->
+  <section class="s-crossfit">
+    <div class="container">
+      <h2 class="title-decor">Parakram <span><b>Leaderboard & Rankings</b></span></h2>
+      <p class="slogan">Sport-wise match results and rankings across the tournament.</p>
+
+      <!-- Day Navigation Tabs -->
+      <div class="fixtures-tabs">
+        <button class="fixtures-tab-btn active" data-day="day1">Day 1</button>
+        <button class="fixtures-tab-btn" data-day="day2">Day 2</button>
+        <button class="fixtures-tab-btn" data-day="day3">Day 3</button>
+      </div>
+
+      <!-- Sport Quick Filter Bar -->
+      <div class="sport-filter-tabs">
+        <button class="sport-filter-btn active" data-sport-filter="all">All Sports</button>
+        <button class="sport-filter-btn" data-sport-filter="badminton"><i class="fa-solid fa-feather-pointed"></i>
+          Badminton</button>
+        <button class="sport-filter-btn" data-sport-filter="chess"><i class="fa-solid fa-chess-knight"></i>
+          Chess</button>
+        <button class="sport-filter-btn" data-sport-filter="football"><i class="fa-solid fa-futbol"></i>
+          Football</button>
+        <button class="sport-filter-btn" data-sport-filter="table-tennis"><i
+            class="fa-solid fa-table-tennis-paddle-ball"></i> Table Tennis</button>
+        <button class="sport-filter-btn" data-sport-filter="volleyball"><i class="fa-solid fa-volleyball"></i>
+          Volleyball</button>
+      </div>
+
+      <!-- ==================== DAY 1 ==================== -->
+      <div id="day1" class="fixtures-day active">
+
+        <!-- Football -->
+        <div class="fixture-sport-block" data-sport="football">
+          <h3 class="training-schedule-top"><i class="fa-solid fa-futbol"></i> Football</h3>
+          <div class="fixtures-table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Match</th>
+                  <th>Winner / Result</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="fixture-match">M1: JUIT Team B vs JSS Noida</td>
+                  <td class="fixture-winner">1 - 1 : Draw (Pool B)</td>
+                </tr>
+                <tr>
+                  <td class="fixture-match">M2: JUIT Team A vs DBS</td>
+                  <td class="fixture-winner">0 - 1 : DBS won (Pool A)</td>
+                </tr>
+                <tr>
+                  <td class="fixture-match">M3: Shoolini vs DBS</td>
+                  <td class="fixture-winner">1 - 0 : Shoolini won (Pool A)</td>
+                </tr>
+                <tr>
+                  <td class="fixture-match">M4: Arni University vs JSS Noida</td>
+                  <td class="fixture-winner">0 - 8 : JSS Noida won (Pool B)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Badminton -->
+        <div class="fixture-sport-block" data-sport="badminton">
+          <h3 class="training-schedule-top"><i class="fa-solid fa-feather-pointed"></i> Badminton</h3>
+          <div class="fixtures-table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Match</th>
+                  <th>Winner</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="fixture-match">ARNI vs DBS</td>
+                  <td class="fixture-winner">DBS</td>
+                </tr>
+                <tr>
+                  <td class="fixture-match">NIT-J vs Shoolini</td>
+                  <td class="fixture-winner">NIT J</td>
+                </tr>
+                <tr>
+                  <td class="fixture-match">JUIT A vs DBS</td>
+                  <td class="fixture-winner">JUIT A</td>
+                </tr>
+                <tr>
+                  <td class="fixture-match">JUIT B vs Shoolini</td>
+                  <td class="fixture-winner">JUIT B</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Table Tennis -->
+        <div class="fixture-sport-block" data-sport="table-tennis">
+          <h3 class="training-schedule-top"><i class="fa-solid fa-table-tennis-paddle-ball"></i> Table Tennis</h3>
+          <div class="fixtures-table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Match / Team</th>
+                  <th>Result</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="fixture-match">JUIT A</td>
+                  <td class="fixture-winner">FINALIST</td>
+                </tr>
+                <tr>
+                  <td class="fixture-match">Shoolini vs HPU</td>
+                  <td class="fixture-winner">Shoolini</td>
+                </tr>
+                <tr>
+                  <td class="fixture-match">HPU vs JUIT B</td>
+                  <td class="fixture-winner">HPU</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Chess -->
+        <div class="fixture-sport-block" data-sport="chess">
+          <h3 class="training-schedule-top"><i class="fa-solid fa-chess-knight"></i> Chess</h3>
+          <div class="fixtures-table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Teams</th>
+                  <th>Matches</th>
+                  <th>Win</th>
+                  <th>Lose</th>
+                  <th>Draw</th>
+                  <th>NRR (W-L)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="fixture-match">1. JUIT A</td>
+                  <td>3</td>
+                  <td>2</td>
+                  <td>0</td>
+                  <td>1</td>
+                  <td class="fixture-winner">9.5-2.5</td>
+                </tr>
+                <tr>
+                  <td class="fixture-match">2. SMVDU</td>
+                  <td>3</td>
+                  <td>2</td>
+                  <td>1</td>
+                  <td>0</td>
+                  <td class="fixture-winner">7.5-4.5</td>
+                </tr>
+                <tr>
+                  <td class="fixture-match">3. JUIT B</td>
+                  <td>3</td>
+                  <td>0</td>
+                  <td>1</td>
+                  <td>2</td>
+                  <td class="fixture-winner">5-7</td>
+                </tr>
+                <tr>
+                  <td class="fixture-match">4. ARNI</td>
+                  <td>3</td>
+                  <td>0</td>
+                  <td>2</td>
+                  <td>1</td>
+                  <td class="fixture-winner">2-10</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Volleyball -->
+        <div class="fixture-sport-block" data-sport="volleyball">
+          <h3 class="training-schedule-top"><i class="fa-solid fa-volleyball"></i> Volleyball</h3>
+          <div class="fixtures-table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Match</th>
+                  <th>Winner</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="fixture-match">Chitkara baddi vs DBS</td>
+                  <td class="fixture-winner">Chitkara Baddi</td>
+                </tr>
+                <tr>
+                  <td class="fixture-match">JSS vs LR</td>
+                  <td class="fixture-winner">JSS</td>
+                </tr>
+                <tr>
+                  <td class="fixture-match">Arni university girls vs chitkara baddi girls</td>
+                  <td class="fixture-winner">Chitkara Baddi</td>
+                </tr>
+                <tr>
+                  <td class="fixture-match">JUIT vs Chitkara baddi</td>
+                  <td class="fixture-winner">JUIT</td>
+                </tr>
+                <tr>
+                  <td class="fixture-match">JUIT girls vs Arni university girls</td>
+                  <td class="fixture-winner">JUIT</td>
+                </tr>
+                <tr>
+                  <td class="fixture-match">Arni university vs LR</td>
+                  <td class="fixture-winner">Arni University</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ==================== DAY 2 ==================== -->
+      <div id="day2" class="fixtures-day">
+        <div style="padding:40px; text-align:center; color:#fff;">
+          <h4>Day 2 Results will be updated soon.</h4>
+        </div>
+      </div>
+
+      <!-- ==================== DAY 3 ==================== -->
+      <div id="day3" class="fixtures-day">
+        <div style="padding:40px; text-align:center; color:#fff;">
+          <h4>Day 3 Results will be updated soon.</h4>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <!-- =========== FIXTURES END =========== -->
+
+  <!-- ================== FOOTER ================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <a href="index.html">
+          <img src="photosc/logojyc.webp" alt="University Clubs Logo" class="footer-logo">
+        </a>
+        <a href="technical.html">
+          <img src="photosc/tech logo (1).png" alt="Made By Logo" class="footer-logo logo-right">
+        </a>
+      </div>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Clubs</h3>
+          <ul>
+            <li><a href="technical.html">Technical Sciences, Movies and Photography</a></li>
+            <li><a href="sports.html">Sports</a></li>
+            <li><a href="literary.html">Literary and Debating</a></li>
+            <li><a href="koshish.html">Koshish</a></li>
+            <li><a href="cultural.html">Cultural and Dance</a></li>
+            <li><a href="theatre.html">Theatre and Music</a></li>
+            <li><a href="environment.html">Environment, Ecology and Health</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Committees</h3>
+          <ul>
+            <li><a href="events.html">Events and Procurement</a></li>
+            <li><a href="finance.html">Finance</a></li>
+            <li><a href="creative.html">Creative Arts</a></li>
+            <li><a href="disciplinary.html">Disciplinary</a></li>
+            <li><a href="media.html">Media and Publicity</a></li>
+            <li><a href="hospitality.html">Registration and Hospitality</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Connect With Us</h3>
+          <div class="social-icons">
+            <a href="https://www.facebook.com/jyc.juit/" class="social-icon" aria-label="Facebook"><i
+                class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/jyc.juit/" class="social-icon" aria-label="Instagram"><i
+                class="fab fa-instagram"></i></a>
+            <a href="https://x.com/JycJuit/" class="social-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.linkedin.com/company/juit-youth-club/mycompany/" class="social-icon"
+              aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.youtube.com/@JYCPhotographyClub" class="social-icon" aria-label="YouTube"><i
+                class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <nav>
+          <a href="ourTeam.html">Our Team</a>
+        </nav>
+        <div class="copyright">
+          © <span id="current-year"></span> University Clubs & Committees. All rights reserved.
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- ================ FOOTER END ================ -->
+
+  <!--=================== TO TOP ===================-->
+  <a class="to-top" href="#home">
+    <i class="fa fa-chevron-up" aria-hidden="true"></i>
+  </a>
+  <!--================= TO TOP END =================-->
+
+  <!-- Day-tab and Sport-filter switching -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var dayButtons = document.querySelectorAll(".fixtures-tab-btn");
+      var days = document.querySelectorAll(".fixtures-day");
+      var sportFilterButtons = document.querySelectorAll(".sport-filter-btn");
+      var currentSportFilter = "all";
+
+      function applySportFilter() {
+        var activeDay = document.querySelector(".fixtures-day.active");
+        if (!activeDay) return;
+        var sportBlocks = activeDay.querySelectorAll(".fixture-sport-block");
+        sportBlocks.forEach(function (block) {
+          if (currentSportFilter === "all" || block.dataset.sport === currentSportFilter) {
+            block.style.display = "block";
+          } else {
+            block.style.display = "none";
+          }
+        });
+      }
+
+      dayButtons.forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          dayButtons.forEach(function (b) { b.classList.remove("active"); });
+          days.forEach(function (d) { d.classList.remove("active"); });
+          btn.classList.add("active");
+          var targetDay = document.getElementById(btn.dataset.day);
+          if (targetDay) {
+            targetDay.classList.add("active");
+          }
+          applySportFilter();
+        });
+      });
+
+      sportFilterButtons.forEach(function (sBtn) {
+        sBtn.addEventListener("click", function () {
+          sportFilterButtons.forEach(function (b) { b.classList.remove("active"); });
+          sBtn.classList.add("active");
+          currentSportFilter = sBtn.dataset.sportFilter;
+          applySportFilter();
+        });
+      });
+
+      var yearSpan = document.getElementById("current-year");
+      if (yearSpan) { yearSpan.textContent = new Date().getFullYear(); }
+    });
+  </script>
+
+  <!--=================== SCRIPT ===================-->
+  <script src="assets/js/jquery-2.2.4.min.js"></script>
+  <script src="assets/js/slick.min.js"></script>
+  <script src="assets/js/rx-lazy.js"></script>
+  <script src="assets/js/parallax.min.js"></script>
+  <script src="assets/js/scripts.js"></script>
+  <script src="assets/js/sscript.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Poppins:wght@300;400;500;600;700;800;900&family=Tektur:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+</body>
+
+</html>
